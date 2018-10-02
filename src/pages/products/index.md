@@ -1,6 +1,5 @@
 ---
-templateKey: 'product-page'
-path: /products
+templateKey: product-page
 title: Our Coffee
 image: /img/jumbotron.jpg
 heading: What we offer
@@ -98,4 +97,10 @@ pricing:
         - Unlimited varieties
       plan: Custom
       price: '??'
+    - description: أفضل سعر
+      items:
+        - خمس قهوات
+      plan: الذهبي
+      price: 50 ريال
 ---
+
