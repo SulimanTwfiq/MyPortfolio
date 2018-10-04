@@ -1,15 +1,35 @@
-import React from 'react'
-import Helmet from 'react-helmet'
-
-import Navbar from '../components/Navbar'
-import './all.sass'
+import React from "react";
+import Helmet from "react-helmet";
+import styled from "styled-components";
+import Header from "../components/Header";
+import Footer from "../components/Footer";
+import Slider from "../components/Slider";
+import Sections from "../components/Sections";
+import ContactInfo from "../components/ContactInfo";
+const Container = styled.div`
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto 1fr;
+  grid-template-areas:
+    "header header"
+    "contactInfo contactInfo"
+    "slider sections"
+    "slider footer";
+`;
 
 const TemplateWrapper = ({ children }) => (
   <div>
     <Helmet title="Home | Gatsby + Netlify CMS" />
-    <Navbar />
-    <div>{children}</div>
+    <Container>
+      <Header />
+      <ContactInfo />
+      <Slider />
+      <Sections />
+      {/* {children} */}
+      <Footer />
+    </Container>
   </div>
-)
+);
 
-export default TemplateWrapper
+export default TemplateWrapper;
