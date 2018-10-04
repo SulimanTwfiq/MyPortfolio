@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-const ContactInfoSection = styled.div`
+const ContactInfoSection = styled.section`
   background-color: var(--secoundary-color);
   grid-area: contactInfo;
   display: flex;

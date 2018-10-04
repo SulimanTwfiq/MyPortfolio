@@ -2,10 +2,9 @@ import React from "react";
 import styled from "styled-components";
 
 const StyledHeader = styled.header`
-  header {
-    grid-area: header;
-    background-color: var(--primary-color);
-  }
+  grid-area: header;
+  background-color: var(--primary-color);
+
   nav {
     grid-area: nav;
     background-color: var(--primary-color);

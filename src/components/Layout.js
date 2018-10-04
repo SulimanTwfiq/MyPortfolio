@@ -5,6 +5,7 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import Slider from "../components/Slider";
 import Sections from "../components/Sections";
+import GlobalStyles from "../components/GlobalStyles";
 import ContactInfo from "../components/ContactInfo";
 const Container = styled.div`
   height: 100vh;
@@ -20,6 +21,7 @@ const Container = styled.div`
 
 const TemplateWrapper = ({ children }) => (
   <div>
+    <GlobalStyles />
     <Helmet title="Home | Gatsby + Netlify CMS" />
     <Container>
       <Header />
