@@ -4,7 +4,7 @@ import styled from "styled-components";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import Slider from "../components/Slider";
-// import Sections from "../components/sections/index";
+import Sections from "../components/sections";
 import GlobalStyles from "../components/GlobalStyles";
 import ContactInfo from "../components/ContactInfo";
 import media from "./media";
@@ -37,7 +37,7 @@ const TemplateWrapper = ({ children }) => (
       <Header />
       <ContactInfo />
       <Slider />
-      {/* <Sections /> */}
+      <Sections />
       {/* {children} */}
       <Footer />
     </Container>
