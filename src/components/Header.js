@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import media from "./media";
-
+import { Menu } from "styled-icons/material/Menu";
 const StyledHeader = styled.header`
   grid-area: header;
   background-color: var(--primary-color);
@@ -17,27 +17,28 @@ const StyledHeader = styled.header`
       color: wheat;
       padding: 0 20px;
       text-transform: uppercase;
-      ${media.tablet`
-      background-color:#1c5856;
-    text-align:center;
-    flex-direction:column;
-    display:none; 
-    backg
-    `};
+      margin: 0px;
+
+      label {
+        display: none;
+      }
       a {
         text-decoration: none;
         color: inherit;
       }
       li {
-        margin: 10px;
+        margin: 7px;
       }
+      ${media.tablet`
+      background-color:#1c5856;
+    text-align:center;
+    flex-direction:column;
+    display:none; 
+    padding:10px;
+    `};
     }
   }
-  label {
-    color: aquamarine;
-    cursor: pointer;
-    font-size: 1.7rem;
-  }
+
   input {
     &[type="checkbox"] {
       display: none;
@@ -47,12 +48,21 @@ const StyledHeader = styled.header`
     }
   }
 `;
+const MenuIcon = styled(Menu)`
+  display: none;
+  color: aquamarine;
+  cursor: pointer;
+  width: 40px;
+  ${media.tablet`display:block`};
+`;
 const Header = () => {
   return (
     <StyledHeader>
       <nav>
         <input type="checkbox" id="checkbox_toggle" />
-        <label for="checkbox_toggle">☰</label>
+        <label for="checkbox_toggle">
+          <MenuIcon />
+        </label>
 
         <ul>
           <li>

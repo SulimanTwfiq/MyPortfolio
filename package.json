@@ -25,6 +25,7 @@
     "react-dom": "^16.4.1",
     "react-helmet": "^5.2.0",
     "styled-components": "^4.0.0-beta.7-hoist",
+    "styled-icons": "^3.0.0",
     "uuid": "^3.2.1"
   },
   "keywords": [
