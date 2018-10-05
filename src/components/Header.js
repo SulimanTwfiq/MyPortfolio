@@ -2,23 +2,20 @@ import React from "react";
 import styled from "styled-components";
 import media from "./media";
 import { Menu } from "styled-icons/material/Menu";
+import ContactInfo from "./ContactInfo";
 const StyledHeader = styled.header`
   grid-area: header;
-  background-color: var(--primary-color);
-
-  nav {
-    grid-area: nav;
-    background-color: var(--primary-color);
-
-    ul {
+  display:flex;
+  flex-direction:column;
+  background-image: linear-gradient(-225deg, #B7F8DB 0%, #50A7C2 100%);  height:35vh;
+  nav ul {
       list-style: none;
       display: flex;
       justify-content: space-between;
-      color: wheat;
+      color: var(--primary-color);;
       padding: 0 20px;
       text-transform: uppercase;
       margin: 0px;
-
       label {
         display: none;
       }
@@ -30,7 +27,7 @@ const StyledHeader = styled.header`
         margin: 7px;
       }
       ${media.tablet`
-      background-color:#1c5856;
+      background-color:inherit;
     text-align:center;
     flex-direction:column;
     display:none; 
@@ -50,10 +47,14 @@ const StyledHeader = styled.header`
 `;
 const MenuIcon = styled(Menu)`
   display: none;
-  color: aquamarine;
+  color: var(--primary-color);
   cursor: pointer;
   width: 40px;
   ${media.tablet`display:block`};
+`;
+const HeaderContent = styled.div`
+  text-align: center;
+  flex: 1;
 `;
 const Header = () => {
   return (
@@ -91,6 +92,11 @@ const Header = () => {
           </li>
         </ul>
       </nav>
+      <HeaderContent>
+        <h1>dental clink</h1>
+        <p>The best clinc ever!</p>
+      </HeaderContent>
+      <ContactInfo />
     </StyledHeader>
   );
 };

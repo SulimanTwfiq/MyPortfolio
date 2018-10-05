@@ -9,7 +9,6 @@ const StyledSection = styled.div`
   background-color: var(--light);
   display: flex;
   flex-direction: column;
-  overflow-y: auto;
 `;
 
 const Sections = () => (
