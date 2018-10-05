@@ -32,7 +32,7 @@ const Container = styled.div`
 const TemplateWrapper = ({ children }) => (
   <div>
     <GlobalStyles />
-    <Helmet title="Home | Gatsby + Netlify CMS" />
+    <Helmet title="didsburydental" />
     <Container>
       <Header />
       <ContactInfo />
