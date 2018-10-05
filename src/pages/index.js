@@ -13,7 +13,7 @@ export default class IndexPage extends React.Component {
         <section className="section">
           <div className="container">
             <div className="content">
-              <h1 className="has-text-weight-bold is-size-2">Latest Stories</h1>
+              <h1 className="has-text-weight-bold is-size-2">Latest Best Stories `````</h1>
             </div>
             {posts.map(({ node: post }) => (
               <div className="content" style={{ border: "1px solid #eaecee", padding: "2em 4em" }} key={post.id}>
