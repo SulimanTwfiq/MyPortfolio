@@ -12,7 +12,6 @@ const Container = styled.div`
   grid-template-columns: 1fr;
   grid-template-areas:
     "header"
-    "contactInfo"
     "sections"
     "footer";
 `;
