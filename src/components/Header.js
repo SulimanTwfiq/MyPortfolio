@@ -43,6 +43,16 @@ const StyledHeader = styled.header`
     }
     &[type="checkbox"]:checked ~ nav ul {
       display: block;
+      height: 100vh;
+      position: relative;
+      background-color: rgba(234, 239, 232, 0.9);
+      li {
+        margin: 15px;
+        border: 2px black solid;
+        background-color: blanchedalmond;
+        border-radius: 20px;
+        padding: 2px;
+      }
     }
   }
 `;
