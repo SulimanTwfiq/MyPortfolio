@@ -3,7 +3,6 @@ import styled from "styled-components";
 import Services from "./Services";
 import Contact from "./Contact";
 import Features from "./Features";
-import Blog from "./blog";
 
 const StyledSection = styled.div`
   grid-area: sections;
@@ -17,7 +16,6 @@ const Sections = () => (
     <Services />
     <Contact />
     <Features />
-    <Blog />
   </StyledSection>
 );
 
