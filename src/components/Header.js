@@ -3,6 +3,7 @@ import styled from "styled-components";
 import media from "./media";
 import { Menu } from "styled-icons/material/Menu";
 import ContactInfo from "./ContactInfo";
+import { Link } from "@reach/router";
 const StyledHeader = styled.header`
   grid-area: header;
   display: flex;
@@ -79,13 +80,13 @@ const Header = () => {
       <nav>
         <ul>
           <li>
-            <a href="google.com">home</a>
+            <Link to="/">home</Link>
           </li>
           <li>
-            <a href="google.com">office</a>
+            <Link to="/doctors">doctors</Link>
           </li>
           <li>
-            <a href="google.com">services</a>
+            <Link to="/blog">Blog</Link>
           </li>
           <li>
             <a href="google.com">new patients</a>

@@ -2,7 +2,7 @@ import React from "react";
 import { Link, StaticQuery } from "gatsby";
 import styled from "styled-components";
 import Layout from "../components/Layout";
-
+import { graphql } from "gatsby";
 const StyledBlog = styled.section`
   text-align: center;
   p:last-of-type {
