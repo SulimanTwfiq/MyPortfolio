@@ -52,6 +52,9 @@ const StyledHeader = styled.header`
         background-color: blanchedalmond;
         border-radius: 20px;
         padding: 2px;
+        a {
+          width: 100%;
+        }
       }
     }
   }
@@ -70,34 +73,34 @@ const Header = () => {
   return (
     <StyledHeader>
       <input type="checkbox" id="checkbox_toggle" />
-      <label for="checkbox_toggle">
+      <label htmlFor="checkbox_toggle">
         <MenuIcon />
       </label>
       <nav>
         <ul>
           <li>
-            <a href="#">home</a>
+            <a href="google.com">home</a>
           </li>
           <li>
-            <a href="#">office</a>
+            <a href="google.com">office</a>
           </li>
           <li>
-            <a href="#">services</a>
+            <a href="google.com">services</a>
           </li>
           <li>
-            <a href="#">new patients</a>
+            <a href="google.com">new patients</a>
           </li>
           <li>
-            <a href="#">contact us</a>
+            <a href="google.com">contact us</a>
           </li>
           <li>
-            <a href="#">appointment request</a>
+            <a href="google.com">appointment request</a>
           </li>
           <li>
-            <a href="#">patient education</a>
+            <a href="google.com">patient education</a>
           </li>
           <li>
-            <a href="#">our team</a>
+            <a href="google.com">our team</a>
           </li>
         </ul>
       </nav>
