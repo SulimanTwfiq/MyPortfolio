@@ -6,7 +6,7 @@ import Layout from "../components/Layout";
 import Content, { HTMLContent } from "../components/Content";
 import styled from "styled-components";
 
-const StyledArticle = styled.div`
+const StyledArticle = styled.article`
   text-align: center;
 `;
 export const BlogPostTemplate = ({ content, contentComponent, description, tags, title, helmet }) => {
