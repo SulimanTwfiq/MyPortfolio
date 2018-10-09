@@ -5,6 +5,7 @@ backend:
 
 media_folder: static/img
 public_folder: /img
+publish_mode: editorial_workflow
 
 collections:
   - name: "blog"
@@ -19,6 +20,16 @@ collections:
       - { label: "Description", name: "description", widget: "text" }
       - { label: "Body", name: "body", widget: "markdown" }
       - { label: "Tags", name: "tags", widget: "list" }
+
+  - name: "Doctors"
+    label: "doctors"
+    folder: "src/pages/doctors"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Template Key", name: "templateKey", widget: "hidden", default: "doctors-post" }
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Description", name: "description", widget: "markdown" }
 
   - name: "pages"
     label: "Pages"

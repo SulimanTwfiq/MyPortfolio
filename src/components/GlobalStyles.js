@@ -12,7 +12,7 @@ const GlobalStyle = createGlobalStyle`
   html,
   body {
     box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Markazi Text', serif;
     margin: 0;
     padding: 0;
     background-color: var(--light);

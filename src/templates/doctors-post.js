@@ -4,7 +4,7 @@ import Layout from "../components/Layout";
 import { HTMLContent } from "../components/Content";
 import { ContactCard } from "../components/Card";
 
-export const AboutPageTemplate = ({ title, description }) => {
+export const DoctorPage = ({ title, description }) => {
   return (
     <ContactCard>
       <h2>{title}</h2>
@@ -18,7 +18,7 @@ const DoctorsPageTemplate = ({ data }) => {
 
   return (
     <Layout>
-      <AboutPageTemplate
+      <DoctorPage
         contentComponent={HTMLContent}
         description={post.frontmatter.description}
         title={post.frontmatter.title}
