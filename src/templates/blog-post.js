@@ -8,6 +8,18 @@ import styled from "styled-components";
 
 const StyledArticle = styled.article`
   text-align: center;
+  h2 {
+    font-size: 2rem;
+    color: red;
+  }
+  ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    li {
+      list-style: none;
+    }
+  }
 `;
 export const BlogPostTemplate = ({ content, contentComponent, description, tags, title, helmet }) => {
   const PostContent = contentComponent || Content;
@@ -25,7 +37,7 @@ export const BlogPostTemplate = ({ content, contentComponent, description, tags,
           <ul>
             {tags.map(tag => (
               <li key={tag + `tag`}>
-                <Link to={`/tags/${kebabCase(tag)}/`}>{tag}</Link>
+                <Link to={`/tags/${kebabCase(tag)}/`}>#{tag}</Link> |
               </li>
             ))}
           </ul>

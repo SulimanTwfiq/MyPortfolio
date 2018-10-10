@@ -26,34 +26,41 @@ const ServiceCards = styled.div`
 const Services = () => (
   <StyledServices>
     <h3> خدماتنا المميزة </h3>
-    <h4>Click to find out more </h4>
     <ServiceCards>
       <ServiceCard>
-        <h5>SEDATION DENTISTRY</h5>
+        <h5>سريعين مرة</h5>
         <p>
-          Calm your dental anxiety with Sedation Dentistry! We have oral and IV sedation techniques available for even
-          the most apprehensive patient.
+          نحن السالميه كلينيك (مجمع عيادات خاصة ) متخصصون في تقديم الخدمات الطبية على أسس أحدث ما توصل اليه العلم. نحن
+          ننمو وإرضاء عملائنا هو غايتنا ونحن نعتبر أنفسنا رائدين في طب أمراض الغدد الصماء وذلك تحت رعاية الدكتورة /
+          لطيفه الدويسان .نحن نعمل في تناغم لتقديم سيمفونية من الطب في التخصصات المختلفة ونلتزم بأعلى المعايير الطبيه
+          الدوليه لنرتقي بصحة وأمان المواطن الكويتي.
         </p>
       </ServiceCard>
       <ServiceCard>
-        <h5>SEDATION DENTISTRY</h5>
+        <h5>دقيقين الف</h5>
         <p>
-          Calm your dental anxiety with Sedation Dentistry! We have oral and IV sedation techniques available for even
-          the most apprehensive patient.
+          نحن السالميه كلينيك (مجمع عيادات خاصة ) متخصصون في تقديم الخدمات الطبية على أسس أحدث ما توصل اليه العلم. نحن
+          ننمو وإرضاء عملائنا هو غايتنا ونحن نعتبر أنفسنا رائدين في طب أمراض الغدد الصماء وذلك تحت رعاية الدكتورة /
+          لطيفه الدويسان .نحن نعمل في تناغم لتقديم سيمفونية من الطب في التخصصات المختلفة ونلتزم بأعلى المعايير الطبيه
+          الدوليه لنرتقي بصحة وأمان المواطن الكويتي.
         </p>
       </ServiceCard>
       <ServiceCard>
-        <h5>SEDATION DENTISTRY</h5>
+        <h5>دعم فني نار</h5>
         <p>
-          Calm your dental anxiety with Sedation Dentistry! We have oral and IV sedation techniques available for even
-          the most apprehensive patient.
+          نحن السالميه كلينيك (مجمع عيادات خاصة ) متخصصون في تقديم الخدمات الطبية على أسس أحدث ما توصل اليه العلم. نحن
+          ننمو وإرضاء عملائنا هو غايتنا ونحن نعتبر أنفسنا رائدين في طب أمراض الغدد الصماء وذلك تحت رعاية الدكتورة /
+          لطيفه الدويسان .نحن نعمل في تناغم لتقديم سيمفونية من الطب في التخصصات المختلفة ونلتزم بأعلى المعايير الطبيه
+          الدوليه لنرتقي بصحة وأمان المواطن الكويتي.
         </p>
       </ServiceCard>
       <ServiceCard>
-        <h5>SEDATION DENTISTRY </h5>
+        <h5>اقوى شي من الأخر </h5>
         <p>
-          Calm your dental anxiety with Sedation Dentistry! We have oral and IV sedation techniques available for even
-          the most apprehensive patient.
+          نحن السالميه كلينيك (مجمع عيادات خاصة ) متخصصون في تقديم الخدمات الطبية على أسس أحدث ما توصل اليه العلم. نحن
+          ننمو وإرضاء عملائنا هو غايتنا ونحن نعتبر أنفسنا رائدين في طب أمراض الغدد الصماء وذلك تحت رعاية الدكتورة /
+          لطيفه الدويسان .نحن نعمل في تناغم لتقديم سيمفونية من الطب في التخصصات المختلفة ونلتزم بأعلى المعايير الطبيه
+          الدوليه لنرتقي بصحة وأمان المواطن الكويتي.
         </p>
       </ServiceCard>
     </ServiceCards>

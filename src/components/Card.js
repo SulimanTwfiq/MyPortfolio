@@ -1,5 +1,5 @@
 import styled from "styled-components";
-
+import media from "../components/media";
 export const StyledCard = styled.div`
   color: var(--light);
   border-radius: 10px;
@@ -19,6 +19,12 @@ export const ServiceCard = styled(StyledCard)`
   background-color: var(--secoundary-color);
   flex: 1 1 250px;
   margin: 10px 5px;
+  ${media.desktop`
+    &:hover {
+    transform: scale(1.1);
+    background-color: var(--primary-color);
+  }
+  `};
 `;
 
 export const DoctorCard = styled(StyledCard)`
