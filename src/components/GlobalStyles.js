@@ -12,14 +12,16 @@ const GlobalStyle = createGlobalStyle`
   html,
   body {
     box-sizing: border-box;
-    font-family: 'Markazi Text', serif;
     margin: 0;
     padding: 0;
     background-color: var(--light);
+    font-family: 'Markazi Text', serif;
+
   }
   a{
     text-decoration: none;
   }
+ 
 `;
 
 export default GlobalStyle;

@@ -25,7 +25,7 @@ const ServiceCards = styled.div`
 
 const Services = () => (
   <StyledServices>
-    <h3> Featured Services </h3>
+    <h3> خدماتنا المميزة </h3>
     <h4>Click to find out more </h4>
     <ServiceCards>
       <ServiceCard>
