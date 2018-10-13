@@ -6,6 +6,9 @@ export const StyledCard = styled.div`
   padding: 10px;
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
   text-align: center;
+  border: 5px solid transparent;
+  border-image: linear-gradient(to bottom, #22c1c3, #fdbb2d);
+  border-image-slice: 1;
 `;
 
 export const ContactCard = styled(StyledCard)`
@@ -19,6 +22,7 @@ export const ServiceCard = styled(StyledCard)`
   background-color: var(--secoundary-color);
   flex: 1 1 250px;
   margin: 10px 5px;
+
   ${media.desktop`
     &:hover {
     transform: scale(1.1);
