@@ -18,7 +18,7 @@ const Container = styled.div`
 const TemplateWrapper = ({ children }) => (
   <div>
     <GlobalStyles />
-    <Helmet title="didsburydental" />
+    <Helmet title="معرض البناء" />
     <Container>
       <Header />
       {children}
