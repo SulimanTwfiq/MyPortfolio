@@ -11,7 +11,7 @@ const StyledServices = styled.section`
   background-color: beige;
 
   h3 {
-    font-size: 2rem;
+    font-size: 1.5rem;
   }
   h4 {
     margin-top: -20px;
@@ -23,7 +23,7 @@ const StyledServices = styled.section`
 `;
 const ServiceCards = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(173px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
   justify-content: center;
   align-content: center;
 
@@ -37,17 +37,17 @@ const ServiceCards = styled.div`
 
 const Services = () => (
   <StyledServices>
-    <h3> نحن سوف </h3>
+    <h3>نحن سوف نوفر عليك </h3>
     <ServiceCards>
       <ServiceCard>
-        <h5>نوفر جهدك</h5>
+        <h5>الجهد</h5>
         <img src={tired} alt="وفر جهدك" />
       </ServiceCard>
       <ServiceCard>
-        <h5>نوفر مالك</h5>
+        <h5>المال</h5>
         <img src={saveMoney} alt="وفر مالك" />
       </ServiceCard>
-      <h3> متخصصين في </h3>
+      <h3> لنا خبرة في </h3>
 
       <ServiceCard>
         <h5>الشحن</h5>

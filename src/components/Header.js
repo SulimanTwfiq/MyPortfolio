@@ -67,20 +67,18 @@ const HeaderContent = styled.div`
   text-align: center;
   flex: 1;
   line-height: 1.2;
+  margin: 30px;
   h1 {
     font-size: 3rem;
-  }
-  h2 {
-    margin-bottom: 30px;
   }
 `;
 const Header = () => {
   return (
     <StyledHeader>
-      <input type="checkbox" id="checkbox_toggle" />
+      {/*    <input type="checkbox" id="checkbox_toggle" />
       <label htmlFor="checkbox_toggle">
         <img src={Menu} alt="website menu" />
-      </label>
+      </label> */}
       <nav>
         <ul>
           <li>
