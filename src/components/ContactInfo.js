@@ -8,12 +8,12 @@ const ContactInfoSection = styled.section`
   justify-content: space-between;
   flex-wrap: wrap;
   color: white;
-  padding: 5px 30px;
+  padding: 5px 10px;
 `;
 const ContactInfo = () => (
   <ContactInfoSection>
-    <span>Contact with us</span>
-    <span>Call today 403-335-3855</span>
+    <span>أتصل اليوم 0096599899664</span>
+    <span>تواصل معنا</span>
   </ContactInfoSection>
 );
 

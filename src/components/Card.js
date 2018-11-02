@@ -23,11 +23,11 @@ export const ServiceCard = styled(StyledCard)`
   flex: 1 1 250px;
   margin: 10px 5px;
 
-  ${media.desktop`
+  /* ${media.desktop`
     &:hover {
     transform: scale(1.1);
     background-color: var(--primary-color);
-  }
+  } */
   `};
 `;
 

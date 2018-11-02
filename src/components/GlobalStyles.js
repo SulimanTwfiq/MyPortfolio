@@ -9,10 +9,13 @@ const GlobalStyle = createGlobalStyle`
     --box-color: #ababab;
     --shadow: 0 1px 5px rgba(104, 104, 104, 0.8);
   }
-  
+  *{
+    box-sizing: border-box;
+
+  }
   html,
   body {
-    box-sizing: border-box;
+    text-align:center;
     margin: 0;
     padding: 0;
     background-color: var(--light);

@@ -9,7 +9,6 @@ const StyledHeader = styled.header`
   display: flex;
   flex-direction: column;
   background-image: linear-gradient(-225deg, #b7f8db 0%, #50a7c2 100%);
-  height: 35vh;
   nav ul {
     list-style: none;
     display: flex;
@@ -67,6 +66,10 @@ const StyledHeader = styled.header`
 const HeaderContent = styled.div`
   text-align: center;
   flex: 1;
+  line-height: 1.2;
+  h1 {
+    font-size: 3rem;
+  }
 `;
 const Header = () => {
   return (
@@ -104,8 +107,8 @@ const Header = () => {
         </ul>
       </nav>
       <HeaderContent>
-        <h1>dental clink</h1>
-        <p>The best clinc ever!</p>
+        <h1>معرض البناء</h1>
+        <h2>طريقك إلى الصين</h2>
       </HeaderContent>
       <ContactInfo />
     </StyledHeader>
