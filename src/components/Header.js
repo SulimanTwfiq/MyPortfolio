@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import media from "./media";
-import { Menu } from "styled-icons/material/Menu";
+import Menu from "../img/menu.svg";
 import ContactInfo from "./ContactInfo";
 import { Link } from "@reach/router";
 const StyledHeader = styled.header`
@@ -37,6 +37,9 @@ const StyledHeader = styled.header`
   }
   label {
     width: 40px;
+    display: none;
+    cursor: pointer;
+    ${media.tablet`display:block`};
   }
   input {
     &[type="checkbox"] {
@@ -60,12 +63,7 @@ const StyledHeader = styled.header`
     }
   }
 `;
-const MenuIcon = styled(Menu)`
-  display: none;
-  color: var(--primary-color);
-  cursor: pointer;
-  ${media.tablet`display:block`};
-`;
+
 const HeaderContent = styled.div`
   text-align: center;
   flex: 1;
@@ -75,7 +73,7 @@ const Header = () => {
     <StyledHeader>
       <input type="checkbox" id="checkbox_toggle" />
       <label htmlFor="checkbox_toggle">
-        <MenuIcon />
+        <img src={Menu} alt="website menu" />
       </label>
       <nav>
         <ul>

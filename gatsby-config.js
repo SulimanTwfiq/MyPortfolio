@@ -34,14 +34,6 @@ module.exports = {
       }
     },
     "gatsby-plugin-styled-components",
-    {
-      resolve: "gatsby-plugin-web-font-loader",
-      options: {
-        google: {
-          families: ["Markazi Text", "Droid Serif"]
-        }
-      }
-    },
     "gatsby-plugin-netlify" // make sure to keep it last in the array
   ]
 };

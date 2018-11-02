@@ -1,4 +1,5 @@
 import { createGlobalStyle } from "styled-components";
+import "../fonts/fonts.css";
 
 const GlobalStyle = createGlobalStyle`
 :root {
@@ -15,7 +16,7 @@ const GlobalStyle = createGlobalStyle`
     margin: 0;
     padding: 0;
     background-color: var(--light);
-    font-family: 'Markazi Text', serif;
+    font-family: 'Changa', sans-serif;
 
   }
   a{

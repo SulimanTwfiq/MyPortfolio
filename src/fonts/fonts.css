@@ -1,0 +1,19 @@
+/* changa-600 - arabic_latin */
+@font-face {
+  font-family: 'Changa';
+  font-style: normal;
+  font-weight: 600;
+  src: local('Changa SemiBold'), local('Changa-SemiBold'),
+    url('./changa-v5-arabic_latin-600.woff2') format('woff2'),
+    url('./changa-v5-arabic_latin-600.woff') format('woff');
+  font-display: auto;
+}
+/* changa-700 - arabic_latin */
+@font-face {
+  font-family: 'Changa';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Changa Bold'), local('Changa-Bold'),
+    url('./changa-v5-arabic_latin-700.woff2') format('woff2'),
+    url('./changa-v5-arabic_latin-700.woff') format('woff');
+}
