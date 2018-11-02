@@ -78,7 +78,7 @@ const Header = () => {
       {/*    <input type="checkbox" id="checkbox_toggle" />
       <label htmlFor="checkbox_toggle">
         <img src={Menu} alt="website menu" />
-      </label> */}
+      </label> 
       <nav>
         <ul>
           <li>
@@ -107,6 +107,7 @@ const Header = () => {
           </li>
         </ul>
       </nav>
+      */}
       <HeaderContent>
         <h1>معرض البناء</h1>
         <h2>طريقك إلى الصين</h2>
