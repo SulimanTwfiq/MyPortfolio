@@ -8,7 +8,7 @@ const ContactInfoSection = styled.section`
   justify-content: space-between;
   flex-wrap: wrap;
   color: white;
-  padding: 5px 10px;
+  padding: 0 10px;
 `;
 const ContactInfo = () => (
   <ContactInfoSection>

@@ -7,15 +7,13 @@ import Features from "./Features";
 const StyledSection = styled.div`
   grid-area: sections;
   background-color: var(--light);
-  display: flex;
-  flex-direction: column;
 `;
 
 const Sections = () => (
   <StyledSection>
     <Services />
     <Contact />
-    <Features />
+    {/* <Features /> */}
   </StyledSection>
 );
 

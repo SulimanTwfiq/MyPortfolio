@@ -12,15 +12,22 @@ export const StyledCard = styled.div`
 `;
 
 export const ContactCard = styled(StyledCard)`
-  background-color: var(--box-color);
-  padding: 30px;
-  padding-bottom: 200px;
-  margin: 20px;
+  background-color: #efefb5;
+  color: black;
+  padding: 20px 0;
+  margin: 7px;
+  font-size: 1.1rem;
+  p:nth-child(2n) {
+    color: brown;
+  }
+
+  img {
+    width: 150px;
+  }
 `;
 
 export const ServiceCard = styled(StyledCard)`
   background-color: var(--secoundary-color);
-  flex: 1 1 250px;
   margin: 10px 5px;
 
   /* ${media.desktop`

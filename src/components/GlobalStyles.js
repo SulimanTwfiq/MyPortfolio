@@ -11,13 +11,13 @@ const GlobalStyle = createGlobalStyle`
   }
   *{
     box-sizing: border-box;
-
+    margin: 0;
+    padding: 0;
   }
   html,
   body {
     text-align:center;
-    margin: 0;
-    padding: 0;
+  
     background-color: var(--light);
     font-family: 'Changa', sans-serif;
 

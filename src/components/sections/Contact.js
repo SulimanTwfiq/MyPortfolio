@@ -1,13 +1,15 @@
 import React from "react";
 import { ContactCard as Card } from "../Card";
-
+import trust from "../../img/trust.svg";
 const ContactUs = () => (
   <Card>
-    <h3>Contact Us Today!</h3>
-    <p>
-      We encourage you to contact us with any questions or comments you may have. Please call our office or use the
-      quick contact form below.
-    </p>
+    <img src={trust} alt="الثقة" />
+    <p>ثقتكم تزيدنا اصرار على التميز</p>
+    <p>ولسنا الوحيدون ولكننا مميزون</p>
+    <p>الصدق و الأمانة شعارنا ورضاكم هدفنا</p>
+    <p>حقق حلمك مع معرض البناء بزيارة الصين</p>
+    <p>بخطوات ثابتة نكتسح المنافسين في التعامل الراقي</p>
+    <p>نختصر المسافة ونحدد مايبحث عنه الزبون بطريقة مثالية وعصرية قبل التسوق بالتوجيه السليم</p>
   </Card>
 );
 

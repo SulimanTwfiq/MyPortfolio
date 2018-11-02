@@ -70,6 +70,9 @@ const HeaderContent = styled.div`
   h1 {
     font-size: 3rem;
   }
+  h2 {
+    margin-bottom: 30px;
+  }
 `;
 const Header = () => {
   return (

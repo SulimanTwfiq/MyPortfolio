@@ -6,11 +6,15 @@ const StyledFooter = styled.footer`
   background-color: var(--primary-color);
   color: var(--light);
   text-align: center;
+  span {
+    font-size: 0.7rem;
+  }
 `;
 
 const Footer = () => (
   <StyledFooter>
-    <p>Copyright © 2018 Officite. Admin Log In Privacy Policy Terms of Use Health Disclaimer Cookie Policy</p>
+    <p>معرض البناء</p>
+    <span>تصميم سليمان توفيق</span>
   </StyledFooter>
 );
 
