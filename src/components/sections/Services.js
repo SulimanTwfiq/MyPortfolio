@@ -10,20 +10,17 @@ import clean from "../../img/clean.svg";
 const StyledServices = styled.section`
   background-color: beige;
 
-  h3 {
-    font-size: 1.5rem;
-  }
   h4 {
     margin-top: -20px;
   }
   h5 {
-    font-size: 1.4rem;
+    font-size: 1rem;
     margin: 2px;
   }
 `;
 const ServiceCards = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
   justify-content: center;
   align-content: center;
 
@@ -31,7 +28,7 @@ const ServiceCards = styled.div`
     grid-column: 1/-1;
   }
   img {
-    width: 100px;
+    width: 70px;
   }
 `;
 

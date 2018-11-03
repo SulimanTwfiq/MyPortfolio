@@ -69,7 +69,9 @@ const HeaderContent = styled.div`
   line-height: 1.2;
   margin: 30px;
   h1 {
-    font-size: 3rem;
+    font-size: 2.5rem;
+    text-shadow: 1px 3px 7px white;
+    color: #026b67;
   }
 `;
 const Header = () => {

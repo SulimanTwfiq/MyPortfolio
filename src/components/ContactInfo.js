@@ -9,10 +9,11 @@ const ContactInfoSection = styled.section`
   flex-wrap: wrap;
   color: white;
   padding: 0 10px;
+  font-size: 0.8rem;
 `;
 const ContactInfo = () => (
   <ContactInfoSection>
-    <span>أتصل اليوم 0096599899664</span>
+    <span>أتصل اليوم 96599899664</span>
     <span>تواصل معنا</span>
   </ContactInfoSection>
 );
