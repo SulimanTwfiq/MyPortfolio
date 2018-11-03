@@ -2,8 +2,6 @@ import styled from "styled-components";
 import media from "../components/media";
 export const StyledCard = styled.div`
   color: var(--light);
-  border-radius: 10px;
-  ${"" /* padding: 10px; */} ${"" /* box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3); */};
   text-align: center;
   border: 5px solid transparent;
   border-image: linear-gradient(to bottom, #22c1c3, #fdbb2d);
@@ -15,7 +13,7 @@ export const ContactCard = styled(StyledCard)`
   color: black;
   padding: 20px 0;
   margin: 7px;
-  font-size: 1.1rem;
+  font-size: 0.9rem;
   p:nth-child(2n) {
     color: brown;
   }
@@ -27,8 +25,7 @@ export const ContactCard = styled(StyledCard)`
 
 export const ServiceCard = styled(StyledCard)`
   background-color: var(--secoundary-color);
-  margin: 5px 3px;
-
+ margin: 5px 3px; 
   /* ${media.desktop`
     &:hover {
     transform: scale(1.1);

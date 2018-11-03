@@ -2,7 +2,6 @@ import React from "react";
 import styled from "styled-components";
 import media from "./media";
 import Menu from "../img/menu.svg";
-import ContactInfo from "./ContactInfo";
 import { Link } from "@reach/router";
 const StyledHeader = styled.header`
   grid-area: header;
@@ -63,6 +62,16 @@ const StyledHeader = styled.header`
   }
 `;
 
+const ContactInfoSection = styled.section`
+  background-color: var(--secoundary-color);
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  color: white;
+  padding: 0 10px;
+  font-size: 0.8rem;
+`;
+
 const HeaderContent = styled.div`
   text-align: center;
   flex: 1;
@@ -114,7 +123,10 @@ const Header = () => {
         <h1>معرض البناء</h1>
         <h2>طريقك إلى الصين</h2>
       </HeaderContent>
-      <ContactInfo />
+      <ContactInfoSection>
+        <span>أتصل اليوم 96599899664</span>
+        <span>تواصل معنا</span>
+      </ContactInfoSection>
     </StyledHeader>
   );
 };

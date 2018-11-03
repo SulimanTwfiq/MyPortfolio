@@ -23,9 +23,16 @@ const ServiceCards = styled.div`
   grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
   justify-content: center;
   align-content: center;
-
   h3 {
     grid-column: 1/-1;
+    margin: 20px auto;
+    margin-bottom: 2px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 13px;
+    border: 1.6px #00ada7 solid;
+    border-bottom: none;
+    font-size: 0.9rem;
+    width: 250px;
   }
   img {
     width: 70px;
@@ -34,8 +41,8 @@ const ServiceCards = styled.div`
 
 const Services = () => (
   <StyledServices>
-    <h3>نحن سوف نوفر عليك </h3>
     <ServiceCards>
+      <h3>نحن سوف نوفر عليك </h3>
       <ServiceCard>
         <h5>الجهد</h5>
         <img src={tired} alt="وفر جهدك" />
