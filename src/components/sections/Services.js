@@ -28,43 +28,46 @@ const ServiceCards = styled.div`
     margin: 20px auto;
     margin-bottom: 2px;
     background-color: rgba(255, 255, 255, 0.5);
-    border-radius: 13px;
-    border: 1.6px #00ada7 solid;
-    border-bottom: none;
-    font-size: 0.9rem;
+    border: 1.6px var(--secoundary-color) solid;
+    border-right: none;
+    border-left: none;
+    font-size: 1.3rem;
     width: 250px;
+    color: var(--secoundary-color);
+    padding: 1px;
   }
   img {
     width: 70px;
   }
 `;
 
+const Styleddiv = styled.div``;
 const Services = () => (
   <StyledServices>
     <ServiceCards>
       <h3>نحن سوف نوفر عليك </h3>
-      <ServiceCard>
+      <Styleddiv>
         <h5>الجهد</h5>
         <img src={tired} alt="وفر جهدك" />
-      </ServiceCard>
-      <ServiceCard>
+      </Styleddiv>
+      <Styleddiv>
         <h5>المال</h5>
         <img src={saveMoney} alt="وفر مالك" />
-      </ServiceCard>
+      </Styleddiv>
       <h3> لنا خبرة في </h3>
 
-      <ServiceCard>
+      <Styleddiv>
         <h5>الشحن</h5>
         <img src={shipping} alt="الشحن" />
-      </ServiceCard>
-      <ServiceCard>
+      </Styleddiv>
+      <Styleddiv>
         <h5>التشطيب</h5>
         <img src={clean} alt="تشطيب" />
-      </ServiceCard>
-      <ServiceCard>
+      </Styleddiv>
+      <Styleddiv>
         <h5>السياحة</h5>
         <img src={travel} alt="السياحة" />
-      </ServiceCard>
+      </Styleddiv>
     </ServiceCards>
   </StyledServices>
 );

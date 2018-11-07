@@ -12,7 +12,6 @@ const StyledHeader = styled.header`
     list-style: none;
     display: flex;
     justify-content: space-between;
-    color: var(--primary-color);
     padding: 0 20px;
     text-transform: uppercase;
     margin: 0px;
@@ -62,21 +61,18 @@ const StyledHeader = styled.header`
   }
 `;
 
-const ContactInfoSection = styled.section`
-  background-color: var(--secoundary-color);
+const ContactInfoSection = styled.div`
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  color: white;
   padding: 0 10px;
   font-size: 0.8rem;
 `;
 
 const HeaderContent = styled.div`
-  text-align: center;
   flex: 1;
   line-height: 1.2;
-  margin: 30px;
+  margin: 50px;
   h1 {
     font-size: 2.5rem;
     text-shadow: 1px 3px 7px white;

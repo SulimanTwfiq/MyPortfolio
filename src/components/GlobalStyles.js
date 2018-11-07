@@ -3,8 +3,8 @@ import "../fonts/fonts.css";
 
 const GlobalStyle = createGlobalStyle`
 :root {
-    --primary-color: #004542;
-    --secoundary-color: #00ada7;
+    --primary-color: rgb(0,69,66);
+    --secoundary-color: rgb(0,173,167);
     --light: #e5f0ef;
     --box-color: #ababab;
     --shadow: 0 1px 5px rgba(104, 104, 104, 0.8);
