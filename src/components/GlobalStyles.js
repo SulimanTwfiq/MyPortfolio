@@ -17,7 +17,6 @@ const GlobalStyle = createGlobalStyle`
   html,
   body {
     text-align:center;
-  
     background-color: var(--light);
     font-family: 'Changa', sans-serif;
 

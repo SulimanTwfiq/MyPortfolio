@@ -2,12 +2,16 @@ import React from "react";
 import styled from "styled-components";
 import media from "./media";
 import Menu from "../img/menu.svg";
+import Logo from "../img/Logo.png";
 import { Link } from "@reach/router";
 const StyledHeader = styled.header`
   grid-area: header;
   display: flex;
   flex-direction: column;
   background-image: linear-gradient(-225deg, #b7f8db 0%, #50a7c2 100%);
+  margin-bottom: 20px;
+  height: 250px;
+
   nav ul {
     list-style: none;
     display: flex;
@@ -72,11 +76,10 @@ const ContactInfoSection = styled.div`
 const HeaderContent = styled.div`
   flex: 1;
   line-height: 1.2;
-  margin: 50px;
+  color: #026b67;
   h1 {
     font-size: 2.5rem;
     text-shadow: 1px 3px 7px white;
-    color: #026b67;
   }
 `;
 const Header = () => {
@@ -116,13 +119,14 @@ const Header = () => {
       </nav>
       */}
       <HeaderContent>
-        <h1>معرض البناء</h1>
-        <h2>طريقك إلى الصين</h2>
+        <h1>د. نزار فقيه</h1>
+        <h4>استشاري جراحة تجميل الأنف و الحنجرة</h4>
+        <img src={Logo} alt="" />
       </HeaderContent>
-      <ContactInfoSection>
+      {/*  <ContactInfoSection>
         <span>أتصل اليوم 96599899664</span>
         <span>تواصل معنا</span>
-      </ContactInfoSection>
+      </ContactInfoSection> */}
     </StyledHeader>
   );
 };

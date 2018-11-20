@@ -1,11 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import { ServiceCard } from "../Card";
-import tired from "../../img/tired.svg";
-import saveMoney from "../../img/save-money.svg";
-import shipping from "../../img/shipping.svg";
-import travel from "../../img/travel.svg";
-import clean from "../../img/clean.svg";
 
 const StyledServices = styled.section`
   background-color: beige;
@@ -44,31 +38,7 @@ const ServiceCards = styled.div`
 const Styleddiv = styled.div``;
 const Services = () => (
   <StyledServices>
-    <ServiceCards>
-      <h3>نحن سوف نوفر عليك </h3>
-      <Styleddiv>
-        <h5>الجهد</h5>
-        <img src={tired} alt="وفر جهدك" />
-      </Styleddiv>
-      <Styleddiv>
-        <h5>المال</h5>
-        <img src={saveMoney} alt="وفر مالك" />
-      </Styleddiv>
-      <h3> لنا خبرة في </h3>
-
-      <Styleddiv>
-        <h5>الشحن</h5>
-        <img src={shipping} alt="الشحن" />
-      </Styleddiv>
-      <Styleddiv>
-        <h5>التشطيب</h5>
-        <img src={clean} alt="تشطيب" />
-      </Styleddiv>
-      <Styleddiv>
-        <h5>السياحة</h5>
-        <img src={travel} alt="السياحة" />
-      </Styleddiv>
-    </ServiceCards>
+    <ServiceCards />
   </StyledServices>
 );
 

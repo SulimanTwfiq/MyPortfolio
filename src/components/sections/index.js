@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import Services from "./Services";
 import Contact from "./Contact";
-import Features from "./Features";
+import CV from "./CV";
 
 const StyledSection = styled.div`
   grid-area: sections;
@@ -11,9 +11,9 @@ const StyledSection = styled.div`
 
 const Sections = () => (
   <StyledSection>
-    <Services />
-    <Contact />
-    {/* <Features /> */}
+    <CV />
+    {/* <Services /> */}
+    {/* <Contact /> */}
   </StyledSection>
 );
 
