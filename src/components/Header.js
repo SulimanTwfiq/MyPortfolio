@@ -10,7 +10,7 @@ const StyledHeader = styled.header`
   flex-direction: column;
   background-image: linear-gradient(-225deg, #b7f8db 0%, #50a7c2 100%);
   margin-bottom: 20px;
-  height: 200px;
+  /* height: 200px; */
 
   nav ul {
     list-style: none;
@@ -83,6 +83,8 @@ const HeaderContent = styled.div`
   }
   img {
     width: 8rem;
+
+    transform: translateY(30px);
   }
 `;
 const Header = () => {
