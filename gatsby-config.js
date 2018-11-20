@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: "didsburydentalclone"
+    title: "الدكتور نزار فقيه"
   },
   plugins: [
     "gatsby-plugin-react-helmet",

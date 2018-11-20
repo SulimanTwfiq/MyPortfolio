@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import media from "./media";
 import Menu from "../img/menu.svg";
-import Logo from "../img/Logo.png";
+import Logo from "../img/logo.png";
 import { Link } from "@reach/router";
 const StyledHeader = styled.header`
   grid-area: header;
