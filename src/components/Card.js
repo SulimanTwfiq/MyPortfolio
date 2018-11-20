@@ -14,13 +14,16 @@ export const DefaultCard = styled.div`
   line-height: 1.5;
   margin: 0 4px;
   text-align: right;
-  h2,
+  margin-bottom: 30px;
   h3 {
-    text-align: center;
     color: #658e61;
+    text-align: center;
     margin-top: 20px;
   }
-
+  h2 {
+    text-align: center;
+    color: #026b67;
+  }
   p {
     font-size: 0.9rem;
   }
@@ -38,17 +41,6 @@ export const ContactCard = styled(StyledCard)`
   img {
     width: 150px;
   }
-`;
-
-export const ServiceCard = styled(StyledCard)`
-  background-color: var(--secoundary-color);
- margin: 5px 3px; 
-  /* ${media.desktop`
-    &:hover {
-    transform: scale(1.1);
-    background-color: var(--primary-color);
-  } */
-  `};
 `;
 
 export const DoctorCard = styled(StyledCard)`
