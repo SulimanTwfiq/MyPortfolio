@@ -8,6 +8,23 @@ export const StyledCard = styled.div`
   border-image-slice: 1;
 `;
 
+export const DefaultCard = styled.div`
+  background-color: rgba(0, 0, 0, 0.05);
+  padding: 5px;
+  line-height: 1.5;
+  margin: 0 4px;
+  text-align: right;
+  h2,
+  h3 {
+    text-align: center;
+    color: #658e61;
+    margin-top: 20px;
+  }
+
+  p {
+    font-size: 0.9rem;
+  }
+`;
 export const ContactCard = styled(StyledCard)`
   background-color: #efefb5;
   color: black;

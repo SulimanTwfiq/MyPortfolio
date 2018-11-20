@@ -11,7 +11,7 @@ const StyledHeader = styled.header`
   background-image: linear-gradient(-225deg, #b7f8db 0%, #50a7c2 100%);
   margin-bottom: 20px;
   /* height: 200px; */
-
+  border-bottom: 4px black solid;
   nav ul {
     list-style: none;
     display: flex;
