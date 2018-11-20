@@ -13,7 +13,7 @@ const StyledFooter = styled.footer`
 
 const Footer = () => (
   <StyledFooter>
-    <p>معرض البناء</p>
+    <p>الدكتور نزار فقيه</p>
     <span>تصميم سليمان توفيق</span>
   </StyledFooter>
 );

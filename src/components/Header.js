@@ -10,7 +10,7 @@ const StyledHeader = styled.header`
   flex-direction: column;
   background-image: linear-gradient(-225deg, #b7f8db 0%, #50a7c2 100%);
   margin-bottom: 20px;
-  height: 250px;
+  height: 200px;
 
   nav ul {
     list-style: none;
@@ -80,6 +80,9 @@ const HeaderContent = styled.div`
   h1 {
     font-size: 2.5rem;
     text-shadow: 1px 3px 7px white;
+  }
+  img {
+    width: 8rem;
   }
 `;
 const Header = () => {
