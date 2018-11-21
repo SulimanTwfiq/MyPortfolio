@@ -31,6 +31,7 @@ export const aboutPageQuery = graphql`
       frontmatter {
         title
         description
+        img
       }
     }
   }

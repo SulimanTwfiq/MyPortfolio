@@ -21,6 +21,7 @@ const GlobalStyle = createGlobalStyle`
     background-color: var(--light);
     font-family: 'Changa', sans-serif;
     color: #3b4e3e;
+    font-size:19px;
   }
   a{
     text-decoration: none;

@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { DefaultCard } from "../Card";
 const Sections = () => (
-  <DefaultCard>
+  <DefaultCard center>
     <h2>السيرة الذاتية</h2>
     <p>
       استشاري جراحه تجميل الأنف و الوجه حاصل على الدكتوراه من جامعه باريس في أمراض الأنف و الأذن و الحنجرة حاصل على

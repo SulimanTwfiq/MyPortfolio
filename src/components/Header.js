@@ -3,6 +3,9 @@ import styled from "styled-components";
 import Logo from "../img/logo.png";
 import { Link } from "@reach/router";
 import Navigation from "./Navigation";
+import Img from "gatsby-image";
+import { graphql, StaticQuery } from "gatsby";
+
 const StyledHeader = styled.header`
   grid-area: header;
   display: flex;
@@ -29,26 +32,51 @@ const HeaderContent = styled.div`
     text-shadow: 1px 3px 7px white;
   }
   img {
-    width: 8rem;
-
-    transform: translateY(30px);
+    width: 10rem;
+    margin-top: 13px;
   }
 `;
-const Header = () => {
-  return (
-    <StyledHeader>
-      <Navigation />
-      <HeaderContent>
-        <h1>د. نزار فقيه</h1>
-        <h4>استشاري جراحة تجميل الأنف و الحنجرة</h4>
-        <img src={Logo} alt="" />
-      </HeaderContent>
-      {/*  <ContactInfoSection>
-        <span>أتصل اليوم 96599899664</span>
-        <span>تواصل معنا</span>
-      </ContactInfoSection> */}
-    </StyledHeader>
-  );
-};
+const Header = () => (
+  <StaticQuery
+    query={graphql`
+    imageOne: file(relativePath: { eq: "logo.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 1000) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    `}
+    render={data => {
+      return (
+        <StyledHeader>
+          <Navigation />
+          <HeaderContent>
+            <h1>د. نزار فقيه</h1>
+            <h4>استشاري جراحة تجميل الأنف و الحنجرة</h4>
+            {/* <img src={Logo} alt="د. نزار فقيه" /> */}
+            <Img fluid={data.imageOne.childImageSharp.fluid} />
+          </HeaderContent>
+          <ContactInfoSection>
+            <span>أتصل اليوم 96599899664</span>
+            <span>تواصل معنا</span>
+          </ContactInfoSection>
+        </StyledHeader>
+      );
+    }}
+  />
+);
 
+/* 
+export const pageQuery = graphql`
+  query {
+    imageOne: file(relativePath: { eq: "logo.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 1000) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+  }
+`; */
 export default Header;

@@ -1,5 +1,5 @@
 import React from "react";
-import Menu from "../img/menu.svg";
+import Menu from "../images/menu.svg";
 import styled from "styled-components";
 import { Link } from "@reach/router";
 import media from "./media";
@@ -12,7 +12,8 @@ const StyledNav = styled.nav`
     padding: 0 20px;
     text-transform: uppercase;
     margin: 0px;
-
+    background-color: rgba(255, 255, 255, 0.4);
+    margin-bottom: 42px;
     a {
       text-decoration: none;
       color: inherit;

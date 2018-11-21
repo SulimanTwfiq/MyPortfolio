@@ -3,8 +3,14 @@ import { Link, StaticQuery } from "gatsby";
 import styled from "styled-components";
 import Layout from "../../components/Layout";
 import { graphql } from "gatsby";
-import { DoctorCard } from "../../components/Card";
-const StyledBlog = styled.section`
+import { DefaultCard } from "../../components/Card";
+import Ear from "../../img/surgeries/ear.svg";
+import Eye from "../../img/surgeries/eye.svg";
+import Face from "../../img/surgeries/face.svg";
+import Nose from "../../img/surgeries/nose.svg";
+import Img from "gatsby-image";
+
+const Container = styled.section`
   text-align: center;
 `;
 const Blog = () => {
@@ -23,6 +29,7 @@ const Blog = () => {
                   title
                   templateKey
                   description
+                  img
                 }
               }
             }
@@ -30,19 +37,23 @@ const Blog = () => {
         }
       `}
       render={data => {
-        const { edges: doctors } = data.allMarkdownRemark;
+        const { edges: surgeries } = data.allMarkdownRemark;
         return (
           <Layout>
-            <StyledBlog>
-              {doctors.map(({ node: doctor }) => (
-                <DoctorCard key={doctor.id}>
+            <DefaultCard>
+              {surgeries.map(({ node: surgery }) => (
+                <div key={surgery.id}>
                   <h2>
-                    <Link to={doctor.fields.slug}>{doctor.frontmatter.title}</Link>
+                    <Link to={surgery.fields.slug}>{surgery.frontmatter.title}</Link>
                   </h2>
-                  <p>{doctor.frontmatter.description}</p>
-                </DoctorCard>
+                  <img src={"../../img/surgeries/" + surgery.frontmatter.img} alt={surgery.frontmatter.title} />
+
+                  <img src={Ear} />
+
+                  <p>{surgery.frontmatter.description}</p>
+                </div>
               ))}
-            </StyledBlog>
+            </DefaultCard>
           </Layout>
         );
       }}

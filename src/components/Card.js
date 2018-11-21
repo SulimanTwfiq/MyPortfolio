@@ -9,23 +9,26 @@ export const StyledCard = styled.div`
 `;
 
 export const DefaultCard = styled.div`
-  background-color: rgba(0, 0, 0, 0.05);
-  padding: 5px;
+  padding: 10px;
   line-height: 1.5;
-  margin: 0 4px;
-  text-align: right;
+  margin: 0 6px;
+  text-align: center;
   margin-bottom: 30px;
+  margin-top: -50px;
+  border: 3px black solid;
+  border-radius: 10px;
+  background-color: rgb(202, 244, 255);
   h3 {
     color: #658e61;
-    text-align: center;
     margin-top: 20px;
   }
   h2 {
-    text-align: center;
     color: #026b67;
   }
+
   p {
     font-size: 0.9rem;
+    text-align: ${props => (props.center ? "center" : "right")};
   }
 `;
 export const ContactCard = styled(StyledCard)`
