@@ -51,7 +51,7 @@ const Blog = () => {
                     </Link>
                   </h2>
                   <img
-                    src={"../../img/surgeries/" + surgery.frontmatter.img}
+                    src={"../" + surgery.frontmatter.img}
                     alt={surgery.frontmatter.title}
                   />
 

@@ -9,6 +9,7 @@ export const StyledCard = styled.div`
 `;
 
 export const DefaultCard = styled.div`
+  position: relative;
   padding: 10px;
   line-height: 1.5;
   margin: 0 6px;
