@@ -26,7 +26,9 @@ const Blog = () => {
     <StaticQuery
       query={graphql`
         query SurgeryQuery {
-          allMarkdownRemark(filter: { frontmatter: { templateKey: { eq: "surgery-page" } } }) {
+          allMarkdownRemark(
+            filter: { frontmatter: { templateKey: { eq: "surgery-page" } } }
+          ) {
             edges {
               node {
                 id
@@ -50,11 +52,12 @@ const Blog = () => {
           <Layout>
             <Container>
               {surgeries.map(({ node: surgery }) => (
-                <Link to={surgery.fields.slug}>
-                  <div key={surgery.id}>
+                <Link key={surgery.id} to={surgery.fields.slug}>
+                  <div>
                     <h2>{surgery.frontmatter.title}</h2>
                     <img
-                      src={require("../../images/surgeries/" + surgery.frontmatter.img)}
+                      src={require("../../images/surgeries/" +
+                        surgery.frontmatter.img)}
                       alt={surgery.frontmatter.title}
                     />
                     <p>{surgery.frontmatter.description}</p>

@@ -13,7 +13,6 @@ const StyledNav = styled.nav`
     text-transform: uppercase;
     margin: 0px;
     background-color: rgba(255, 255, 255, 0.4);
-    margin-bottom: 42px;
     a {
       text-decoration: none;
       color: inherit;
@@ -78,7 +77,7 @@ export default function Navigation() {
           <Link to="/">
             <li>معرض الصور</li>
           </Link>
-          <Link to="/">
+          <Link to="/contact">
             <li>الاتصال بنا</li>
           </Link>
         </ul>
