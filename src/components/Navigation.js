@@ -31,7 +31,7 @@ const StyledNav = styled.nav`
     `};
   }
   label {
-    position: fixed;
+    position: absolute;
     width: 40px;
     display: none;
     cursor: pointer;
