@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import Logo from "../images/logo.png";
 import { Link } from "@reach/router";
 import Navigation from "./Navigation";
 import Img from "gatsby-image";
@@ -50,11 +49,13 @@ const Header = () => (
     `}
     render={data => (
       <StyledHeader>
-        <Navigation />
         <HeaderContent>
+          <Navigation />
           <h1>د. نزار فقيه</h1>
           <h4>استشاري جراحة تجميل الأنف و الحنجرة</h4>
-          <Img fixed={data.imageOne.childImageSharp.fixed} alt="د. نزار فقيه" />
+          <Link to="/">
+            <Img fixed={data.imageOne.childImageSharp.fixed} alt="د. نزار فقيه" />
+          </Link>
         </HeaderContent>
         {/*      <ContactInfoSection>
           <span>أتصل اليوم 96599899664</span>

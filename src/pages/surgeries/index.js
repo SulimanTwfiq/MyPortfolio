@@ -4,23 +4,29 @@ import styled from "styled-components";
 import Layout from "../../components/Layout";
 import { graphql } from "gatsby";
 import { DefaultCard } from "../../components/Card";
-import Ear from "../../images/surgeries/ear.svg";
-import Eye from "../../images/surgeries/eye.svg";
-import Face from "../../images/surgeries/face.svg";
-import Nose from "../../images/surgeries/nose.svg";
-import Img from "gatsby-image";
 
-const Container = styled.section`
+const Container = styled(DefaultCard)`
+  /*  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-content: center;
+  align-content: center; */
   text-align: center;
+  img {
+    width: 100px;
+  }
+  div {
+    margin-bottom: 20px;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 36px;
+    border-bottom: 2px rgba(255, 255, 255, 0.7) solid;
+  }
 `;
 const Blog = () => {
   return (
     <StaticQuery
       query={graphql`
         query SurgeryQuery {
-          allMarkdownRemark(
-            filter: { frontmatter: { templateKey: { eq: "surgery-page" } } }
-          ) {
+          allMarkdownRemark(filter: { frontmatter: { templateKey: { eq: "surgery-page" } } }) {
             edges {
               node {
                 id
@@ -42,25 +48,20 @@ const Blog = () => {
         const { edges: surgeries } = data.allMarkdownRemark;
         return (
           <Layout>
-            <DefaultCard>
+            <Container>
               {surgeries.map(({ node: surgery }) => (
-                <div key={surgery.id}>
-                  <h2>
-                    <Link to={surgery.fields.slug}>
-                      {surgery.frontmatter.title}
-                    </Link>
-                  </h2>
-                  <img
-                    src={"../../images/surgeries/" + surgery.frontmatter.img}
-                    alt={surgery.frontmatter.title}
-                  />
-
-                  {/* <img src={Ear} /> */}
-
-                  <p>{surgery.frontmatter.description}</p>
-                </div>
+                <Link to={surgery.fields.slug}>
+                  <div key={surgery.id}>
+                    <h2>{surgery.frontmatter.title}</h2>
+                    <img
+                      src={require("../../images/surgeries/" + surgery.frontmatter.img)}
+                      alt={surgery.frontmatter.title}
+                    />
+                    <p>{surgery.frontmatter.description}</p>
+                  </div>
+                </Link>
               ))}
-            </DefaultCard>
+            </Container>
           </Layout>
         );
       }}

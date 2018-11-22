@@ -31,6 +31,9 @@ export const DefaultCard = styled.div`
     font-size: 0.9rem;
     text-align: ${props => (props.center ? "center" : "right")};
   }
+  a {
+    color: #026b67;
+  }
 `;
 export const ContactCard = styled(StyledCard)`
   background-color: #efefb5;

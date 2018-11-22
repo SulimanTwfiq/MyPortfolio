@@ -31,10 +31,11 @@ const StyledNav = styled.nav`
     `};
   }
   label {
+    position: fixed;
     width: 40px;
     display: none;
     cursor: pointer;
-    ${media.tablet`display:block`};
+    ${media.tablet`display:block;     z-index: 500;`};
   }
   input {
     &[type="checkbox"] {
@@ -44,6 +45,7 @@ const StyledNav = styled.nav`
       display: block;
       height: 100vh;
       position: relative;
+      padding-top: 70px;
       background-color: rgba(234, 239, 232, 0.9);
       li {
         margin: 15px;
@@ -51,9 +53,6 @@ const StyledNav = styled.nav`
         background-color: #a9edd7;
         border-radius: 20px;
         padding: 2px;
-        a {
-          width: 100%;
-        }
       }
     }
   }
@@ -67,21 +66,21 @@ export default function Navigation() {
       </label>
       <nav>
         <ul>
-          <li>
-            <Link to="/">الرئيسية</Link>
-          </li>
-          <li>
-            <Link to="/surgeries">العمليات الجراحية</Link>
-          </li>
-          <li>
-            <Link to="/blog">صحف ومقابلات</Link>
-          </li>
-          <li>
-            <Link to="/">معرض الصور</Link>
-          </li>
-          <li>
-            <Link to="/contact">الاتصال بنا</Link>
-          </li>
+          <Link to="/">
+            <li>الرئيسية</li>
+          </Link>
+          <Link to="/surgeries">
+            <li>العمليات الجراحية</li>
+          </Link>
+          <Link to="/">
+            <li>صحف ومقابلات</li>
+          </Link>
+          <Link to="/">
+            <li>معرض الصور</li>
+          </Link>
+          <Link to="/">
+            <li>الاتصال بنا</li>
+          </Link>
         </ul>
       </nav>
     </StyledNav>

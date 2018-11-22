@@ -6,7 +6,8 @@ import { DefaultCard } from "../components/Card";
 export const SurgeryPage = ({ title, content }) => {
   return (
     <DefaultCard>
-      <h2>{title}</h2>
+      {/* <span> 🡲</span> */}
+      <h2> {title} </h2>
       <div dangerouslySetInnerHTML={{ __html: content }} />
     </DefaultCard>
   );
