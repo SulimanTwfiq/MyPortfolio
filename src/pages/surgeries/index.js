@@ -4,10 +4,10 @@ import styled from "styled-components";
 import Layout from "../../components/Layout";
 import { graphql } from "gatsby";
 import { DefaultCard } from "../../components/Card";
-import Ear from "../../img/surgeries/ear.svg";
+/* import Ear from "../../img/surgeries/ear.svg";
 import Eye from "../../img/surgeries/eye.svg";
 import Face from "../../img/surgeries/face.svg";
-import Nose from "../../img/surgeries/nose.svg";
+import Nose from "../../img/surgeries/nose.svg"; */
 import Img from "gatsby-image";
 
 const Container = styled.section`
@@ -18,7 +18,9 @@ const Blog = () => {
     <StaticQuery
       query={graphql`
         query SurgeryQuery {
-          allMarkdownRemark(filter: { frontmatter: { templateKey: { eq: "surgery-page" } } }) {
+          allMarkdownRemark(
+            filter: { frontmatter: { templateKey: { eq: "surgery-page" } } }
+          ) {
             edges {
               node {
                 id
@@ -44,11 +46,16 @@ const Blog = () => {
               {surgeries.map(({ node: surgery }) => (
                 <div key={surgery.id}>
                   <h2>
-                    <Link to={surgery.fields.slug}>{surgery.frontmatter.title}</Link>
+                    <Link to={surgery.fields.slug}>
+                      {surgery.frontmatter.title}
+                    </Link>
                   </h2>
-                  <img src={"../../img/surgeries/" + surgery.frontmatter.img} alt={surgery.frontmatter.title} />
+                  <img
+                    src={"../../img/surgeries/" + surgery.frontmatter.img}
+                    alt={surgery.frontmatter.title}
+                  />
 
-                  <img src={Ear} />
+                  {/* <img src={Ear} /> */}
 
                   <p>{surgery.frontmatter.description}</p>
                 </div>
