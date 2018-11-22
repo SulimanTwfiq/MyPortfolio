@@ -8,6 +8,29 @@ export const StyledCard = styled.div`
   border-image-slice: 1;
 `;
 
+export const DefaultCard = styled.div`
+  padding: 10px;
+  line-height: 1.5;
+  margin: 0 6px;
+  text-align: center;
+  margin-bottom: 30px;
+  margin-top: -50px;
+  border: 3px black solid;
+  border-radius: 10px;
+  background-color: rgb(202, 244, 255);
+  h3 {
+    color: #658e61;
+    margin-top: 20px;
+  }
+  h2 {
+    color: #026b67;
+  }
+
+  p {
+    font-size: 0.9rem;
+    text-align: ${props => (props.center ? "center" : "right")};
+  }
+`;
 export const ContactCard = styled(StyledCard)`
   background-color: #efefb5;
   color: black;
@@ -21,17 +44,6 @@ export const ContactCard = styled(StyledCard)`
   img {
     width: 150px;
   }
-`;
-
-export const ServiceCard = styled(StyledCard)`
-  background-color: var(--secoundary-color);
- margin: 5px 3px; 
-  /* ${media.desktop`
-    &:hover {
-    transform: scale(1.1);
-    background-color: var(--primary-color);
-  } */
-  `};
 `;
 
 export const DoctorCard = styled(StyledCard)`

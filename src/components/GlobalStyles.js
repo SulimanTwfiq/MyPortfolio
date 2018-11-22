@@ -13,14 +13,15 @@ const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    direction:rtl;
   }
   html,
   body {
     text-align:center;
-  
     background-color: var(--light);
     font-family: 'Changa', sans-serif;
-
+    color: #3b4e3e;
+    font-size:19px;
   }
   a{
     text-decoration: none;

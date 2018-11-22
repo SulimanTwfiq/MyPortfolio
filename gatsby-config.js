@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: "didsburydentalclone"
+    title: "الدكتور نزار فقيه"
   },
   plugins: [
     "gatsby-plugin-react-helmet",
@@ -15,7 +15,7 @@ module.exports = {
     {
       resolve: "gatsby-source-filesystem",
       options: {
-        path: `${__dirname}/src/img`,
+        path: `${__dirname}/src/images`,
         name: "images"
       }
     },
