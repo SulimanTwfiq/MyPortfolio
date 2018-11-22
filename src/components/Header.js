@@ -41,7 +41,7 @@ const Header = () => (
       query HeadingQuery {
         imageOne: file(relativePath: { eq: "logo.png" }) {
           childImageSharp {
-            fixed(width: 250) {
+            fixed(width: 200) {
               ...GatsbyImageSharpFixed
             }
           }

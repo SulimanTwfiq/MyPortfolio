@@ -4,10 +4,10 @@ import styled from "styled-components";
 import Layout from "../../components/Layout";
 import { graphql } from "gatsby";
 import { DefaultCard } from "../../components/Card";
-/* import Ear from "../../img/surgeries/ear.svg";
-import Eye from "../../img/surgeries/eye.svg";
-import Face from "../../img/surgeries/face.svg";
-import Nose from "../../img/surgeries/nose.svg"; */
+import Ear from "../../images/surgeries/ear.svg";
+import Eye from "../../images/surgeries/eye.svg";
+import Face from "../../images/surgeries/face.svg";
+import Nose from "../../images/surgeries/nose.svg";
 import Img from "gatsby-image";
 
 const Container = styled.section`
@@ -51,7 +51,7 @@ const Blog = () => {
                     </Link>
                   </h2>
                   <img
-                    src={"../" + surgery.frontmatter.img}
+                    src={"../../images/surgeries/" + surgery.frontmatter.img}
                     alt={surgery.frontmatter.title}
                   />
 
