@@ -2,13 +2,23 @@ import React, { Component } from "react";
 import Layout from "../components/Layout";
 import styled from "styled-components";
 import { DefaultCard } from "../components/Card";
-import DatePicker from "../components/DatePicker";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker-cssmodules.css";
+import setMinutes from "date-fns/set_minutes";
+import setHours from "date-fns/set_hours";
+import getDay from "date-fns/get_day";
 const Container = styled(DefaultCard)`
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-content: center;
   flex: 1;
+  .react-datepicker{
+    transform: scale(0.9);
+    left: -65px;
+    top: -37px;
+}
+  }
 `;
 
 const StyledForm = styled.form`
@@ -42,6 +52,11 @@ export class contact extends Component {
     FormRedirect: false,
     startDate: new Date()
   };
+  AvailableDays = date => {
+    const day = getDay(date);
+    return day !== 1 && day !== 3 && day !== 5;
+  };
+
   render() {
     const { FormRedirect, startDate } = this.state;
     console.log(startDate);
@@ -50,16 +65,29 @@ export class contact extends Component {
       <Layout>
         <Container center>
           {FormRedirect ? (
-            <p>بتواصل معك في أقرب وقت بأذن الله , شكراً لك </p>
+            <p>سيتم التواصل معك في أقرب وقت بأذن الله , شكراً لك </p>
           ) : (
             <>
-              <h1>تواصل معي </h1>
-              <StyldInfo>
-                معلومات التواصل تجدها في أخر الصفحة
-                <br /> أو قم بتعبئة هذا النموذج
-              </StyldInfo>
-              <StyledForm onSubmit={() => this.setState({ FormRedirect: true })}>
-                <DatePicker />
+              <h1>حجز موعد</h1>
+
+              <StyledForm
+                onSubmit={() => this.setState({ FormRedirect: true })}
+              >
+                <DatePicker
+                  selected={startDate}
+                  onChange={date => this.setState({ startDate: date })}
+                  placeholderText="أختر تاريخ و وقت الحجز"
+                  showTimeSelect
+                  showMonthDropdown
+                  minDate={new Date()}
+                  timeIntervals={30}
+                  dateFormat="yyyy/MM/dd h:mm aa"
+                  minTime={setHours(setMinutes(new Date(), 0), 5)}
+                  maxTime={setHours(setMinutes(new Date(), 0), 8)}
+                  todayButton={"اليوم"}
+                  timeCaption="الوقت"
+                  filterDate={this.AvailableDays}
+                />
                 <label htmlFor="name">الأسم</label>
                 <input type="text" required id="name" />
 

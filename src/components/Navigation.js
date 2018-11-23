@@ -78,7 +78,7 @@ export default function Navigation() {
             <li>معرض الصور</li>
           </Link>
           <Link to="/contact">
-            <li>الاتصال بنا</li>
+            <li>حجز موعد </li>
           </Link>
         </ul>
       </nav>
