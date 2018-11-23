@@ -43,7 +43,8 @@ export class contact extends Component {
     startDate: new Date()
   };
   render() {
-    const { FormRedirect } = this.state;
+    const { FormRedirect, startDate } = this.state;
+    console.log(startDate);
 
     return (
       <Layout>
@@ -57,13 +58,8 @@ export class contact extends Component {
                 معلومات التواصل تجدها في أخر الصفحة
                 <br /> أو قم بتعبئة هذا النموذج
               </StyldInfo>
-              <StyledForm
-                onSubmit={() => this.setState({ FormRedirect: true })}
-              >
-                <DatePicker
-                  selected={this.state.startDate}
-                  onChange={date => this.setState({ startDate: date })}
-                />
+              <DatePicker />
+              <StyledForm onSubmit={() => this.setState({ FormRedirect: true })}>
                 <label htmlFor="name">الأسم</label>
                 <input type="text" required id="name" />
 
