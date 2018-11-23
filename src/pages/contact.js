@@ -39,7 +39,8 @@ const StyldInfo = styled.p`
 
 export class contact extends Component {
   state = {
-    FormRedirect: false
+    FormRedirect: false,
+    startDate: new Date()
   };
   render() {
     const { FormRedirect } = this.state;
@@ -61,7 +62,7 @@ export class contact extends Component {
               >
                 <DatePicker
                   selected={this.state.startDate}
-                  onChange={this.handleChange}
+                  onChange={date => this.setState({ startDate: date })}
                 />
                 <label htmlFor="name">الأسم</label>
                 <input type="text" required id="name" />
