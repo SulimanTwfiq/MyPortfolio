@@ -1,16 +1,9 @@
 import React from "react";
-import DatePicker, { registerLocale, setDefaultLocale } from "react-datepicker";
+import DatePicker from "react-datepicker";
 import setMinutes from "date-fns/setMinutes";
 import setHours from "date-fns/setHours";
 import "react-datepicker/dist/react-datepicker-cssmodules.css";
 import getDay from "date-fns/getDay";
-
-/* // import "react-datepicker/dist/react-datepicker.css";
-
-import arSA from "date-fns/locale/ar-SA";
-registerLocale("ar-SA", arSA); */
-
-// CSS Modules, react-datepicker-cssmodules.css
 
 class DatePickerComp extends React.Component {
   constructor(props) {
@@ -47,9 +40,6 @@ class DatePickerComp extends React.Component {
         todayButton={"اليوم"}
         timeCaption="الوقت"
         filterDate={this.AvailableDays}
-
-        /*         locale="ar-SA"
-         */
       />
     );
   }
