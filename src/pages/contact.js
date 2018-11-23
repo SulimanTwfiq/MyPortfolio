@@ -58,8 +58,8 @@ export class contact extends Component {
                 معلومات التواصل تجدها في أخر الصفحة
                 <br /> أو قم بتعبئة هذا النموذج
               </StyldInfo>
-              <DatePicker />
               <StyledForm onSubmit={() => this.setState({ FormRedirect: true })}>
+                <DatePicker />
                 <label htmlFor="name">الأسم</label>
                 <input type="text" required id="name" />
 
