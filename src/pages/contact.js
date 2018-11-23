@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Layout from "../components/Layout";
 import styled from "styled-components";
 import { DefaultCard } from "../components/Card";
+import DatePicker from "../components/DatePicker";
 const Container = styled(DefaultCard)`
   display: flex;
   flex-direction: column;
@@ -58,14 +59,15 @@ export class contact extends Component {
               <StyledForm
                 onSubmit={() => this.setState({ FormRedirect: true })}
               >
+                <DatePicker
+                  selected={this.state.startDate}
+                  onChange={this.handleChange}
+                />
                 <label htmlFor="name">الأسم</label>
                 <input type="text" required id="name" />
 
                 <label htmlFor="time">وقت الحجز</label>
                 <input type="text" required id="time" />
-
-                <label htmlFor="date">التاريخ</label>
-                <input type="date" required id="date" />
 
                 <label htmlFor="msg">الرسالة</label>
                 <textarea cols="30" type="text" required rows="5" id="msg" />
