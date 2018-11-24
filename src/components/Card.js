@@ -14,11 +14,13 @@ export const DefaultCard = styled.div`
   line-height: 1.5;
   margin: 0 6px;
   text-align: center;
-  margin-bottom: 30px;
-  margin-top: -50px;
+  margin-bottom: 70px;
   border: 3px black solid;
+  /* margin-top: ${props => (props.noMarginTop ? 0 : -50)}px; */
   border-radius: 10px;
   background-color: rgb(202, 244, 255);
+  margin-top: -55px;
+
   h3 {
     color: #658e61;
     margin-top: 20px;

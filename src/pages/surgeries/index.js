@@ -21,6 +21,22 @@ const Container = styled(DefaultCard)`
     border-bottom: 2px rgba(255, 255, 255, 0.7) solid;
   }
 `;
+export const SurgeriesComponent = surgeries => (
+  <Container>
+    {surgeries.map(({ node: surgery }) => (
+      <Link key={surgery.id} to={surgery.fields.slug}>
+        <div>
+          <h2>{surgery.frontmatter.title}</h2>
+          <img
+            src={require("../../images/surgeries/" + surgery.frontmatter.img)}
+            alt={surgery.frontmatter.title}
+          />
+          <p>{surgery.frontmatter.description}</p>
+        </div>
+      </Link>
+    ))}
+  </Container>
+);
 const Blog = () => {
   return (
     <StaticQuery
@@ -48,25 +64,7 @@ const Blog = () => {
       `}
       render={data => {
         const { edges: surgeries } = data.allMarkdownRemark;
-        return (
-          <Layout>
-            <Container>
-              {surgeries.map(({ node: surgery }) => (
-                <Link key={surgery.id} to={surgery.fields.slug}>
-                  <div>
-                    <h2>{surgery.frontmatter.title}</h2>
-                    <img
-                      src={require("../../images/surgeries/" +
-                        surgery.frontmatter.img)}
-                      alt={surgery.frontmatter.title}
-                    />
-                    <p>{surgery.frontmatter.description}</p>
-                  </div>
-                </Link>
-              ))}
-            </Container>
-          </Layout>
-        );
+        return <Layout>{SurgeriesComponent(surgeries)}</Layout>;
       }}
     />
   );

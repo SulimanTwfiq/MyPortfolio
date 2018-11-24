@@ -2,23 +2,13 @@ import React, { Component } from "react";
 import Layout from "../components/Layout";
 import styled from "styled-components";
 import { DefaultCard } from "../components/Card";
-import DatePicker from "react-datepicker";
-import "react-datepicker/dist/react-datepicker-cssmodules.css";
-import setMinutes from "date-fns/set_minutes";
-import setHours from "date-fns/set_hours";
-import getDay from "date-fns/get_day";
+
 const Container = styled(DefaultCard)`
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-content: center;
   flex: 1;
-  .react-datepicker{
-    transform: scale(0.9);
-    left: -65px;
-    top: -37px;
-}
-  }
 `;
 
 const StyledForm = styled.form`
@@ -47,63 +37,39 @@ const StyldInfo = styled.p`
   line-height: 1.2;
 `;
 
-export class contact extends Component {
+export const ContactCopmonent = ({ FormRedirect }) => (
+  <Container center>
+    {FormRedirect ? (
+      <p>سيتم التواصل معك في أقرب وقت بأذن الله , شكراً لك </p>
+    ) : (
+      <>
+        <h1>حجز موعد</h1>
+        <StyledForm onSubmit={() => this.setState({ FormRedirect: true })}>
+          <label htmlFor="name">الأسم</label>
+          <input type="text" required id="name" />
+
+          <label htmlFor="time">وقت الحجز</label>
+          <input type="text" required id="time" />
+
+          <label htmlFor="msg">الرسالة</label>
+          <textarea cols="30" type="text" required rows="5" id="msg" />
+          <input type="submit" value="آرسال" />
+        </StyledForm>
+      </>
+    )}
+  </Container>
+);
+
+export class Contact extends Component {
   state = {
-    FormRedirect: false,
-    startDate: new Date()
-  };
-  AvailableDays = date => {
-    const day = getDay(date);
-    return day !== 1 && day !== 3 && day !== 5;
+    FormRedirect: false
   };
 
   render() {
-    const { FormRedirect, startDate } = this.state;
-    console.log(startDate);
+    const { FormRedirect } = this.state;
 
-    return (
-      <Layout>
-        <Container center>
-          {FormRedirect ? (
-            <p>سيتم التواصل معك في أقرب وقت بأذن الله , شكراً لك </p>
-          ) : (
-            <>
-              <h1>حجز موعد</h1>
-
-              <StyledForm
-                onSubmit={() => this.setState({ FormRedirect: true })}
-              >
-                <DatePicker
-                  selected={startDate}
-                  onChange={date => this.setState({ startDate: date })}
-                  placeholderText="أختر تاريخ و وقت الحجز"
-                  showTimeSelect
-                  showMonthDropdown
-                  minDate={new Date()}
-                  timeIntervals={30}
-                  dateFormat="yyyy/MM/dd h:mm aa"
-                  minTime={setHours(setMinutes(new Date(), 0), 5)}
-                  maxTime={setHours(setMinutes(new Date(), 0), 8)}
-                  todayButton={"اليوم"}
-                  timeCaption="الوقت"
-                  filterDate={this.AvailableDays}
-                />
-                <label htmlFor="name">الأسم</label>
-                <input type="text" required id="name" />
-
-                <label htmlFor="time">وقت الحجز</label>
-                <input type="text" required id="time" />
-
-                <label htmlFor="msg">الرسالة</label>
-                <textarea cols="30" type="text" required rows="5" id="msg" />
-                <input type="submit" value="آرسال" />
-              </StyledForm>
-            </>
-          )}
-        </Container>
-      </Layout>
-    );
+    return <Layout>{this.ContactCopmonent(FormRedirect)}</Layout>;
   }
 }
 
-export default contact;
+export default Contact;
