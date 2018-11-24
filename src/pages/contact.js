@@ -2,7 +2,8 @@ import React, { Component } from "react";
 import Layout from "../components/Layout";
 import styled from "styled-components";
 import { DefaultCard } from "../components/Card";
-
+import Flatpickr from "react-flatpickr";
+require("flatpickr/dist/themes/dark.css");
 const Container = styled(DefaultCard)`
   display: flex;
   flex-direction: column;
@@ -37,7 +38,7 @@ const StyldInfo = styled.p`
   line-height: 1.2;
 `;
 
-export const ContactCopmonent = ({ FormRedirect }) => (
+export const ContactCopmonent = ({ FormRedirect, date }) => (
   <Container center>
     {FormRedirect ? (
       <p>سيتم التواصل معك في أقرب وقت بأذن الله , شكراً لك </p>
@@ -47,9 +48,16 @@ export const ContactCopmonent = ({ FormRedirect }) => (
         <StyledForm onSubmit={() => this.setState({ FormRedirect: true })}>
           <label htmlFor="name">الأسم</label>
           <input type="text" required id="name" />
-
           <label htmlFor="time">وقت الحجز</label>
-          <input type="text" required id="time" />
+
+          <Flatpickr
+            data-enable-time
+            value={date}
+            onChange={date => {
+              this.setState({ date });
+            }}
+            required
+          />
 
           <label htmlFor="msg">الرسالة</label>
           <textarea cols="30" type="text" required rows="5" id="msg" />
@@ -62,13 +70,14 @@ export const ContactCopmonent = ({ FormRedirect }) => (
 
 export class Contact extends Component {
   state = {
-    FormRedirect: false
+    FormRedirect: false,
+    date: new Date()
   };
 
   render() {
-    const { FormRedirect } = this.state;
+    const { FormRedirect, date } = this.state;
 
-    return <Layout>{ContactCopmonent(FormRedirect)}</Layout>;
+    return <Layout>{ContactCopmonent(FormRedirect, date)}</Layout>;
   }
 }
 
