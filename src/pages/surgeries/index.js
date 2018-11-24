@@ -6,19 +6,23 @@ import { graphql } from "gatsby";
 import { DefaultCard } from "../../components/Card";
 
 const Container = styled(DefaultCard)`
-  /*  display: grid;
+  display: grid;
   grid-template-columns: 1fr 1fr;
   justify-content: center;
-  align-content: center; */
+  align-content: center;
   text-align: center;
   img {
     width: 100px;
   }
   div {
+    margin: 3px;
     margin-bottom: 20px;
     background-color: rgba(255, 255, 255, 0.3);
     border-radius: 36px;
     border-bottom: 2px rgba(255, 255, 255, 0.7) solid;
+    h2 {
+      font-size: 0.9rem;
+    }
   }
 `;
 export const SurgeriesComponent = surgeries => (
