@@ -68,7 +68,7 @@ export class Contact extends Component {
   render() {
     const { FormRedirect } = this.state;
 
-    return <Layout>{this.ContactCopmonent(FormRedirect)}</Layout>;
+    return <Layout>{ContactCopmonent(FormRedirect)}</Layout>;
   }
 }
 

@@ -5,8 +5,6 @@
   "author": "Austin Green",
   "dependencies": {
     "babel-plugin-styled-components": "^1.8.0",
-    "date-fns": "^1.29.0",
-    "flatpickr": "^4.5.2",
     "gatsby": "^2.0.54",
     "gatsby-image": "^2.0.20",
     "gatsby-plugin-netlify": "^2.0.5",
@@ -26,7 +24,6 @@
     "parcel-bundler": "^1.10.3",
     "prop-types": "^15.6.0",
     "react": "^16.6.3",
-    "react-datepicker": "^2.0.0",
     "react-dom": "^16.6.3",
     "react-helmet": "^5.2.0",
     "styled-components": "^4.1.1",
