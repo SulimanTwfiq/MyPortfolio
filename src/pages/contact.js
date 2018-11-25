@@ -38,8 +38,9 @@ const StyldInfo = styled.p`
   line-height: 1.2;
 `;
 
-export const ContactCopmonent = ({ FormRedirect, date }) => (
+export const ContactCopmonent = ({ FormRedirect, changeDate, date }) => (
   <Container center>
+    {console.log(changeDate)}
     {FormRedirect ? (
       <p>سيتم التواصل معك في أقرب وقت بأذن الله , شكراً لك </p>
     ) : (
@@ -54,7 +55,21 @@ export const ContactCopmonent = ({ FormRedirect, date }) => (
             data-enable-time
             value={date}
             onChange={date => {
-              this.setState({ date });
+              /*    console.log("before  " + date);
+              console.log(changeDate(date));
+              console.log("after   " + date); */
+            }}
+            options={{
+              minDate: "today",
+              time_24hr: false,
+              minTime: "17:00",
+              maxTime: "20:00",
+              disable: [
+                function(date) {
+                  // return true to disable
+                  return date.getDay() === 5 || date.getDay() === 6;
+                }
+              ]
             }}
             required
           />
@@ -74,10 +89,18 @@ export class Contact extends Component {
     date: new Date()
   };
 
+  changeDate = newDate => this.setState({ date: newDate });
   render() {
     const { FormRedirect, date } = this.state;
-
-    return <Layout>{ContactCopmonent(FormRedirect, date)}</Layout>;
+    return (
+      <Layout>
+        <ContactCopmonent
+          FormRedirect={FormRedirect}
+          changeDate={this.changeDate}
+          date={date}
+        />
+      </Layout>
+    );
   }
 }
 

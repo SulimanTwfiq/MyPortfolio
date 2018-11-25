@@ -4,28 +4,20 @@ import Helmet from "react-helmet";
 import { graphql, Link } from "gatsby";
 import Layout from "../components/Layout";
 import Content, { HTMLContent } from "../components/Content";
-import styled from "styled-components";
+import { DefaultCard } from "../components/Card";
 
-const StyledArticle = styled.article`
-  text-align: center;
-  h2 {
-    font-size: 2rem;
-    color: red;
-  }
-  ul {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    li {
-      list-style: none;
-    }
-  }
-`;
-export const BlogPostTemplate = ({ content, contentComponent, description, tags, title, helmet }) => {
+export const BlogPostTemplate = ({
+  content,
+  contentComponent,
+  description,
+  tags,
+  title,
+  helmet
+}) => {
   const PostContent = contentComponent || Content;
 
   return (
-    <StyledArticle>
+    <DefaultCard>
       {helmet || ""}
 
       <h1>{title}</h1>
@@ -43,7 +35,7 @@ export const BlogPostTemplate = ({ content, contentComponent, description, tags,
           </ul>
         </div>
       ) : null}
-    </StyledArticle>
+    </DefaultCard>
   );
 };
 

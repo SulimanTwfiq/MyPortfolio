@@ -74,7 +74,7 @@ export default function Navigation() {
           <Link to="/">
             <li>صحف ومقابلات</li>
           </Link>
-          <Link to="/">
+          <Link to="/pictures">
             <li>معرض الصور</li>
           </Link>
           <Link to="/contact">

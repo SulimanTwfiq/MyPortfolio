@@ -34,11 +34,11 @@ const Footer = () => (
       </span>
       <span>
         <img src={Whatsapp} alt="" />
-        00966505580358
+        0505580358
       </span>
       <span>
         <img src={Call} alt="" />
-        00966549818686
+        0549818686
       </span>
     </SocialMedia>
     <p>الدكتور نزار فقيه</p>

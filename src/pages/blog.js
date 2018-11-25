@@ -3,6 +3,8 @@ import { Link, StaticQuery } from "gatsby";
 import styled from "styled-components";
 import Layout from "../components/Layout";
 import { graphql } from "gatsby";
+import { DefaultCard } from "../components/Card";
+
 const StyledBlog = styled.section`
   text-align: center;
   p:last-of-type {
@@ -40,7 +42,7 @@ const Blog = () => {
         const { edges: posts } = data.allMarkdownRemark;
         return (
           <Layout>
-            <StyledBlog>
+            <DefaultCard>
               {posts.map(({ node: post }) => (
                 <div key={post.id}>
                   <p>
@@ -52,11 +54,11 @@ const Blog = () => {
                     {post.excerpt}
                     <br />
                     <br />
-                    <Link to={post.fields.slug}>Keep Reading →</Link>
+                    <Link to={post.fields.slug}>تابع القراءة →</Link>
                   </p>
                 </div>
               ))}
-            </StyledBlog>
+            </DefaultCard>
           </Layout>
         );
       }}

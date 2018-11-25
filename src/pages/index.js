@@ -17,7 +17,7 @@ const IndexPage = ({ data }) => {
     <Layout>
       <StyledSection>
         <CV />
-        {Surgeries(surgeries)}
+        <Surgeries surgeries={surgeries} />
         <Contact />
       </StyledSection>
     </Layout>
@@ -26,7 +26,9 @@ const IndexPage = ({ data }) => {
 
 export const SurgeriesQuery = graphql`
   query Surgeries {
-    allMarkdownRemark(filter: { frontmatter: { templateKey: { eq: "surgery-page" } } }) {
+    allMarkdownRemark(
+      filter: { frontmatter: { templateKey: { eq: "surgery-page" } } }
+    ) {
       edges {
         node {
           id
