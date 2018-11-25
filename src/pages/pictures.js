@@ -41,4 +41,5 @@ const Pictures = () => (
     </Container>
   </Layout>
 );
+
 export default Pictures;

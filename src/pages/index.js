@@ -4,8 +4,11 @@ import { ContactCopmonent as Contact } from "./contact";
 import { SurgeriesComponent as Surgeries } from "./surgeries";
 import CV from "../components/sections/CV";
 import styled from "styled-components";
-
+import { DefaultCard } from "../components/Card";
 import { graphql } from "gatsby";
+import { Link } from "@reach/router";
+import { Button } from "antd";
+
 const StyledSection = styled.div`
   grid-area: sections;
   background-color: var(--light);
@@ -19,6 +22,15 @@ const IndexPage = ({ data }) => {
         <CV />
         <Surgeries surgeries={surgeries} />
         <Contact />
+        <Link to="/pictures">
+          <DefaultCard>
+            <h2>معرض الصور</h2>
+            <h5>
+              شاهد صور المرضى قبل وبعد العمليات التي قام بها الدكتور نزار فقيه
+            </h5>
+            <Button type="primary">مشاهدة</Button>{" "}
+          </DefaultCard>
+        </Link>
       </StyledSection>
     </Layout>
   );

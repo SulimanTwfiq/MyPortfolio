@@ -8,7 +8,10 @@ const StyledFooter = styled.footer`
   background-color: var(--primary-color);
   color: var(--light);
   text-align: center;
-  span {
+  p {
+    font-size: 0.8rem;
+  }
+  a {
     font-size: 0.7rem;
   }
 `;
@@ -41,8 +44,10 @@ const Footer = () => (
         0549818686
       </span>
     </SocialMedia>
-    <p>الدكتور نزار فقيه</p>
-    <span>تصميم سليمان توفيق</span>
+    <p>
+      جميع الحقوق محفوظة د.نزار فقيه <br />استشاري جراحة تجميل الأنف والوجه
+    </p>
+    <a href="https://www.sulimantwfiq.com">تصميم سليمان توفيق</a>
   </StyledFooter>
 );
 

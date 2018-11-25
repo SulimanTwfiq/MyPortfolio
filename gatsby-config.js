@@ -34,6 +34,7 @@ module.exports = {
       }
     },
     "gatsby-plugin-styled-components",
+    "gatsby-plugin-antd",
     "gatsby-plugin-netlify" // make sure to keep it last in the array
   ]
 };
