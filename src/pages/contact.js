@@ -31,11 +31,10 @@ const StyledForm = styled.form`
     width: 150px;
     margin: 10px auto;
   }
-`;
-const StyldInfo = styled.p`
-  color: #026b67;
-  font-size: 0.9rem;
-  line-height: 1.2;
+  div {
+    display: grid;
+    justify-content: center;
+  }
 `;
 
 export const ContactCopmonent = ({ FormRedirect, changeDate, date }) => (
@@ -51,29 +50,32 @@ export const ContactCopmonent = ({ FormRedirect, changeDate, date }) => (
           <input type="text" required id="name" />
           <label htmlFor="time">وقت الحجز</label>
 
-          <Flatpickr
-            data-enable-time
-            value={date}
-            onChange={date => {
-              /*    console.log("before  " + date);
+          <div>
+            <Flatpickr
+              data-enable-time
+              value={date}
+              onChange={date => {
+                console.log(changeDate(date));
+                /*    console.log("before  " + date);
               console.log(changeDate(date));
               console.log("after   " + date); */
-            }}
-            options={{
-              minDate: "today",
-              time_24hr: false,
-              minTime: "17:00",
-              maxTime: "20:00",
-              disable: [
-                function(date) {
-                  // return true to disable
-                  return date.getDay() === 5 || date.getDay() === 6;
-                }
-              ]
-            }}
-            required
-          />
-
+              }}
+              options={{
+                minDate: "today",
+                time_24hr: false,
+                minTime: "17:00",
+                maxTime: "20:00",
+                disableMobile: "true",
+                disable: [
+                  function(date) {
+                    // return true to disable
+                    return date.getDay() === 5 || date.getDay() === 6;
+                  }
+                ]
+              }}
+              required
+            />
+          </div>
           <label htmlFor="msg">الرسالة</label>
           <textarea cols="30" type="text" required rows="5" id="msg" />
           <input type="submit" value="آرسال" />
@@ -94,11 +96,7 @@ export class Contact extends Component {
     const { FormRedirect, date } = this.state;
     return (
       <Layout>
-        <ContactCopmonent
-          FormRedirect={FormRedirect}
-          changeDate={this.changeDate}
-          date={date}
-        />
+        <ContactCopmonent FormRedirect={FormRedirect} changeDate={this.changeDate} date={date} />
       </Layout>
     );
   }

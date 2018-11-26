@@ -22,15 +22,13 @@ const IndexPage = ({ data }) => {
         <CV />
         <Surgeries surgeries={surgeries} />
         <Contact />
-        <Link to="/pictures">
-          <DefaultCard>
-            <h2>معرض الصور</h2>
-            <h5>
-              شاهد صور المرضى قبل وبعد العمليات التي قام بها الدكتور نزار فقيه
-            </h5>
-            <Button type="primary">مشاهدة</Button>{" "}
-          </DefaultCard>
-        </Link>
+        <DefaultCard>
+          <h2>معرض الصور</h2>
+          <h5>شاهد صور المرضى قبل وبعد العمليات التي قام بها الدكتور نزار فقيه</h5>
+          <Link to="/pictures">
+            <Button type="primary">مشاهدة</Button>
+          </Link>
+        </DefaultCard>
       </StyledSection>
     </Layout>
   );
@@ -38,9 +36,7 @@ const IndexPage = ({ data }) => {
 
 export const SurgeriesQuery = graphql`
   query Surgeries {
-    allMarkdownRemark(
-      filter: { frontmatter: { templateKey: { eq: "surgery-page" } } }
-    ) {
+    allMarkdownRemark(filter: { frontmatter: { templateKey: { eq: "surgery-page" } } }) {
       edges {
         node {
           id
