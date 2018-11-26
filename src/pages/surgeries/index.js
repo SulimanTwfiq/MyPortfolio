@@ -4,6 +4,7 @@ import styled from "styled-components";
 import Layout from "../../components/Layout";
 import { graphql } from "gatsby";
 import { DefaultCard } from "../../components/Card";
+import media from "../../components/media";
 
 const Container = styled(DefaultCard)`
   display: grid;
@@ -25,6 +26,10 @@ const Container = styled(DefaultCard)`
   h2 {
     grid-column: 1/-1;
   }
+  ${media.tablet`
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  `}
 `;
 export const SurgeriesComponent = ({ surgeries }) => (
   <Container>

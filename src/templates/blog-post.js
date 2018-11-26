@@ -23,7 +23,7 @@ export const BlogPostTemplate = ({
       <h1>{title}</h1>
       <p>{description}</p>
       <PostContent content={content} />
-      {tags && tags.length ? (
+      {/*    {tags && tags.length ? (
         <div>
           <h4>Tags</h4>
           <ul>
@@ -34,7 +34,7 @@ export const BlogPostTemplate = ({
             ))}
           </ul>
         </div>
-      ) : null}
+      ) : null} */}
     </DefaultCard>
   );
 };
