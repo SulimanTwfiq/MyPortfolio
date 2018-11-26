@@ -36,6 +36,13 @@ export const DefaultCard = styled.div`
   a {
     color: #026b67;
   }
+  button{
+margin-top:15px;
+    font-size:0.7rem;
+  }
+  img{
+    width:100%;
+  }
 `;
 export const ContactCard = styled(StyledCard)`
   background-color: #efefb5;

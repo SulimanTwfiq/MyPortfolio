@@ -7,7 +7,7 @@ import styled from "styled-components";
 import { DefaultCard } from "../components/Card";
 import { graphql } from "gatsby";
 import { Link } from "@reach/router";
-import { Button } from "antd";
+import Button from "@atlaskit/button";
 
 const StyledSection = styled.div`
   grid-area: sections;
@@ -28,7 +28,7 @@ const IndexPage = ({ data }) => {
             <h5>
               شاهد صور المرضى قبل وبعد العمليات التي قام بها الدكتور نزار فقيه
             </h5>
-            <Button type="primary">مشاهدة</Button>{" "}
+            <Button appearance={"primary"}>مشاهدة</Button>
           </DefaultCard>
         </Link>
       </StyledSection>
