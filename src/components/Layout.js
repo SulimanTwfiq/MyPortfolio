@@ -21,7 +21,7 @@ const TemplateWrapper = ({ children }) => (
     <GlobalStyles />
     <Helmet>
       <meta charSet="utf-8" />
-      <title>دكتور نزار فقيه</title>
+      <title>دكتور نزار فقية</title>
       <html lang="ar" dir="rtl" />
     </Helmet>
     <Container>

@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: "الدكتور نزار فقيه"
+    title: "الدكتور نزار فقية"
   },
   plugins: [
     "gatsby-plugin-react-helmet",
@@ -34,7 +34,7 @@ module.exports = {
       }
     },
     "gatsby-plugin-styled-components",
-   
+
     "gatsby-plugin-netlify" // make sure to keep it last in the array
   ]
 };
