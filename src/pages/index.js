@@ -1,6 +1,6 @@
 import React from "react";
 import Layout from "../components/Layout";
-import  Contact  from "./contact";
+import { ContactCopmonent as Contact } from "./contact";
 import { SurgeriesComponent as Surgeries } from "./surgeries";
 import CV from "../components/sections/CV";
 import styled from "styled-components";

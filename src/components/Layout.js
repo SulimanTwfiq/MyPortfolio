@@ -19,7 +19,11 @@ const Container = styled.div`
 const TemplateWrapper = ({ children }) => (
   <div>
     <GlobalStyles />
-    <Helmet title="الدكتور نزار فقيه" />
+    <Helmet>
+      <meta charSet="utf-8" />
+      <title>دكتور نزار فقيه</title>
+      <html lang="ar" dir="rtl" />
+    </Helmet>
     <Container>
       <Header />
       {children}
