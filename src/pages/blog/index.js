@@ -4,7 +4,7 @@ import styled from "styled-components";
 import Layout from "../../components/Layout";
 import { graphql } from "gatsby";
 import { DefaultCard } from "../../components/Card";
-import { Button } from "antd";
+import Button from "../../components/Button";
 
 const StyledPost = styled.div`
   border-radius: 10px;
@@ -14,7 +14,6 @@ const StyledPost = styled.div`
   border: 2px rgba(0, 0, 0, 0.2) dotted;
   a:first-child {
     font-size: 1.2rem;
-    background-color: rgba(255, 255, 255, 0.2);
   }
   small {
     font-size: 0.6rem;
@@ -61,7 +60,7 @@ const Blog = () => {
                     {post.excerpt}
                     <br />
                     <br />{" "}
-                    <Button type="primary">
+                    <Button>
                       <Link to={post.fields.slug}>تابع القراءة </Link>
                     </Button>
                   </p>
