@@ -24,7 +24,14 @@ module.exports = {
     {
       resolve: "gatsby-transformer-remark",
       options: {
-        plugins: []
+        plugins: [
+          {
+            resolve: "gatsby-remark-better-embed-video",
+            options: {
+              width: 800
+            }
+          }
+        ]
       }
     },
     {
