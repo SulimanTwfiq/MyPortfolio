@@ -38,6 +38,7 @@ const Blog = () => {
                 frontmatter {
                   title
                   templateKey
+                  thumbnail
                   date(formatString: "MMMM DD, YYYY")
                 }
               }
@@ -47,23 +48,24 @@ const Blog = () => {
       `}
       render={data => {
         const { edges: posts } = data.allMarkdownRemark;
+
         return (
           <Layout>
             <DefaultCard center>
               {posts.map(({ node: post }) => (
                 <StyledPost key={post.id}>
+                {console.log(post.thumbnail)}
                   <p>
                     <Link to={post.fields.slug}>{post.frontmatter.title}</Link>
                     <small>{post.frontmatter.date}</small>
                   </p>
                   <p>
                     {post.excerpt}
-                    <br />
-                    <br />{" "}
+                  </p>
+                  <img src={post.thumbnail} alt="صورة"/>
                     <Button>
                       <Link to={post.fields.slug}>تابع القراءة </Link>
                     </Button>
-                  </p>
                 </StyledPost>
               ))}
             </DefaultCard>
