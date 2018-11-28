@@ -17,7 +17,7 @@ const StyledPost = styled.div`
     font-size: 0.6rem;
   }
   img{
-    width:200px;
+    width:150px;
     display:block;
     margin:0 auto;
   }
@@ -33,7 +33,7 @@ const Blog = () => {
           ) {
             edges {
               node {
-                excerpt(pruneLength: 400)
+                excerpt(pruneLength: 250)
                 id
                 fields {
                   slug
@@ -58,10 +58,10 @@ const Blog = () => {
               {posts.map(({ node: post }) => (
                 <StyledPost key={post.id}>
                 {console.log(post.excerpt)}
-                  <h7>
+                  <h4>
                     <Link to={post.fields.slug}>{post.frontmatter.title}</Link>
-                    <small>{post.frontmatter.date}</small>
-                  </h7>
+                    {/* <small>{post.frontmatter.date}</small> */}
+                  </h4>
                   <img src={post.frontmatter.thumbnail} alt="صورة"/>
                   <p>
                     {post.excerpt}

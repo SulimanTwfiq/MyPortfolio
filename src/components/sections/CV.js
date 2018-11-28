@@ -1,5 +1,4 @@
 import React from "react";
-import styled from "styled-components";
 import { DefaultCard } from "../Card";
 const Sections = () => (
   <DefaultCard center>

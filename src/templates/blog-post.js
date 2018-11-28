@@ -1,9 +1,7 @@
 import React from "react";
-import { kebabCase } from "lodash";
 import Helmet from "react-helmet";
-import { graphql, Link } from "gatsby";
+import { graphql } from "gatsby";
 import Layout from "../components/Layout";
-import Content, { HTMLContent } from "../components/Content";
 import { DefaultCard } from "../components/Card";
 
 export const BlogPostTemplate = ({ content, title, helmet }) => {
@@ -11,7 +9,7 @@ export const BlogPostTemplate = ({ content, title, helmet }) => {
     <DefaultCard>
       {helmet || ""}
 
-      <h2>{title}</h2>
+      <h4>{title}</h4>
       <div dangerouslySetInnerHTML={{ __html: content }} />
     </DefaultCard>
   );

@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import media from "../components/media";
 export const StyledCard = styled.div`
   color: var(--light);
   text-align: center;
