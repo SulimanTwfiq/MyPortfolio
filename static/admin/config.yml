@@ -14,14 +14,7 @@ collections:
     fields:
       - { label: "Template Key", name: "templateKey", widget: "hidden", default: "blog-post" }
       - { label: "العنوان", name: "title", widget: "string" }
-      - label: "الصورة"
-        name: "thumbnail"
-        widget: "image"
-        options:
-         media_library:
-           config:
-            publicKey: "demopublickey"
-            multiple: true
+      - { label: "الصورة", name: "thumbnail", widget: "image" , required: false}
       - { label: "تاريخ النشر", name: "date", widget: "datetime" }
       - { label: "المقالة", name: "body", widget: "markdown" }
     

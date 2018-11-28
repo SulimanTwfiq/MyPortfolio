@@ -33,7 +33,7 @@ const Blog = () => {
           ) {
             edges {
               node {
-                excerpt(pruneLength: 250)
+                excerpt(truncate: true)
                 id
                 fields {
                   slug
@@ -58,11 +58,11 @@ const Blog = () => {
               {posts.map(({ node: post }) => (
                 <StyledPost key={post.id}>
                 {console.log(post.excerpt)}
-                  <h4>
+                  <h3>
                     <Link to={post.fields.slug}>{post.frontmatter.title}</Link>
                     {/* <small>{post.frontmatter.date}</small> */}
-                  </h4>
-                  <img src={post.frontmatter.thumbnail} alt="صورة"/>
+                  </h3>
+                  <img src={post.frontmatter.thumbnail} alt={post.frontmatter.title}/>
                   <p>
                     {post.excerpt}
                   </p>
