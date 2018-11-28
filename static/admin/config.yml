@@ -4,7 +4,6 @@ backend:
 
 media_folder: static/img
 public_folder: /img
-publish_mode: editorial_workflow
 
 collections:
   - name: "blog"
@@ -14,11 +13,11 @@ collections:
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
       - { label: "Template Key", name: "templateKey", widget: "hidden", default: "blog-post" }
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Publish Date", name: "date", widget: "datetime" }
-      - { label: "Description", name: "description", widget: "text" }
-      - { label: "Body", name: "body", widget: "markdown" }
-      - { label: "Tags", name: "tags", widget: "list" }
+      - { label: "العنوان", name: "title", widget: "string" }
+      - { label: "الصورة", name: "thumbnail", widget: "image" , required: false}
+      - { label: "تاريخ النشر", name: "date", widget: "datetime" }
+      - { label: "المقالة", name: "body", widget: "markdown" }
+    
 
   - name: "Doctors"
     label: "doctors"

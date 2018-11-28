@@ -1,40 +1,16 @@
 import React from "react";
-import { kebabCase } from "lodash";
 import Helmet from "react-helmet";
-import { graphql, Link } from "gatsby";
+import { graphql } from "gatsby";
 import Layout from "../components/Layout";
-import Content, { HTMLContent } from "../components/Content";
 import { DefaultCard } from "../components/Card";
 
-export const BlogPostTemplate = ({
-  content,
-  contentComponent,
-  description,
-  tags,
-  title,
-  helmet
-}) => {
-  const PostContent = contentComponent || Content;
-
+export const BlogPostTemplate = ({ content, title, helmet }) => {
   return (
     <DefaultCard>
       {helmet || ""}
 
-      <h1>{title}</h1>
-      <p>{description}</p>
-      <PostContent content={content} />
-      {tags && tags.length ? (
-        <div>
-          <h4>Tags</h4>
-          <ul>
-            {tags.map(tag => (
-              <li key={tag + `tag`}>
-                <Link to={`/tags/${kebabCase(tag)}/`}>#{tag}</Link> |
-              </li>
-            ))}
-          </ul>
-        </div>
-      ) : null}
+      <h4>{title}</h4>
+      <div dangerouslySetInnerHTML={{ __html: content }} />
     </DefaultCard>
   );
 };
@@ -46,10 +22,7 @@ const BlogPost = ({ data }) => {
     <Layout>
       <BlogPostTemplate
         content={post.html}
-        contentComponent={HTMLContent}
-        description={post.frontmatter.description}
-        helmet={<Helmet title={`${post.frontmatter.title} | Blog`} />}
-        tags={post.frontmatter.tags}
+        helmet={<Helmet title={`${post.frontmatter.title} `} />}
         title={post.frontmatter.title}
       />
     </Layout>
@@ -67,7 +40,6 @@ export const pageQuery = graphql`
         date(formatString: "MMMM DD, YYYY")
         title
         description
-        tags
       }
     }
   }

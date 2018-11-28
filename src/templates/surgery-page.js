@@ -18,7 +18,11 @@ const SurgeryPageTemplate = ({ data }) => {
   console.log(post.html);
   return (
     <Layout>
-      <SurgeryPage content={post.html} description={post.frontmatter.description} title={post.frontmatter.title} />
+      <SurgeryPage
+        content={post.html}
+        description={post.frontmatter.description}
+        title={post.frontmatter.title}
+      />
     </Layout>
   );
 };
