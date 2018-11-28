@@ -18,6 +18,11 @@ const StyledPost = styled.div`
   small {
     font-size: 0.6rem;
   }
+  img{
+    width:200px;
+    display:block;
+    margin:0 auto;
+  }
 `;
 const Blog = () => {
   return (
@@ -54,15 +59,15 @@ const Blog = () => {
             <DefaultCard center>
               {posts.map(({ node: post }) => (
                 <StyledPost key={post.id}>
-                {console.log(post.thumbnail)}
+                {console.log(post.frontmatter.thumbnail)}
                   <p>
                     <Link to={post.fields.slug}>{post.frontmatter.title}</Link>
                     <small>{post.frontmatter.date}</small>
                   </p>
+                  <img src={post.frontmatter.thumbnail} alt="صورة"/>
                   <p>
                     {post.excerpt}
                   </p>
-                  <img src={post.thumbnail} alt="صورة"/>
                     <Button>
                       <Link to={post.fields.slug}>تابع القراءة </Link>
                     </Button>
