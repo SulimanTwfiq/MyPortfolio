@@ -20,7 +20,7 @@ const TVPost = ({ data }) => {
 
   return (
     <Layout>
-      <BlogPostTemplate
+      <TVPostTemplate
         content={post.html}
         helmet={<Helmet title={`${post.frontmatter.title} `} />}
         title={post.frontmatter.title}
