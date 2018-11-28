@@ -6,7 +6,7 @@ import Layout from "../components/Layout";
 import Content, { HTMLContent } from "../components/Content";
 import { DefaultCard } from "../components/Card";
 
-export const BlogPostTemplate = ({ content, description, title, helmet }) => {
+export const BlogPostTemplate = ({ content, title, helmet }) => {
   return (
     <DefaultCard>
       {helmet || ""}
@@ -24,7 +24,6 @@ const BlogPost = ({ data }) => {
     <Layout>
       <BlogPostTemplate
         content={post.html}
-        description={post.frontmatter.description}
         helmet={<Helmet title={`${post.frontmatter.title} `} />}
         title={post.frontmatter.title}
       />

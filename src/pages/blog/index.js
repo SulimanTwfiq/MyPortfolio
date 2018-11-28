@@ -12,9 +12,7 @@ const StyledPost = styled.div`
   padding: 10px;
   margin: 7px 0;
   border: 2px rgba(0, 0, 0, 0.2) dotted;
-  a:first-child {
-    font-size: 1.2rem;
-  }
+
   small {
     font-size: 0.6rem;
   }
@@ -59,11 +57,11 @@ const Blog = () => {
             <DefaultCard center>
               {posts.map(({ node: post }) => (
                 <StyledPost key={post.id}>
-                {console.log(post.frontmatter.thumbnail)}
-                  <p>
+                {console.log(post.excerpt)}
+                  <h7>
                     <Link to={post.fields.slug}>{post.frontmatter.title}</Link>
                     <small>{post.frontmatter.date}</small>
-                  </p>
+                  </h7>
                   <img src={post.frontmatter.thumbnail} alt="صورة"/>
                   <p>
                     {post.excerpt}

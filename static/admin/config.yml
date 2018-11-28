@@ -17,14 +17,12 @@ collections:
       - label: "الصورة"
         name: "thumbnail"
         widget: "image"
-        default: "/uploads/chocolate-dogecoin.jpg"
         options:
          media_library:
            config:
             publicKey: "demopublickey"
             multiple: true
       - { label: "تاريخ النشر", name: "date", widget: "datetime" }
-      - { label: "الوصف", name: "description", widget: "text" }
       - { label: "المقالة", name: "body", widget: "markdown" }
     
 
