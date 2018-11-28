@@ -3,6 +3,7 @@ import styled from "styled-components";
 import Whatsapp from "../images/footer/whatsapp.svg";
 import Skype from "../images/footer/skype.svg";
 import Call from "../images/footer/call.svg";
+import media from './media'
 const StyledFooter = styled.footer`
   grid-area: footer;
   background-color: var(--primary-color);
@@ -22,12 +23,19 @@ const SocialMedia = styled.div`
   flex-direction: column;
   align-content: center;
   padding: 10px;
-  span {
-    padding-right: 5px;
-  }
   img {
     width: 25px;
   }
+  a, a:visited ,a:link{
+    color:grey;
+  }
+    ${media.tablet`
+  span {
+    padding-right: 20px;
+  }
+  display: flex;
+  flex-direction:row;
+  `}
 `;
 const Footer = () => (
   <StyledFooter>

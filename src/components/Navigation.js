@@ -6,13 +6,12 @@ import media from "./media";
 
 const StyledNav = styled.nav`
   ul {
+    background-color: inherit;
+    text-align: center;
+    flex-direction: row;
     list-style: none;
-    display: flex;
-    justify-content: space-between;
-    padding: 0 20px;
-    text-transform: uppercase;
-    margin: 0px;
-    background-color: rgba(255, 255, 255, 0.4);
+    display: none;
+    padding: 10px;
     a {
       text-decoration: none;
       color: inherit;
@@ -21,20 +20,25 @@ const StyledNav = styled.nav`
       margin: 7px;
     }
     ${media.tablet`
-      background-color:inherit;
-    text-align:center;
-    flex-direction:column;
-    display:none; 
-    padding:10px;
+   
 
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+    text-transform: uppercase;
+    margin: 0px;
+    background-color: rgba(255, 255, 255, 0.4);
     `};
   }
   label {
-    position: absolute;
+    display: block;
+    z-index: 500;
+
     width: 40px;
+    ${media.tablet`
+    position: absolute;
     display: none;
-    cursor: pointer;
-    ${media.tablet`display:block;     z-index: 500;`};
+    cursor: pointer;`};
   }
   input {
     &[type="checkbox"] {
@@ -71,7 +75,7 @@ export default function Navigation() {
           <Link to="/surgeries">
             <li>العمليات الجراحية</li>
           </Link>
-          <Link to="/">
+          <Link to="/blog">
             <li>صحف ومقابلات</li>
           </Link>
           <Link to="/pictures">

@@ -14,13 +14,6 @@ const StyledHeader = styled.header`
   border-bottom: 4px black solid;
 `;
 
-const ContactInfoSection = styled.div`
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  padding: 0 10px;
-  font-size: 0.8rem;
-`;
 
 const HeaderContent = styled.div`
   flex: 1;
@@ -57,10 +50,7 @@ const Header = () => (
             <Img fixed={data.imageOne.childImageSharp.fixed} alt="د. نزار فقيه" />
           </Link>
         </HeaderContent>
-        {/*      <ContactInfoSection>
-          <span>أتصل اليوم 96599899664</span>
-          <span>تواصل معنا</span>
-        </ContactInfoSection> */}
+
       </StyledHeader>
     )}
   />

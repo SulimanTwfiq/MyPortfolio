@@ -13,13 +13,13 @@ const GlobalStyle = createGlobalStyle`
   *{
     box-sizing: border-box;
     margin: 0;
+    font-family: 'Changa', sans-serif;
     padding: 0;
   }
   html,
   body {
     text-align:center;
     background-color: var(--light);
-    font-family: 'Changa', sans-serif;
     color: #3b4e3e;
     font-size:19px;
   }

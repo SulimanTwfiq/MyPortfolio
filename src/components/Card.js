@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import media from "../components/media";
 export const StyledCard = styled.div`
   color: var(--light);
   text-align: center;
@@ -35,6 +34,10 @@ export const DefaultCard = styled.div`
   }
   a {
     color: #026b67;
+  }
+ 
+  img{
+    width:100%;
   }
 `;
 export const ContactCard = styled(StyledCard)`
