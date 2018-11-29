@@ -39,7 +39,7 @@ export const SurgeriesComponent = ({ surgeries }) => (
         <div>
           <h4>{surgery.frontmatter.title}</h4>
           <img
-            src={require("../../images/surgeries/" + surgery.frontmatter.img)}
+            src={surgery.frontmatter.img}
             alt={surgery.frontmatter.title}
           />
           <p>{surgery.frontmatter.description}</p>
