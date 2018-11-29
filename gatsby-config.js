@@ -28,7 +28,7 @@ module.exports = {
           {
             resolve: "gatsby-remark-better-embed-video",
             options: {
-              width: 800
+              width: 250
             }
           }
         ]

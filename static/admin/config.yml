@@ -34,6 +34,7 @@ collections:
           name: "templateKey",
           widget: "hidden",
           default: "TV-post",
+          required: false,
         }
       - { label: "العنوان", name: "title", widget: "string", required: false }
       - { label: "المحتوى", name: "body", widget: "markdown", required: false }
