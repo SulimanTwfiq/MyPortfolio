@@ -35,11 +35,11 @@ collections:
           widget: "hidden",
           default: "TV-post",
         }
-      - { label: "Title", name: "title", widget: "string", required: true }
+      - { label: "العنوان", name: "title", widget: "string", required: true }
       - { label: "المحتوى", name: "body", widget: "markdown", required: true }
 
   - name: "pages"
-    label: "Pages"
+    label: "باقي الصفحات"
     files:
       - file: "src/pages/about/index.md"
         label: "About"
