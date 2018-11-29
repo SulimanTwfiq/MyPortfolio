@@ -54,7 +54,7 @@ const Surgeries = () => {
       query={graphql`
         query SurgeryQuery {
           allMarkdownRemark(
-            filter: { frontmatter: { templateKey: { eq: "surgery-page" } } }
+            filter: { frontmatter: { templateKey: { eq: "surgery-post" } } }
           ) {
             edges {
               node {
