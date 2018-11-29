@@ -38,7 +38,7 @@ const IndexPage = ({ data }) => {
 export const SurgeriesQuery = graphql`
   query Surgeries {
     allMarkdownRemark(
-      filter: { frontmatter: { templateKey: { eq: "surgery-page" } } }
+      filter: { frontmatter: { templateKey: { eq: "surgery-post" } } }
     ) {
       edges {
         node {
