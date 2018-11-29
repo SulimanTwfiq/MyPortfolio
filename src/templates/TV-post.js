@@ -9,7 +9,7 @@ export const TVPostTemplate = ({ content, title, helmet }) => {
     <DefaultCard>
       {helmet || ""}
 
-      <h4>{title}</h4>
+      <h2>{title}</h2>
       <div dangerouslySetInnerHTML={{ __html: content }} />
     </DefaultCard>
   );

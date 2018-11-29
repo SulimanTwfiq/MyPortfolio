@@ -14,15 +14,12 @@ const StyledSection = styled.div`
 `;
 const IndexPage = ({ data }) => {
   const { edges: surgeries } = data.allMarkdownRemark;
-  var d = new Date();
-  var n = d.getDay();
-  console.log(n);
+
   return (
     <Layout>
       <StyledSection>
         <CV />
         <Surgeries surgeries={surgeries} />
-        <Contact />
         <DefaultCard>
           <h2>معرض الصور</h2>
           <h5>
@@ -32,6 +29,7 @@ const IndexPage = ({ data }) => {
             <Button>مشاهدة</Button>
           </Link>
         </DefaultCard>
+        <Contact />
       </StyledSection>
     </Layout>
   );

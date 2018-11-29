@@ -22,6 +22,7 @@ const StyledPost = styled.div`
   }
   ${media.tablet`
   display:grid;  
+  grid-template-columns: auto 1fr;
   grid-template-areas: 
   "img title"
   "img desc";

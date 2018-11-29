@@ -39,6 +39,23 @@ collections:
       - { label: "العنوان", name: "title", widget: "string", required: false }
       - { label: "المحتوى", name: "body", widget: "markdown", required: false }
 
+    - name: "surgeries"
+    label: "العمليات الجراحية"
+    folder: "src/pages/surgeries"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {
+          label: "Template Key",
+          name: "templateKey",
+          widget: "hidden",
+          default: "surgery-post",
+          required: false,
+        }
+      - { label: "العنوان", name: "title", widget: "string", required: false }
+      - { label: "الصورة", name: "img", widget: "image", required: false }
+      - { label: "المحتوى", name: "body", widget: "markdown", required: false }
+
   - name: "pages"
     label: "باقي الصفحات"
     files:

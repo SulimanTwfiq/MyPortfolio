@@ -11,7 +11,7 @@ const StyledPost = styled.div`
   padding: 10px;
   margin: 7px 0;
   border: 2px rgba(0, 0, 0, 0.2) dotted;
- 
+ text-align:center;
 `;
 const Blog = () => {
   return (
