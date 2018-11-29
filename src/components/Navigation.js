@@ -79,7 +79,7 @@ export default function Navigation() {
             <li>صحف</li>
           </Link>
           <Link to="/TV">
-            <li>مقابلات </li>
+            <li>  مقابلات تلفزيونية</li>
           </Link>
           <Link to="/pictures">
             <li>معرض الصور</li>
