@@ -35,8 +35,8 @@ collections:
           widget: "hidden",
           default: "TV-post",
         }
-      - { label: "العنوان", name: "title", widget: "string", required: true }
-      - { label: "المحتوى", name: "body", widget: "markdown", required: true }
+      - { label: "العنوان", name: "title", widget: "string", required: false }
+      - { label: "المحتوى", name: "body", widget: "markdown", required: false }
 
   - name: "pages"
     label: "باقي الصفحات"
