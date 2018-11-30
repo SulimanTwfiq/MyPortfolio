@@ -75,19 +75,6 @@ collections:
         label: "السيرة الذاتية"
         name: "cv"
         fields:
-          - {
-              label: "Template Key",
-              name: "templateKey",
-              widget: "hidden",
-              default: "cv-page",
-            }
-          - {
-              label: "path",
-              name: "path",
-              widget: "hidden",
-              default: "/cv",
-              required: false,
-            }
           - { label: "Title", name: "title", widget: "string" }
           - { label: "Body", name: "body", widget: "markdown" }
       - file: "src/pages/products/index.md"
