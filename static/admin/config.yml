@@ -5,6 +5,9 @@ backend:
 media_folder: static/img
 public_folder: /img
 
+editor:
+  preview: false
+
 collections:
   - name: "blog"
     label: "صحف"
