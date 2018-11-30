@@ -38,11 +38,7 @@ export const SurgeriesComponent = ({ surgeries }) => (
       <Link key={surgery.id} to={surgery.fields.slug}>
         <div>
           <h4>{surgery.frontmatter.title}</h4>
-          <img
-            src={surgery.frontmatter.img}
-            alt={surgery.frontmatter.title}
-          />
-          <p>{surgery.frontmatter.description}</p>
+          <img src={surgery.frontmatter.img} alt={surgery.frontmatter.title} />
         </div>
       </Link>
     ))}
@@ -65,7 +61,7 @@ const Surgeries = () => {
                 frontmatter {
                   title
                   templateKey
-                  description
+
                   img
                 }
               }

@@ -12,6 +12,8 @@ import PicSeven from "../images/beforeANDafter/nizarfakih-7-2-300x282.jpg";
 import PicEight from "../images/beforeANDafter/nizarfakih-8-2-300x208.jpg";
 import PicNine from "../images/beforeANDafter/nizarfakih-9-2-300x225.jpg";
 import PicTen from "../images/beforeANDafter/nizarfakih-10-2-300x225.jpg";
+import { graphql } from "gatsby";
+
 const Container = styled(DefaultCard)`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -41,5 +43,11 @@ const Pictures = () => (
     </Container>
   </Layout>
 );
+/* 
+export const PicturesQuery=graphql`
+query pictures {
 
+}
+` 
+ */
 export default Pictures;
