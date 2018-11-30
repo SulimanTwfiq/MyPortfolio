@@ -11,42 +11,16 @@ const StyledPost = styled.div`
   padding: 10px;
   margin: 7px 0;
   border: 2px rgba(0, 0, 0, 0.2) dotted;
-  p {
-    font-size: 0.8rem;
-  }
-  img {
-    width: 150px;
-    height: 150px;
-    display: block;
-    margin: 0 auto;
-  }
-  ${media.tablet`
-  display:grid;  
-  grid-template-columns: auto 1fr;
-  grid-template-areas: 
-  "img title"
-  "img desc";
-   img{
-    grid-area: img;
-  }
-   p{
-    grid-area: desc;
-    padding: 10px;
-  }
-   h4{
-    grid-area: title;
-  }
-  
-  `}
+ text-align:center;
 `;
 const Blog = () => {
   return (
     <StaticQuery
       query={graphql`
-        query BlogQuery {
+        query InterviewsQuery {
           allMarkdownRemark(
             sort: { order: DESC, fields: [frontmatter___date] }
-            filter: { frontmatter: { templateKey: { eq: "blog-post" } } }
+            filter: { frontmatter: { templateKey: { eq: "TV-post" } } }
           ) {
             edges {
               node {
@@ -58,8 +32,6 @@ const Blog = () => {
                 frontmatter {
                   title
                   templateKey
-                  thumbnail
-                  date(formatString: "MMMM DD, YYYY")
                 }
               }
             }
@@ -67,22 +39,17 @@ const Blog = () => {
         }
       `}
       render={data => {
-        const { edges: posts } = data.allMarkdownRemark;
+        const { edges: interviews } = data.allMarkdownRemark;
 
         return (
           <Layout>
             <DefaultCard center>
-              {posts.map(({ node: post }) => (
-                <StyledPost key={post.id}>
+              {interviews.map(({ node: interview }) => (
+                <StyledPost key={interview.id}>
                   <h4>
-                    <Link to={post.fields.slug}>{post.frontmatter.title}</Link>
+                    <Link to={interview.fields.slug}>{interview.frontmatter.title}</Link>
                   </h4>
-                  <img
-                    src={post.frontmatter.thumbnail}
-                    alt={post.frontmatter.title}
-                  />
-                  <p>{post.excerpt}</p>
-                </StyledPost>
+                               </StyledPost>
               ))}
             </DefaultCard>
           </Layout>

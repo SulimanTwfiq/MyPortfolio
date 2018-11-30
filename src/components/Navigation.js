@@ -76,7 +76,10 @@ export default function Navigation() {
             <li>العمليات الجراحية</li>
           </Link>
           <Link to="/blog">
-            <li>صحف ومقابلات</li>
+            <li>صحف</li>
+          </Link>
+          <Link to="/TV">
+            <li>  مقابلات تلفزيونية</li>
           </Link>
           <Link to="/pictures">
             <li>معرض الصور</li>

@@ -5,45 +5,101 @@ backend:
 media_folder: static/img
 public_folder: /img
 
+editor:
+  preview: false
+
 collections:
   - name: "blog"
-    label: "Blog"
+    label: "صحف"
     folder: "src/pages/blog"
-    create: true
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
-    fields:
-      - { label: "Template Key", name: "templateKey", widget: "hidden", default: "blog-post" }
-      - { label: "العنوان", name: "title", widget: "string" }
-      - { label: "الصورة", name: "thumbnail", widget: "image" , required: false}
-      - { label: "تاريخ النشر", name: "date", widget: "datetime" }
-      - { label: "المقالة", name: "body", widget: "markdown" }
-    
-
-  - name: "Doctors"
-    label: "doctors"
-    folder: "src/pages/doctors"
     create: true
     slug: "{{slug}}"
     fields:
-      - { label: "Template Key", name: "templateKey", widget: "hidden", default: "doctors-post" }
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Description", name: "description", widget: "markdown" }
-
+      - {
+          label: "Template Key",
+          name: "templateKey",
+          widget: "hidden",
+          default: "blog-post",
+        }
+      - { label: "العنوان", name: "title", widget: "string" }
+      - { label: "الصورة", name: "thumbnail", widget: "image", required: false }
+      - { label: "تاريخ النشر", name: "date", widget: "datetime" }
+      - { label: "المقالة", name: "body", widget: "markdown" }
+  - name: "TV"
+    label: "مقابلات"
+    folder: "src/pages/TV"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {
+          label: "Template Key",
+          name: "templateKey",
+          widget: "hidden",
+          default: "TV-post",
+          required: false,
+        }
+      - { label: "العنوان", name: "title", widget: "string", required: false }
+      - { label: "المحتوى", name: "body", widget: "markdown", required: false }
+  - name: "surgeries"
+    label: "العمليات الجراحية"
+    folder: "src/pages/surgeries"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {
+          label: "Template Key",
+          name: "templateKey",
+          widget: "hidden",
+          default: "surgery-post",
+          required: false,
+        }
+      - { label: "العنوان", name: "title", widget: "string", required: false }
+      - { label: "الصورة", name: "img", widget: "image", required: false }
+      - { label: "المحتوى", name: "body", widget: "markdown", required: false }
   - name: "pages"
-    label: "Pages"
+    label: "باقي الصفحات"
     files:
       - file: "src/pages/about/index.md"
         label: "About"
         name: "about"
         fields:
-          - { label: "Template Key", name: "templateKey", widget: "hidden", default: "about-page" }
+          - {
+              label: "Template Key",
+              name: "templateKey",
+              widget: "hidden",
+              default: "about-page",
+            }
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Body", name: "body", widget: "markdown" }
+      - file: "src/content/CV/index.md"
+        label: "السيرة الذاتية"
+        name: "cv"
+        fields:
+          - {
+              label: "Template Key",
+              name: "templateKey",
+              widget: "hidden",
+              default: "cv-page",
+            }
+          - {
+              label: "path",
+              name: "path",
+              widget: "hidden",
+              default: "/cv",
+              required: false,
+            }
           - { label: "Title", name: "title", widget: "string" }
           - { label: "Body", name: "body", widget: "markdown" }
       - file: "src/pages/products/index.md"
         label: "Products Page"
         name: "products"
         fields:
-          - { label: "Template Key", name: "templateKey", widget: "hidden", default: "product-page" }
+          - {
+              label: "Template Key",
+              name: "templateKey",
+              widget: "hidden",
+              default: "product-page",
+            }
           - { label: Title, name: title, widget: string }
           - { label: Image, name: image, widget: image }
           - { label: Heading, name: heading, widget: string }
@@ -60,7 +116,11 @@ collections:
                     label: Blurbs,
                     name: blurbs,
                     widget: list,
-                    fields: [{ label: Image, name: image, widget: image }, { label: Text, name: text, widget: text }],
+                    fields:
+                      [
+                        { label: Image, name: image, widget: image },
+                        { label: Text, name: text, widget: text },
+                      ],
                   },
                 ],
             }
@@ -76,19 +136,31 @@ collections:
                     label: Image1,
                     name: image1,
                     widget: object,
-                    fields: [{ label: Image, name: image, widget: image }, { label: Alt, name: alt, widget: string }],
+                    fields:
+                      [
+                        { label: Image, name: image, widget: image },
+                        { label: Alt, name: alt, widget: string },
+                      ],
                   },
                   {
                     label: Image2,
                     name: image2,
                     widget: object,
-                    fields: [{ label: Image, name: image, widget: image }, { label: Alt, name: alt, widget: string }],
+                    fields:
+                      [
+                        { label: Image, name: image, widget: image },
+                        { label: Alt, name: alt, widget: string },
+                      ],
                   },
                   {
                     label: Image3,
                     name: image3,
                     widget: object,
-                    fields: [{ label: Image, name: image, widget: image }, { label: Alt, name: alt, widget: string }],
+                    fields:
+                      [
+                        { label: Image, name: image, widget: image },
+                        { label: Alt, name: alt, widget: string },
+                      ],
                   },
                 ],
             }
@@ -96,7 +168,11 @@ collections:
               label: Testimonials,
               name: testimonials,
               widget: list,
-              fields: [{ label: Quote, name: quote, widget: string }, { label: Author, name: author, widget: string }],
+              fields:
+                [
+                  { label: Quote, name: quote, widget: string },
+                  { label: Author, name: author, widget: string },
+                ],
             }
           - { label: Full_image, name: full_image, widget: image }
           - {
@@ -115,7 +191,11 @@ collections:
                       [
                         { label: Plan, name: plan, widget: string },
                         { label: Price, name: price, widget: string },
-                        { label: Description, name: description, widget: string },
+                        {
+                          label: Description,
+                          name: description,
+                          widget: string,
+                        },
                         { label: Items, name: items, widget: list },
                       ],
                   },

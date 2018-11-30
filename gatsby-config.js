@@ -19,12 +19,26 @@ module.exports = {
         name: "images"
       }
     },
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        path: `${__dirname}/src/content`,
+        name: "content"
+      }
+    },
     "gatsby-plugin-sharp",
     "gatsby-transformer-sharp",
     {
       resolve: "gatsby-transformer-remark",
       options: {
-        plugins: []
+        plugins: [
+          {
+            resolve: "gatsby-remark-better-embed-video",
+            options: {
+              width: 250
+            }
+          }
+        ]
       }
     },
     {

@@ -15,7 +15,6 @@ export const SurgeryPage = ({ title, content }) => {
 
 const SurgeryPageTemplate = ({ data }) => {
   const { markdownRemark: post } = data;
-  console.log(post.html);
   return (
     <Layout>
       <SurgeryPage
