@@ -105,6 +105,11 @@ collections:
                   - { label: "الأربعاء", value: 4 }
                   - { label: "الخميس", value: 5 }
                   - { label: "الجمعة", value: 6 }
+              - label: "Tags"
+                name: "tags"
+                multiple: true
+                widget: "select"
+                options: ["Design", "UX", "Dev"]
       - file: "src/content/CV/index.md"
         label: "السيرة الذاتية"
         name: "cv"

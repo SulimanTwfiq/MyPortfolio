@@ -21,7 +21,6 @@ function disabledHours(start = 0, end = 5) {
   for (let i = start; i <= end; i++) {
     openHour.push(i);
   }
-  console.log(openHour);
   for (let i = 0; i < 24; i++) {
     if (!openHour.find(num => num === i)) {
       closedHours.push(i);
@@ -31,15 +30,12 @@ function disabledHours(start = 0, end = 5) {
 }
 
 const TimePickercComponent = () => (
-  <div>
-    <h3>Disabled options</h3>
-    <TimePicker
-      defaultValue={now}
-      onChange={onChange}
-      disabledHours={disabledHours}
-      showSecond={false}
-      use12Hours
-    />
-  </div>
+  <TimePicker
+    defaultValue={now}
+    onChange={onChange}
+    disabledHours={disabledHours}
+    showSecond={false}
+    use12Hours
+  />
 );
 export default TimePickercComponent;

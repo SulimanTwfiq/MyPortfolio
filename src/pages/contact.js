@@ -2,25 +2,24 @@ import React, { Component } from "react";
 import Layout from "../components/Layout";
 import styled from "styled-components";
 import { DefaultCard } from "../components/Card";
-import Flatpickr from "react-flatpickr";
-require("flatpickr/dist/themes/dark.css");
+import TimePicker from "../components/TimePicker";
+import DatePicker from "../components/DatePicker";
+
 const Container = styled(DefaultCard)`
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-content: center;
-  flex: 1;
 `;
 
 const StyledForm = styled.form`
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-content: center;
-  padding: 10px;
+
   margin: 0 auto;
   input,
   textarea {
+    margin: 10px auto;
     width: 220px;
     padding: 10px;
     border-radius: 5px;
@@ -31,56 +30,39 @@ const StyledForm = styled.form`
     width: 150px;
     margin: 10px auto;
   }
-  div {
-    display: grid;
-    justify-content: center;
+
+  .DayPicker {
+    &-wrapper {
+      background-color: white;
+      border: 2px rgba(0, 0, 0, 0.3) solid;
+      padding-bottom: 0;
+      button {
+        padding: 5px;
+      }
+    }
+    &-Month {
+      margin: 0;
+    }
   }
 `;
-
+// this.setState({ FormRedirect: true })
 export const ContactCopmonent = ({ FormRedirect, changeDate, date }) => (
   <Container center>
     {console.log(changeDate)}
     {FormRedirect ? (
       <p>سيتم التواصل معك في أقرب وقت بأذن الله , شكراً لك </p>
     ) : (
-      <>
+      <StyledForm onSubmit={() => this.setState({ FormRedirect: true })}>
         <h1>حجز موعد</h1>
-        <StyledForm onSubmit={() => this.setState({ FormRedirect: true })}>
-          <label htmlFor="name">الأسم</label>
-          <input type="text" required id="name" />
-          <label htmlFor="time">وقت الحجز</label>
-
-          <div>
-            <Flatpickr
-              data-enable-time
-              value={date}
-              onChange={date => {
-                console.log(changeDate(date));
-                /*    console.log("before  " + date);
-              console.log(changeDate(date));
-              console.log("after   " + date); */
-              }}
-              options={{
-                minDate: "today",
-                time_24hr: false,
-                minTime: "17:00",
-                maxTime: "20:00",
-                disableMobile: "true",
-                disable: [
-                  function(date) {
-                    // return true to disable
-                    return date.getDay() === 5 || date.getDay() === 6;
-                  }
-                ]
-              }}
-              required
-            />
-          </div>
-          <label htmlFor="msg">الرسالة</label>
-          <textarea cols="30" type="text" required rows="5" id="msg" />
-          <input type="submit" value="آرسال" />
-        </StyledForm>
-      </>
+        <label htmlFor="name">الأسم</label>
+        <input type="text" required id="name" />
+        <label htmlFor="time">وقت الحجز</label>
+        <DatePicker />
+        <TimePicker />
+        <label htmlFor="msg">الرسالة</label>
+        <textarea cols="30" type="text" required rows="5" id="msg" />
+        <input type="submit" value="آرسال" />
+      </StyledForm>
     )}
   </Container>
 );
@@ -96,7 +78,11 @@ export class Contact extends Component {
     const { FormRedirect, date } = this.state;
     return (
       <Layout>
-        <ContactCopmonent FormRedirect={FormRedirect} changeDate={this.changeDate} date={date} />
+        <ContactCopmonent
+          FormRedirect={FormRedirect}
+          changeDate={this.changeDate}
+          date={date}
+        />
       </Layout>
     );
   }

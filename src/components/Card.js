@@ -11,7 +11,7 @@ export const DefaultCard = styled.div`
   position: relative;
   padding: 10px;
   line-height: 1.5;
-  margin: 0 6px;
+  margin: 0 5px;
   text-align: center;
   margin-bottom: 70px;
   border: 3px black solid;
