@@ -1,4 +1,6 @@
 ---
-templateKey: info-page
-path: /info
+time:
+  endTime: 8
+  startTime: 5
 ---
+
