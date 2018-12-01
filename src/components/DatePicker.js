@@ -1,39 +1,44 @@
 import React from "react";
-import DatePicker from "react-datepicker";
-import "react-datepicker/dist/react-datepicker-cssmodules.css";
-import setMinutes from "date-fns/set_minutes";
-import setHours from "date-fns/set_hours";
-import getDay from "date-fns/get_day";
+import DayPicker from "react-day-picker";
+import "react-day-picker/lib/style.css";
 
-class DatePickerComp extends React.Component {
-  AvailableDays = date => {
-    const day = getDay(date);
-    return day !== 1 && day !== 3 && day !== 5;
-  };
-  state = {
-    startDate: new Date()
-  };
-
+export default class Example extends React.Component {
+  constructor(props) {
+    super(props);
+    this.handleDayClick = this.handleDayClick.bind(this);
+    this.state = {
+      selectedDay: undefined
+    };
+  }
+  handleDayClick(day, modifiers = {}) {
+    if (modifiers.disabled) {
+      return;
+    }
+    this.setState({
+      selectedDay: modifiers.selected ? undefined : day
+    });
+  }
   render() {
-    const { startDate } = this.state;
-
+    const disabledDays = [
+      {
+        daysOfWeek: [1, 3, 5, 6]
+      },
+      { before: new Date() }
+    ];
     return (
-      <DatePicker
-        selected={startDate}
-        onChange={date => this.setState({ startDate: date })}
-        placeholderText="أختر تاريخ و وقت الحجز"
-        showTimeSelect
-        showMonthDropdown
-        minDate={new Date()}
-        timeIntervals={30}
-        dateFormat="yyyy/MM/dd h:mm aa"
-        minTime={setHours(setMinutes(new Date(), 0), 5)}
-        maxTime={setHours(setMinutes(new Date(), 0), 8)}
-        todayButton={"اليوم"}
-        timeCaption="الوقت"
-        filterDate={this.AvailableDays}
-      />
+      <div>
+        <DayPicker
+          showOutsideDays
+          selectedDays={this.state.selectedDay}
+          disabledDays={disabledDays}
+          onDayClick={this.handleDayClick}
+        />
+        <div>
+          {this.state.selectedDay
+            ? this.state.selectedDay.toLocaleDateString()
+            : "Please select a day."}
+        </div>
+      </div>
     );
   }
 }
-export default DatePickerComp;
