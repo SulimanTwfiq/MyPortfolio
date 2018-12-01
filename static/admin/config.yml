@@ -93,6 +93,18 @@ collections:
                 valueType: "int"
                 min: 0
                 max: 24
+              - label: "ايام الدوام"
+                name: "days"
+                widget: "select"
+                multiple: true
+                options:
+                  - { label: "السبت", value: 0 }
+                  - { label: "الأحد", value: 1 }
+                  - { label: "الأثنين", value: 2 }
+                  - { label: "الثلاثاء", value: 3 }
+                  - { label: "الأربعاء", value: 4 }
+                  - { label: "الخميس", value: 5 }
+                  - { label: "الجمعة", value: 6 }
       - file: "src/content/CV/index.md"
         label: "السيرة الذاتية"
         name: "cv"
