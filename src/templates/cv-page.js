@@ -5,7 +5,7 @@ export const CV = ({ CVinfo }) =>
   CVinfo ? (
     <DefaultCard center>
       <div>
-        <h4>{CVinfo.frontmatter.title}</h4>
+        <h2>{CVinfo.frontmatter.title}</h2>
         <div dangerouslySetInnerHTML={{ __html: CVinfo.html }} />
       </div>
     </DefaultCard>

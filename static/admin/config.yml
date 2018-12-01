@@ -71,6 +71,28 @@ collections:
             }
           - { label: "Title", name: "title", widget: "string" }
           - { label: "Body", name: "body", widget: "markdown" }
+      - file: "src/content/info/index.md"
+        label: "معلومات عامة"
+        name: "info"
+        fields:
+          - label: "أوقات الدوام  | يرجى كتابة الأوقات بنظام الـ24 ساعة "
+            name: "time"
+            widget: "object"
+            fields:
+              - label: "يبدى الدوام عند الساعة : "
+                name: "startTime"
+                widget: "number"
+                default: 0
+                valueType: "int"
+                min: 0
+                max: 24
+              - label: "ينتهي الدوام عند الساعة :"
+                name: "endTime"
+                widget: "number"
+                default: 0
+                valueType: "int"
+                min: 0
+                max: 24
       - file: "src/content/CV/index.md"
         label: "السيرة الذاتية"
         name: "cv"
@@ -86,7 +108,7 @@ collections:
               name: "path",
               widget: "hidden",
               default: "/cv",
-              required: true
+              required: true,
             }
           - { label: "Title", name: "title", widget: "string" }
           - { label: "Body", name: "body", widget: "markdown" }
