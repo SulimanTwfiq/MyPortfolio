@@ -53,9 +53,9 @@ collections:
           default: "surgery-post",
           required: false,
         }
-      - { label: "العنوان", name: "title", widget: "string", required: false }
-      - { label: "الصورة", name: "img", widget: "image", required: false }
-      - { label: "المحتوى", name: "body", widget: "markdown", required: false }
+      - { label: "العنوان", name: "title", widget: "string", required: true }
+      - { label: "الصورة", name: "img", widget: "image", required: true }
+      - { label: "المحتوى", name: "body", widget: "markdown", required: true }
   - name: "pages"
     label: "باقي الصفحات"
     files:
@@ -71,10 +71,16 @@ collections:
             }
           - { label: "Title", name: "title", widget: "string" }
           - { label: "Body", name: "body", widget: "markdown" }
-      - file: "src/content/info/index.md"
-        label: "معلومات عامة"
-        name: "info"
+      - file: "src/content/Contact/index.md"
+        label: "حجز الموعد"
+        name: "contact"
         fields:
+          - {
+              label: "Template Key",
+              name: "templateKey",
+              widget: "hidden",
+              default: "contact-page",
+            }
           - label: "أوقات الدوام  | يرجى كتابة الأوقات بنظام الـ24 ساعة "
             name: "time"
             widget: "object"
@@ -93,23 +99,52 @@ collections:
                 valueType: "int"
                 min: 0
                 max: 24
-              - label: "ايام الدوام"
-                name: "days"
-                widget: "select"
-                multiple: true
-                options:
-                  - { label: "السبت", value: 0 }
-                  - { label: "الأحد", value: 1 }
-                  - { label: "الأثنين", value: 2 }
-                  - { label: "الثلاثاء", value: 3 }
-                  - { label: "الأربعاء", value: 4 }
-                  - { label: "الخميس", value: 5 }
-                  - { label: "الجمعة", value: 6 }
-              - label: "Tags"
-                name: "tags"
-                multiple: true
-                widget: "select"
-                options: ["Design", "UX", "Dev"]
+          - label: "أيام الدوام "
+            name: "days"
+            widget: "object"
+            fields:
+              - {
+                  label: "السبت",
+                  name: "sat",
+                  widget: "boolean",
+                  default: true,
+                }
+              - {
+                  label: "الأحد",
+                  name: "sun",
+                  widget: "boolean",
+                  default: true,
+                }
+              - {
+                  label: "الأثنين",
+                  name: "mon",
+                  widget: "boolean",
+                  default: true,
+                }
+              - {
+                  label: "الثلاثاء",
+                  name: "tue",
+                  widget: "boolean",
+                  default: true,
+                }
+              - {
+                  label: "الأربعاء",
+                  name: "wed",
+                  widget: "boolean",
+                  default: true,
+                }
+              - {
+                  label: "الخميس",
+                  name: "thu",
+                  widget: "boolean",
+                  default: true,
+                }
+              - {
+                  label: "الجمعة",
+                  name: "fri",
+                  widget: "boolean",
+                  default: true,
+                }
       - file: "src/content/CV/index.md"
         label: "السيرة الذاتية"
         name: "cv"

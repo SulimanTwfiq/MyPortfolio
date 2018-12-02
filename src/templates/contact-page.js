@@ -88,4 +88,18 @@ export class Contact extends Component {
   }
 }
 
+export const ContactPageQuery = graphql`
+  query ContactPageTemplate($id: String!) {
+    markdownRemark(id: { eq: $id }) {
+      
+      frontmatter {
+        title
+        description
+        img
+      }
+    }
+  }
+`;
+
+
 export default Contact;
