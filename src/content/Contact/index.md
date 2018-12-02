@@ -1,8 +1,10 @@
 ---
-templateKey: contact-page
-path: /contact
-title: حجز الموعد
 time:
-  endTime: 8
-  startTime: 5
+  endTime: 20
+  sat: false
+  startTime: 17
+  sun: true
+  thu: true
+  tue: true
 ---
+
