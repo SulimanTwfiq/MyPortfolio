@@ -36,7 +36,7 @@ const SurgeryPageTemplate = ({ data }) => {
 
 export default SurgeryPageTemplate;
 
-export const aboutPageQuery = graphql`
+export const SurgeryPageQuery = graphql`
   query SurgeryPageTemplate($id: String!) {
     markdownRemark(id: { eq: $id }) {
       html
