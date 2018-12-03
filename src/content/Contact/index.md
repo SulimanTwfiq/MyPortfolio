@@ -1,7 +1,7 @@
 ---
 templateKey: contact-page
 time:
-  endTime: 20
+  endTime: 19
   startTime: 17
 days:
   fri: false
