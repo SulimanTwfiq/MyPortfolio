@@ -5,6 +5,7 @@ time:
   startTime: 17
 days:
   mon: false
+  sat: false
   sun: true
   thu: true
   tue: true
