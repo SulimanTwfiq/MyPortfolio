@@ -18,11 +18,15 @@ export default class DatePicker extends React.Component {
     this.setState({ selectedDay: modifiers.selected ? undefined : day });
   };
   render() {
-    const disabledDays = [{ daysOfWeek: [1, 3, 5, 6] }, { before: new Date() }];
-    console.log(this.props.days);
-    this.props.days.forEach(day => {
-      console.log(day);
-    });
+    // console.log(this.props.days);
+    const DisabledDaysArray = Object.values(this.props.days).map(
+      (day, index) => day === true && index
+    );
+    console.log(DisabledDaysArray);
+    const disabledDays = [
+      { daysOfWeek: DisabledDaysArray },
+      { before: new Date() }
+    ];
     return (
       <>
         <DayPicker

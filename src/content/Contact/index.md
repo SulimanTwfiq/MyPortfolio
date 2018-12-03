@@ -1,7 +1,6 @@
 ---
 templateKey: contact-page
 path: "/contact"
-tite: "حجز الموعد "
 time:
   endTime: 19
   startTime: 17

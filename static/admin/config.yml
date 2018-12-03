@@ -80,7 +80,6 @@ collections:
               name: "templateKey",
               widget: "hidden",
               default: "contact-page",
-              required: true,
             }
           - label: "أوقات الدوام  | يرجى كتابة الأوقات بنظام الـ24 ساعة "
             name: "time"
@@ -172,7 +171,6 @@ collections:
               default: "/cv",
               required: true,
             }
-          - { label: "Title", name: "title", widget: "string" }
           - { label: "Body", name: "body", widget: "markdown" }
       - file: "src/pages/products/index.md"
         label: "Products Page"
