@@ -1,15 +1,15 @@
 ---
 templateKey: contact-page
-path: "/contact"
 time:
-  endTime: 19
+  endTime: 20
   startTime: 17
 days:
-  fri: false
+  fri: true
   mon: false
   sat: false
-  sun: true
+  sun: false
   thu: true
-  tue: true
-  wed: false
+  tue: false
+  wed: true
 ---
+
