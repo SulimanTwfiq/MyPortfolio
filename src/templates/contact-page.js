@@ -4,7 +4,7 @@ import styled from "styled-components";
 import { DefaultCard } from "../components/Card";
 import TimePicker from "../components/TimePicker";
 import DatePicker from "../components/DatePicker";
-
+import { graphql } from "gatsby";
 const Container = styled(DefaultCard)`
   display: flex;
   flex-direction: column;
@@ -45,10 +45,9 @@ const StyledForm = styled.form`
     }
   }
 `;
-// this.setState({ FormRedirect: true })
-export const ContactCopmonent = ({ FormRedirect, changeDate, date }) => (
+export const ContactCopmonent = ({ FormRedirect, changeDate, date, data }) => (
   <Container center>
-    {console.log(changeDate)}
+    {console.log(data)}
     {FormRedirect ? (
       <p>سيتم التواصل معك في أقرب وقت بأذن الله , شكراً لك </p>
     ) : (
@@ -67,7 +66,7 @@ export const ContactCopmonent = ({ FormRedirect, changeDate, date }) => (
   </Container>
 );
 
-export class Contact extends Component {
+class Contact extends Component {
   state = {
     FormRedirect: false,
     date: new Date()
@@ -76,6 +75,8 @@ export class Contact extends Component {
   changeDate = newDate => this.setState({ date: newDate });
   render() {
     const { FormRedirect, date } = this.state;
+    const { markdownRemark: contact } = this.props;
+    console.log(contact);
     return (
       <Layout>
         <ContactCopmonent
@@ -89,17 +90,25 @@ export class Contact extends Component {
 }
 
 export const ContactPageQuery = graphql`
-  query ContactPageTemplate($id: String!) {
-    markdownRemark(id: { eq: $id }) {
-      
+  query ContactPageTemplate {
+    markdownRemark(frontmatter: { templateKey: { eq: "contact-page" } }) {
       frontmatter {
-        title
-        description
-        img
+        time {
+          endTime
+          startTime
+        }
+        days {
+          sat
+          sun
+          mon
+          tue
+          wed
+          thu
+          fri
+        }
       }
     }
   }
 `;
-
 
 export default Contact;

@@ -4,14 +4,13 @@ import styled from "styled-components";
 import Layout from "../../components/Layout";
 import { graphql } from "gatsby";
 import { DefaultCard } from "../../components/Card";
-import media from "../../components/media";
 const StyledPost = styled.div`
   border-radius: 10px;
   background-color: rgba(255, 255, 255, 0.5);
   padding: 10px;
   margin: 7px 0;
   border: 2px rgba(0, 0, 0, 0.2) dotted;
- text-align:center;
+  text-align: center;
 `;
 const Blog = () => {
   return (
@@ -47,9 +46,11 @@ const Blog = () => {
               {interviews.map(({ node: interview }) => (
                 <StyledPost key={interview.id}>
                   <h4>
-                    <Link to={interview.fields.slug}>{interview.frontmatter.title}</Link>
+                    <Link to={interview.fields.slug}>
+                      {interview.frontmatter.title}
+                    </Link>
                   </h4>
-                               </StyledPost>
+                </StyledPost>
               ))}
             </DefaultCard>
           </Layout>

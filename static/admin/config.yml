@@ -71,7 +71,7 @@ collections:
             }
           - { label: "Title", name: "title", widget: "string" }
           - { label: "Body", name: "body", widget: "markdown" }
-      - file: "src/content/Contact/index.md"
+      - file: "src/content/contact/index.md"
         label: "حجز الموعد"
         name: "contact"
         fields:
@@ -80,6 +80,7 @@ collections:
               name: "templateKey",
               widget: "hidden",
               default: "contact-page",
+              required: true,
             }
           - label: "أوقات الدوام  | يرجى كتابة الأوقات بنظام الـ24 ساعة "
             name: "time"
@@ -92,6 +93,7 @@ collections:
                 valueType: "int"
                 min: 0
                 max: 24
+                required: true
               - label: "ينتهي الدوام عند الساعة :"
                 name: "endTime"
                 widget: "number"
@@ -99,6 +101,7 @@ collections:
                 valueType: "int"
                 min: 0
                 max: 24
+                required: true
           - label: "أيام الدوام "
             name: "days"
             widget: "object"
@@ -108,42 +111,49 @@ collections:
                   name: "sat",
                   widget: "boolean",
                   default: true,
+                  required: true,
                 }
               - {
                   label: "الأحد",
                   name: "sun",
                   widget: "boolean",
                   default: true,
+                  required: true,
                 }
               - {
                   label: "الأثنين",
                   name: "mon",
                   widget: "boolean",
                   default: true,
+                  required: true,
                 }
               - {
                   label: "الثلاثاء",
                   name: "tue",
                   widget: "boolean",
                   default: true,
+                  required: true,
                 }
               - {
                   label: "الأربعاء",
                   name: "wed",
                   widget: "boolean",
                   default: true,
+                  required: true,
                 }
               - {
                   label: "الخميس",
                   name: "thu",
                   widget: "boolean",
                   default: true,
+                  required: true,
                 }
               - {
                   label: "الجمعة",
                   name: "fri",
                   widget: "boolean",
                   default: true,
+                  required: true,
                 }
       - file: "src/content/CV/index.md"
         label: "السيرة الذاتية"

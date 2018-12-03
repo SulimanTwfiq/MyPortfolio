@@ -1,6 +1,6 @@
 import React from "react";
 import Layout from "../components/Layout";
-import { ContactCopmonent as Contact } from "./contact";
+import { ContactCopmonent as Contact } from "../templates/contact-page";
 import { SurgeriesComponent as Surgeries } from "./surgeries";
 import styled from "styled-components";
 import { DefaultCard } from "../components/Card";
