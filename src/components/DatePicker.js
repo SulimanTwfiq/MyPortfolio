@@ -19,6 +19,10 @@ export default class DatePicker extends React.Component {
   };
   render() {
     const disabledDays = [{ daysOfWeek: [1, 3, 5, 6] }, { before: new Date() }];
+    console.log(this.props.days);
+    this.props.days.forEach(day => {
+      console.log(day);
+    });
     return (
       <>
         <DayPicker

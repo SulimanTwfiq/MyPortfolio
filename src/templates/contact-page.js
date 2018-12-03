@@ -45,9 +45,14 @@ const StyledForm = styled.form`
     }
   }
 `;
-export const ContactCopmonent = ({ FormRedirect, changeDate, date, data }) => (
+export const ContactCopmonent = ({
+  FormRedirect,
+  changeDate,
+  date,
+  time,
+  days
+}) => (
   <Container center>
-    {console.log(data)}
     {FormRedirect ? (
       <p>سيتم التواصل معك في أقرب وقت بأذن الله , شكراً لك </p>
     ) : (
@@ -56,7 +61,7 @@ export const ContactCopmonent = ({ FormRedirect, changeDate, date, data }) => (
         <label htmlFor="name">الأسم</label>
         <input type="text" required id="name" />
         <label htmlFor="time">وقت الحجز</label>
-        <DatePicker />
+        <DatePicker days={days} />
         <TimePicker />
         <label htmlFor="msg">الرسالة</label>
         <textarea cols="30" type="text" required rows="5" id="msg" />
@@ -75,14 +80,15 @@ class Contact extends Component {
   changeDate = newDate => this.setState({ date: newDate });
   render() {
     const { FormRedirect, date } = this.state;
-    const { markdownRemark: contact } = this.props;
-    console.log(contact);
+    const { time, days } = this.props.data.markdownRemark.frontmatter;
     return (
       <Layout>
         <ContactCopmonent
           FormRedirect={FormRedirect}
           changeDate={this.changeDate}
           date={date}
+          time={time}
+          days={days}
         />
       </Layout>
     );
