@@ -4,6 +4,7 @@ time:
   endTime: 20
   startTime: 17
 days:
+  fri: false
   mon: false
   sat: false
   sun: true
