@@ -50,59 +50,69 @@ const StyledForm = styled.div`
     }
   }
 `;
-export const ContactCopmonent = ({ timeOnChange, time, days, dayOnChange }) => (
-  <Container center>
-    <StyledForm>
-      <h1>حجز موعد</h1>
-      <p>
-        <span> حجز المواعيد من الساعة </span>
-        {time.startTime > 12
-          ? time.startTime - 12 + "مساء "
-          : time.startTime + "صباحاً"}
-      </p>
-      <p>
-        <span> إلى الساعة </span>
-        {time.endTime > 12
-          ? time.endTime - 12 + "مساء "
-          : time.endTime + "صباحاً "}
-      </p>
-      <label htmlFor="name">الأسم</label>
-      <input type="text" required id="name" />
-      <DatePicker days={days} dayOnChange={dayOnChange} />
-      <label htmlFor="time">وقت الحجز</label>
-      <TimePicker time={time} timeOnChange={timeOnChange} />
-      <label htmlFor="msg">الرسالة</label>
-      <textarea cols="30" type="text" required rows="5" id="msg" />
+export const ContactCopmonent = ({ timeOnChange, selectedTime, time, days, dayOnChange, ReserveMsg, selectedDay }) => {
+  console.log(selectedDay);
+  console.log(selectedTime);
+  let url =
+    "https://wa.me/966544710774?text=" +
+    `
+  *موعد حجز * 
+  وقت الحجز
+  ${selectedDay.toLocaleDateString()}
+ تاريخ الحجز
+ ${selectedTime}
+ `;
+  return (
+    <Container center>
+      <StyledForm>
+        <h1>حجز موعد</h1>
+        <p>
+          <span> حجز المواعيد من الساعة </span>
+          {time.startTime > 12 ? time.startTime - 12 + "مساء " : time.startTime + "صباحاً"}
+        </p>
+        <p>
+          <span> إلى الساعة </span>
+          {time.endTime > 12 ? time.endTime - 12 + "مساء " : time.endTime + "صباحاً "}
+        </p>
+        <label htmlFor="name">الأسم</label>
+        <input type="text" required id="name" />
+        <DatePicker days={days} dayOnChange={dayOnChange} />
+        <label htmlFor="time">وقت الحجز</label>
+        <TimePicker time={time} timeOnChange={timeOnChange} />
+        <label htmlFor="msg">الرسالة</label>
+        <textarea cols="30" type="text" required rows="5" id="msg" />
 
-      <Button>احجز</Button>
-    </StyledForm>
-  </Container>
-);
+        <a href={url}>احجز</a>
+        <Button onClick={ReserveMsg}>احجززز</Button>
+      </StyledForm>
+    </Container>
+  );
+};
 
 class Contact extends Component {
   state = {
-    time: undefined,
+    selectedTime: undefined,
     selectedDay: undefined
   };
-  timeOnChange = value => this.setState({ time: value.format("hh:mm") });
+
+  timeOnChange = value => this.setState({ selectedTime: value.format("hh:mm") });
   dayOnChange = (day, modifiers = {}) => {
     if (modifiers.disabled) return;
     this.setState({ selectedDay: modifiers.selected ? undefined : day });
   };
   render() {
-    const { selectedDay, time } = this.state;
-    const {
-      time: StartEndTime,
-      days
-    } = this.props.data.markdownRemark.frontmatter;
-    console.log(selectedDay && selectedDay.toLocaleDateString());
+    const { selectedDay, selectedTime } = this.state;
+    const { time, days } = this.props.data.markdownRemark.frontmatter;
+    // console.log(selectedDay && selectedDay.toLocaleDateString());
+    // console.log(this.ReserveMsg);
+    console.log(time);
     return (
       <Layout>
         <ContactCopmonent
           timeOnChange={this.timeOnChange}
           dayOnChange={this.dayOnChange}
-          selectedDay={this.state.selectedDay}
-          time={StartEndTime}
+          selectedDay={selectedDay}
+          time={time}
           days={days}
         />
       </Layout>
