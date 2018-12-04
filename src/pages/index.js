@@ -1,6 +1,5 @@
 import React from "react";
 import Layout from "../components/Layout";
-import { ContactCopmonent as Contact } from "../templates/contact-page";
 import { SurgeriesComponent as Surgeries } from "./surgeries";
 import styled from "styled-components";
 import { DefaultCard } from "../components/Card";
@@ -29,7 +28,13 @@ const IndexPage = ({ data }) => {
             <Button>مشاهدة</Button>
           </Link>
         </DefaultCard>
-        <Contact />
+        <DefaultCard>
+          <h2>حجز موعد</h2>
+          <h5>احجز موعدك مع الدكتور في أقل من دقيقتين</h5>
+          <Link to="/contact">
+            <Button>احجز</Button>
+          </Link>
+        </DefaultCard>
       </StyledSection>
     </Layout>
   );
@@ -58,9 +63,6 @@ export const IndexQuery = graphql`
 
     cvPage: markdownRemark(frontmatter: { path: { eq: "/cv" } }) {
       html
-      frontmatter {
-        title
-      }
     }
   }
 `;

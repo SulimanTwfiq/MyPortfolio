@@ -2,19 +2,9 @@ import "rc-time-picker/assets/index.css";
 
 import React from "react";
 
-import moment from "moment";
-
 import TimePicker from "rc-time-picker";
 
-const now = moment()
-  .hour(14)
-  .minute(30);
-
-function onChange(value) {
-  //console.log(value);
-}
-
-function disabledHours(start = 0, end = 5) {
+const disabledHours = (start, end) => {
   let openHour = [];
   let closedHours = [];
   for (let i = start; i <= end; i++) {
@@ -26,15 +16,16 @@ function disabledHours(start = 0, end = 5) {
     }
   }
   return closedHours;
-}
+};
 
-const TimePickercComponent = () => (
+const TimePickerComponent = ({ time, timeOnChange }) => (
   <TimePicker
-    defaultValue={now}
-    onChange={onChange}
-    disabledHours={disabledHours}
+    onChange={timeOnChange}
+    disabledHours={() => disabledHours(time.startTime, time.endTime)}
     showSecond={false}
+    format={"h:mm"}
     use12Hours
   />
 );
-export default TimePickercComponent;
+
+export default TimePickerComponent;

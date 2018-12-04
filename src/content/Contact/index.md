@@ -1,9 +1,7 @@
 ---
 templateKey: contact-page
-path: "/contact"
-tite: "حجز الموعد "
 time:
-  endTime: 19
+  endTime: 20
   startTime: 17
 days:
   fri: false
@@ -14,3 +12,4 @@ days:
   tue: true
   wed: false
 ---
+

@@ -11,32 +11,28 @@ const SelectedDateDiv = styled.div`
   color: white;
 `;
 export default class DatePicker extends React.Component {
-  state = { selectedDay: undefined };
-
-  handleDayClick = (day, modifiers = {}) => {
-    if (modifiers.disabled) return;
-    this.setState({ selectedDay: modifiers.selected ? undefined : day });
-  };
   render() {
-    const disabledDays = [{ daysOfWeek: [1, 3, 5, 6] }, { before: new Date() }];
-    console.log(this.props.days);
-    this.props.days.forEach(day => {
-      console.log(day);
-    });
+    const DisabledDaysArray = Object.values(this.props.days).map(
+      (day, index) => day === false && index
+    );
+    const disabledDays = [
+      { daysOfWeek: DisabledDaysArray },
+      { before: new Date() }
+    ];
     return (
       <>
         <DayPicker
           showOutsideDays
-          selectedDays={this.state.selectedDay}
+          selectedDays={this.props.selectedDay}
           disabledDays={disabledDays}
-          onDayClick={this.handleDayClick}
+          onDayClick={this.props.dayOnChange}
           fromMonth={new Date()}
           localeUtils={MomentLocaleUtils}
           locale={"ar"}
         />
         <SelectedDateDiv>
-          {this.state.selectedDay
-            ? this.state.selectedDay.toLocaleDateString()
+          {this.props.selectedDay
+            ? this.props.selectedDay.toLocaleDateString()
             : " اختار تاريخ الموعد"}
         </SelectedDateDiv>
       </>

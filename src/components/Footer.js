@@ -3,7 +3,7 @@ import styled from "styled-components";
 import Whatsapp from "../images/footer/whatsapp.svg";
 import Skype from "../images/footer/skype.svg";
 import Call from "../images/footer/call.svg";
-import media from './media'
+import media from "./media";
 const StyledFooter = styled.footer`
   grid-area: footer;
   background-color: var(--primary-color);
@@ -26,10 +26,12 @@ const SocialMedia = styled.div`
   img {
     width: 25px;
   }
-  a, a:visited ,a:link{
-    color:grey;
+  a,
+  a:visited,
+  a:link {
+    color: grey;
   }
-    ${media.tablet`
+  ${media.tablet`
   span {
     padding-right: 20px;
   }
@@ -37,8 +39,31 @@ const SocialMedia = styled.div`
   flex-direction:row;
   `}
 `;
+
+const Address = styled.div`
+  display: flex;
+  justify-content: center;
+  background-color: #346764;
+  flex-direction: column;
+  align-content: center;
+  font-size: 0.8rem;
+  line-height: 1.2;
+  padding: 5px;
+  ${media.tablet`
+  display: flex;
+  flex-direction:row;
+  `};
+`;
+
 const Footer = () => (
   <StyledFooter>
+    <Address>
+      <h3> العنوان</h3>
+      <span>مجمع محمد فقيه الطبية</span>
+      <span>شارع التحلية</span>
+      <span>خلف مركز لامول</span>
+      <span>جده السعودية</span>
+    </Address>
     <SocialMedia>
       <span>
         <img src={Skype} alt="" /> Dranfakih2013
@@ -53,7 +78,8 @@ const Footer = () => (
       </span>
     </SocialMedia>
     <p>
-      جميع الحقوق محفوظة د.نزار فقيه <br />استشاري جراحة تجميل الأنف والوجه
+      جميع الحقوق محفوظة د.نزار فقيه <br />
+      استشاري جراحة تجميل الأنف والوجه
     </p>
     <a href="https://www.sulimantwfiq.com">تصميم سليمان توفيق</a>
   </StyledFooter>
