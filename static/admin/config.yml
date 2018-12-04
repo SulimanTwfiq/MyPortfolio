@@ -71,7 +71,7 @@ collections:
             }
           - { label: "Title", name: "title", widget: "string" }
           - { label: "Body", name: "body", widget: "markdown" }
-      - file: "src/content/contact/index.md"
+      - file: "src/content/Contact/index.md"
         label: "حجز الموعد"
         name: "contact"
         fields:

@@ -104,13 +104,13 @@ export const ContactPageQuery = graphql`
           startTime
         }
         days {
-          sat
           sun
           mon
           tue
           wed
           thu
           fri
+          sat
         }
       }
     }

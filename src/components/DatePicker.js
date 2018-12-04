@@ -19,8 +19,8 @@ export default class DatePicker extends React.Component {
   };
   render() {
     // console.log(this.props.days);
-    const DisabledDaysArray = Object.values(this.props.days).map(
-      (day, index) => day === true && index
+    const DisabledDaysArray = Object.values(this.props.days).map((day, index) =>
+      day === true ? index : false
     );
     console.log(DisabledDaysArray);
     const disabledDays = [
