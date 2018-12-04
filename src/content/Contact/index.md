@@ -4,12 +4,12 @@ time:
   endTime: 20
   startTime: 17
 days:
-  fri: true
+  fri: false
   mon: false
   sat: false
-  sun: false
+  sun: true
   thu: true
-  tue: false
-  wed: true
+  tue: true
+  wed: false
 ---
 
