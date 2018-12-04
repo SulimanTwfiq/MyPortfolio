@@ -109,49 +109,49 @@ collections:
                   label: "السبت",
                   name: "sat",
                   widget: "boolean",
-                  default: true,
+                  default: false,
                   required: true,
                 }
               - {
                   label: "الأحد",
                   name: "sun",
                   widget: "boolean",
-                  default: true,
+                  default: false,
                   required: true,
                 }
               - {
                   label: "الأثنين",
                   name: "mon",
                   widget: "boolean",
-                  default: true,
+                  default: false,
                   required: true,
                 }
               - {
                   label: "الثلاثاء",
                   name: "tue",
                   widget: "boolean",
-                  default: true,
+                  default: false,
                   required: true,
                 }
               - {
                   label: "الأربعاء",
                   name: "wed",
                   widget: "boolean",
-                  default: true,
+                  default: false,
                   required: true,
                 }
               - {
                   label: "الخميس",
                   name: "thu",
                   widget: "boolean",
-                  default: true,
+                  default: false,
                   required: true,
                 }
               - {
                   label: "الجمعة",
                   name: "fri",
                   widget: "boolean",
-                  default: true,
+                  default: false,
                   required: true,
                 }
       - file: "src/content/CV/index.md"
