@@ -24,11 +24,15 @@ const TimePickerComponent = ({ time, timeOnChange }) => (
     <label>وقت الحجز</label>
     <p>
       <span>الأوقات المتاحة من الساعة </span>
-      {time.startTime > 12 ? time.startTime - 12 + "مساء " : time.startTime + "صباحاً"}
+      {time.startTime > 12
+        ? time.startTime - 12 + "مساء "
+        : time.startTime + "صباحاً"}
     </p>
     <p>
       <span> إلى الساعة </span>
-      {time.endTime > 12 ? time.endTime - 12 + "مساء " : time.endTime + "صباحاً "}
+      {time.endTime > 12
+        ? time.endTime - 12 + "مساء "
+        : time.endTime + "صباحاً "}
     </p>
     <TimePicker
       onChange={timeOnChange}

@@ -6,6 +6,7 @@
   "dependencies": {
     "@atlaskit/button": "^9.0.16",
     "@atlaskit/field-base": "^11.0.12",
+    "@atlaskit/input": "^4.0.9",
     "@atlaskit/modal-dialog": "^7.1.0",
     "antd": "^3.10.9",
     "babel-plugin-styled-components": "^1.9.2",

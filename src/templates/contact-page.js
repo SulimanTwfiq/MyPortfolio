@@ -7,6 +7,7 @@ import DatePicker from "../components/DatePicker";
 import Button from "../components/Button";
 import DialogModal from "../components/DialogModal";
 import { graphql } from "gatsby";
+import TextField from "../components/TextField";
 const Container = styled(DefaultCard)`
   display: flex;
   flex-direction: column;
@@ -22,16 +23,6 @@ const StyledForm = styled.div`
   button {
     margin: 10px auto;
     font-size: 1.2rem;
-  }
-  input,
-  textarea {
-    margin: 10px auto;
-
-    width: 220px;
-    padding: 10px;
-    border-radius: 5px;
-    border: 1px solid brown;
-    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.18);
   }
 
   p {
@@ -53,52 +44,46 @@ const StyledForm = styled.div`
 `;
 export const ContactCopmonent = ({
   timeOnChange,
-  selectedTime,
+  dayOnChange,
   time,
   days,
-  dayOnChange,
   selectedDay,
   isTimeAndDateSelected,
+  handleTextFieldChanges,
   isModalOpen,
-  msg,
-  name,
-  ModalOnChange,
-  handleTextFieldChanges
+  ModalOnChange
 }) => {
-  console.log(selectedTime);
-  const uri =
-    "https://wa.me/966544710774?text=" +
-    `
-    *عيادة الدكتور نزار فقية*
-  _حــــجـــز مــــوعــــد_ 
-  ~~~~~~~~~~~~~~~
-   - الأسم 
-${name}
-   - تاريخ الحجز 
-  ${selectedDay}
-  - وقت الحجز 
- ${selectedTime}
-  - الرسالة  
- ${msg}
- ~~~~~~~~~~~~~~~
-سيتم التواصل معك في أقرب وقت ممكن , شكراً لك  
- `;
-  const encdodedURI = encodeURI(uri);
   return (
     <Container center>
       <StyledForm>
         <h1>حجز موعد</h1>
-        <label>الأسم</label>
-        <input type="text" name="name" required id="name" onChange={handleTextFieldChanges} />
-        <DatePicker days={days} dayOnChange={dayOnChange} selectedDay={selectedDay} />
+        <TextField
+          Forlabel={"الأسم"}
+          ForHandleChange={handleTextFieldChanges}
+        />
+
+        <DatePicker
+          days={days}
+          dayOnChange={dayOnChange}
+          selectedDay={selectedDay}
+        />
 
         <TimePicker time={time} timeOnChange={timeOnChange} />
         <label>الرسالة</label>
-        <textarea cols="30" name="msg" type="text" required rows="5" id="msg" onChange={handleTextFieldChanges} />
-        <Button onClick={() => isTimeAndDateSelected(encdodedURI)}>أحجز</Button>
+        <textarea
+          cols="30"
+          name="msg"
+          type="text"
+          required
+          rows="5"
+          placeholder="اكتب معلومات عن الموعد او اي ملاحظة"
+          onChange={handleTextFieldChanges}
+        />
+        <Button onClick={isTimeAndDateSelected}>أحجز</Button>
         {isModalOpen && (
           <DialogModal isModalOpen={isModalOpen} onModalChange={ModalOnChange}>
-            <p>املئ جميع الفراغات</p>
+            <h2>خطأ</h2>
+            <p>الرجاء قم بملئ جميع المعلومات</p>
           </DialogModal>
         )}
       </StyledForm>
@@ -115,24 +100,39 @@ class Contact extends Component {
     isModalOpen: false
   };
 
-  handleTextFieldChanges = event => {
-    console.log(event.currentTarget.value);
-    this.setState({ [event.currentTarget.name]: event.currentTarget.value });
-  };
-  isTimeAndDateSelected = encdodedURI => {
-    const { selectedDay, selectedTime } = this.state;
-    if (!selectedTime || !selectedDay) {
+  isTimeAndDateSelected = () => {
+    const { selectedDay, selectedTime, msg, name } = this.state;
+    if (!selectedTime || !selectedDay || !msg || !name) {
       this.setState({ isModalOpen: true });
     } else {
+      const uri =
+        "https://wa.me/966544710774?text=" +
+        `
+        *عيادة الدكتور نزار فقية*
+      _حــــجـــز مــــوعــــد_ 
+      ~~~~~~~~~~~~~~~
+      ${name} : الأسم  
+      ${selectedDay} : تاريخ الحجز 
+      ${selectedTime} : وقت الحجز 
+      - الرسالة  
+     ${msg}
+     ~~~~~~~~~~~~~~~
+    سيتم التواصل معك في أقرب وقت ممكن , شكراً لك  
+     `;
+      const encdodedURI = encodeURI(uri);
       window.open(encdodedURI);
     }
   };
+
+  handleTextFieldChanges = event =>
+    this.setState({ [event.currentTarget.name]: event.currentTarget.value });
 
   ModalOnChange = () => {
     this.setState({ isModalOpen: !this.state.isModalOpen });
   };
 
-  timeOnChange = value => this.setState({ selectedTime: value.format("h:m A") });
+  timeOnChange = value =>
+    this.setState({ selectedTime: value.format("h:m A") });
 
   dayOnChange = (day, modifiers = {}) => {
     if (modifiers.disabled) return;
@@ -140,7 +140,7 @@ class Contact extends Component {
   };
 
   render() {
-    const { selectedDay, selectedTime, isModalOpen, name, msg } = this.state;
+    const { selectedDay, selectedTime, isModalOpen } = this.state;
     const { time, days } = this.props.data.markdownRemark.frontmatter;
     return (
       <Layout>
@@ -154,8 +154,6 @@ class Contact extends Component {
           days={days}
           isModalOpen={isModalOpen}
           ModalOnChange={this.ModalOnChange}
-          name={name}
-          msg={msg}
           handleTextFieldChanges={this.handleTextFieldChanges}
         />
       </Layout>
