@@ -6,6 +6,7 @@
   "dependencies": {
     "@atlaskit/button": "^9.0.16",
     "@atlaskit/field-base": "^11.0.12",
+    "@atlaskit/modal-dialog": "^7.1.0",
     "antd": "^3.10.9",
     "babel-plugin-styled-components": "^1.9.2",
     "gatsby": "^2.0.59",
@@ -35,6 +36,7 @@
     "react-dom": "^16.6.3",
     "react-flatpickr": "^3.6.4",
     "react-helmet": "^5.2.0",
+    "react-responsive-modal": "^3.5.1",
     "styled-components": "^4.1.2",
     "uglifyjs-webpack-plugin": "^2.0.1",
     "uuid": "^3.2.1"

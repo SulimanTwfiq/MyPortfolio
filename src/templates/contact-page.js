@@ -5,6 +5,7 @@ import { DefaultCard } from "../components/Card";
 import TimePicker from "../components/TimePicker";
 import DatePicker from "../components/DatePicker";
 import Button from "../components/Button";
+import DialogModal from "../components/DialogModal";
 import { graphql } from "gatsby";
 const Container = styled(DefaultCard)`
   display: flex;
@@ -50,15 +51,20 @@ const StyledForm = styled.div`
     }
   }
 `;
-export const ContactCopmonent = ({ timeOnChange, selectedTime, time, days, dayOnChange, ReserveMsg, selectedDay }) => {
-  console.log(selectedDay);
-  console.log(selectedTime);
-  let url =
+export const ContactCopmonent = ({
+  timeOnChange,
+  selectedTime,
+  time,
+  days,
+  dayOnChange,
+  selectedDay
+}) => {
+  const url =
     "https://wa.me/966544710774?text=" +
     `
   *موعد حجز * 
   وقت الحجز
-  ${selectedDay.toLocaleDateString()}
+  ${selectedDay}
  تاريخ الحجز
  ${selectedTime}
  `;
@@ -68,11 +74,15 @@ export const ContactCopmonent = ({ timeOnChange, selectedTime, time, days, dayOn
         <h1>حجز موعد</h1>
         <p>
           <span> حجز المواعيد من الساعة </span>
-          {time.startTime > 12 ? time.startTime - 12 + "مساء " : time.startTime + "صباحاً"}
+          {time.startTime > 12
+            ? time.startTime - 12 + "مساء "
+            : time.startTime + "صباحاً"}
         </p>
         <p>
           <span> إلى الساعة </span>
-          {time.endTime > 12 ? time.endTime - 12 + "مساء " : time.endTime + "صباحاً "}
+          {time.endTime > 12
+            ? time.endTime - 12 + "مساء "
+            : time.endTime + "صباحاً "}
         </p>
         <label htmlFor="name">الأسم</label>
         <input type="text" required id="name" />
@@ -81,9 +91,11 @@ export const ContactCopmonent = ({ timeOnChange, selectedTime, time, days, dayOn
         <TimePicker time={time} timeOnChange={timeOnChange} />
         <label htmlFor="msg">الرسالة</label>
         <textarea cols="30" type="text" required rows="5" id="msg" />
-
-        <a href={url}>احجز</a>
-        <Button onClick={ReserveMsg}>احجززز</Button>
+        <Button
+          onClick={() => !selectedDay && !selectedTime && <DialogModal />}
+        >
+          <a href={url}>احجز</a>
+        </Button>
       </StyledForm>
     </Container>
   );
@@ -94,24 +106,29 @@ class Contact extends Component {
     selectedTime: undefined,
     selectedDay: undefined
   };
-
-  timeOnChange = value => this.setState({ selectedTime: value.format("hh:mm") });
+  /* 
+  isTimeAndDateSelected = () => {
+    if (!selectedTime && !selectedDay) {
+    }
+  }; */
+  timeOnChange = value =>
+    this.setState({ selectedTime: value.format("hh:mm") });
   dayOnChange = (day, modifiers = {}) => {
     if (modifiers.disabled) return;
     this.setState({ selectedDay: modifiers.selected ? undefined : day });
   };
+
   render() {
     const { selectedDay, selectedTime } = this.state;
     const { time, days } = this.props.data.markdownRemark.frontmatter;
-    // console.log(selectedDay && selectedDay.toLocaleDateString());
-    // console.log(this.ReserveMsg);
-    console.log(time);
+
     return (
       <Layout>
         <ContactCopmonent
           timeOnChange={this.timeOnChange}
           dayOnChange={this.dayOnChange}
-          selectedDay={selectedDay}
+          selectedDay={selectedDay && selectedDay.toLocaleDateString("en-US")}
+          selectedTime={selectedTime}
           time={time}
           days={days}
         />
