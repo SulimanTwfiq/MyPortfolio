@@ -1,41 +1,34 @@
 import React from "react";
 import DayPicker from "react-day-picker";
 import "react-day-picker/lib/style.css";
-import styled from "styled-components";
 import MomentLocaleUtils from "react-day-picker/moment";
 
-// Make sure moment.js has the required locale data
 import "moment/locale/ar";
-const SelectedDateDiv = styled.div`
-  background-color: #b2b2b2;
-  color: white;
-`;
-export default class DatePicker extends React.Component {
+class DatePicker extends React.Component {
   render() {
-    const DisabledDaysArray = Object.values(this.props.days).map(
-      (day, index) => day === false && index
-    );
-    const disabledDays = [
-      { daysOfWeek: DisabledDaysArray },
-      { before: new Date() }
-    ];
+    const { selectedDay, dayOnChange, days } = this.props;
+    /*     const DaysInArabic = ["الأحد", "الأثنين", "الثلاثاء", "الأربعاء", "الخميس", "الجمعة", "السبت"].map(
+      (day, index) => days[index] == true
+    ); */
+    const DisabledDaysArray = Object.values(days).map((day, index) => day === false && index);
+    const disabledDays = [{ daysOfWeek: DisabledDaysArray }, { before: new Date() }];
+
     return (
       <>
+        <label>موعد الحجز</label>
+        <span>{selectedDay && selectedDay}</span>
         <DayPicker
           showOutsideDays
-          selectedDays={this.props.selectedDay}
+          selectedDays={selectedDay}
           disabledDays={disabledDays}
-          onDayClick={this.props.dayOnChange}
+          onDayClick={dayOnChange}
           fromMonth={new Date()}
           localeUtils={MomentLocaleUtils}
           locale={"ar"}
         />
-        <SelectedDateDiv>
-          {this.props.selectedDay
-            ? this.props.selectedDay.toLocaleDateString()
-            : " اختار تاريخ الموعد"}
-        </SelectedDateDiv>
       </>
     );
   }
 }
+
+export default DatePicker;

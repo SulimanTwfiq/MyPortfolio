@@ -12,7 +12,11 @@ const StyledFooter = styled.footer`
   p {
     font-size: 0.8rem;
   }
-  a {
+
+  a,
+  a:visited,
+  a:link {
+    color: grey;
     font-size: 0.7rem;
   }
 `;
@@ -26,11 +30,7 @@ const SocialMedia = styled.div`
   img {
     width: 25px;
   }
-  a,
-  a:visited,
-  a:link {
-    color: grey;
-  }
+
   ${media.tablet`
   span {
     padding-right: 20px;
@@ -43,12 +43,12 @@ const SocialMedia = styled.div`
 const Address = styled.div`
   display: flex;
   justify-content: center;
-  background-color: #346764;
+  background-color: #5e7776;
   flex-direction: column;
   align-content: center;
   font-size: 0.8rem;
-  line-height: 1.2;
-  padding: 5px;
+  line-height: 1.4;
+  padding: 10px;
   ${media.tablet`
   display: flex;
   flex-direction:row;

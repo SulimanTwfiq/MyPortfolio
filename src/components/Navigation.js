@@ -79,12 +79,12 @@ export default function Navigation() {
             <li>صحف</li>
           </Link>
           <Link to="/TV">
-            <li>  مقابلات تلفزيونية</li>
+            <li> مقابلات تلفزيونية</li>
           </Link>
           <Link to="/pictures">
             <li>معرض الصور</li>
           </Link>
-          <Link to="/contact">
+          <Link to="/Contact">
             <li>حجز موعد </li>
           </Link>
         </ul>

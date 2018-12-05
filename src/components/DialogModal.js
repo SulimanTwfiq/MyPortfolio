@@ -1,24 +1,12 @@
 import React from "react";
 import Modal from "react-responsive-modal";
 
-export default class DialogModal extends React.Component {
-  state = {
-    open: false
-  };
-
-  onOpenModal = () => {
-    this.setState({ open: true });
-  };
-
-  onCloseModal = () => {
-    this.setState({ open: false });
-  };
-
+export default class ModalComp extends React.Component {
   render() {
-    const { open } = this.state;
+    const { isModalOpen, onModalChange, children } = this.props;
     return (
-      <Modal open={open} onClose={this.onCloseModal} center>
-        <h2>Simple centered modal</h2>
+      <Modal open={isModalOpen} onClose={onModalChange} center>
+        {children}
       </Modal>
     );
   }

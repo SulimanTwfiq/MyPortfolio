@@ -57,45 +57,50 @@ export const ContactCopmonent = ({
   time,
   days,
   dayOnChange,
-  selectedDay
+  selectedDay,
+  isTimeAndDateSelected,
+  isModalOpen,
+  msg,
+  name,
+  ModalOnChange,
+  handleTextFieldChanges
 }) => {
-  const url =
+  console.log(selectedTime);
+  const uri =
     "https://wa.me/966544710774?text=" +
     `
-  *موعد حجز * 
-  وقت الحجز
+    *عيادة الدكتور نزار فقية*
+  _حــــجـــز مــــوعــــد_ 
+  ~~~~~~~~~~~~~~~
+   - الأسم 
+${name}
+   - تاريخ الحجز 
   ${selectedDay}
- تاريخ الحجز
+  - وقت الحجز 
  ${selectedTime}
+  - الرسالة  
+ ${msg}
+ ~~~~~~~~~~~~~~~
+سيتم التواصل معك في أقرب وقت ممكن , شكراً لك  
  `;
+  const encdodedURI = encodeURI(uri);
   return (
     <Container center>
       <StyledForm>
         <h1>حجز موعد</h1>
-        <p>
-          <span> حجز المواعيد من الساعة </span>
-          {time.startTime > 12
-            ? time.startTime - 12 + "مساء "
-            : time.startTime + "صباحاً"}
-        </p>
-        <p>
-          <span> إلى الساعة </span>
-          {time.endTime > 12
-            ? time.endTime - 12 + "مساء "
-            : time.endTime + "صباحاً "}
-        </p>
-        <label htmlFor="name">الأسم</label>
-        <input type="text" required id="name" />
-        <DatePicker days={days} dayOnChange={dayOnChange} />
-        <label htmlFor="time">وقت الحجز</label>
+        <label>الأسم</label>
+        <input type="text" name="name" required id="name" onChange={handleTextFieldChanges} />
+        <DatePicker days={days} dayOnChange={dayOnChange} selectedDay={selectedDay} />
+
         <TimePicker time={time} timeOnChange={timeOnChange} />
-        <label htmlFor="msg">الرسالة</label>
-        <textarea cols="30" type="text" required rows="5" id="msg" />
-        <Button
-          onClick={() => !selectedDay && !selectedTime && <DialogModal />}
-        >
-          <a href={url}>احجز</a>
-        </Button>
+        <label>الرسالة</label>
+        <textarea cols="30" name="msg" type="text" required rows="5" id="msg" onChange={handleTextFieldChanges} />
+        <Button onClick={() => isTimeAndDateSelected(encdodedURI)}>أحجز</Button>
+        {isModalOpen && (
+          <DialogModal isModalOpen={isModalOpen} onModalChange={ModalOnChange}>
+            <p>املئ جميع الفراغات</p>
+          </DialogModal>
+        )}
       </StyledForm>
     </Container>
   );
@@ -104,33 +109,54 @@ export const ContactCopmonent = ({
 class Contact extends Component {
   state = {
     selectedTime: undefined,
-    selectedDay: undefined
+    selectedDay: undefined,
+    name: null,
+    msg: null,
+    isModalOpen: false
   };
-  /* 
-  isTimeAndDateSelected = () => {
-    if (!selectedTime && !selectedDay) {
+
+  handleTextFieldChanges = event => {
+    console.log(event.currentTarget.value);
+    this.setState({ [event.currentTarget.name]: event.currentTarget.value });
+  };
+  isTimeAndDateSelected = encdodedURI => {
+    const { selectedDay, selectedTime } = this.state;
+    if (!selectedTime || !selectedDay) {
+      this.setState({ isModalOpen: true });
+    } else {
+      window.open(encdodedURI);
     }
-  }; */
-  timeOnChange = value =>
-    this.setState({ selectedTime: value.format("hh:mm") });
+  };
+
+  ModalOnChange = () => {
+    this.setState({ isModalOpen: !this.state.isModalOpen });
+  };
+
+  timeOnChange = value => this.setState({ selectedTime: value.format("h:m A") });
+
   dayOnChange = (day, modifiers = {}) => {
     if (modifiers.disabled) return;
     this.setState({ selectedDay: modifiers.selected ? undefined : day });
   };
 
   render() {
-    const { selectedDay, selectedTime } = this.state;
+    const { selectedDay, selectedTime, isModalOpen, name, msg } = this.state;
     const { time, days } = this.props.data.markdownRemark.frontmatter;
-
     return (
       <Layout>
         <ContactCopmonent
           timeOnChange={this.timeOnChange}
           dayOnChange={this.dayOnChange}
+          isTimeAndDateSelected={this.isTimeAndDateSelected}
           selectedDay={selectedDay && selectedDay.toLocaleDateString("en-US")}
           selectedTime={selectedTime}
           time={time}
           days={days}
+          isModalOpen={isModalOpen}
+          ModalOnChange={this.ModalOnChange}
+          name={name}
+          msg={msg}
+          handleTextFieldChanges={this.handleTextFieldChanges}
         />
       </Layout>
     );
