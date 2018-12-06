@@ -5,6 +5,7 @@ import Layout from "../../components/Layout";
 import { graphql } from "gatsby";
 import { DefaultCard } from "../../components/Card";
 import media from "../../components/media";
+import Metatags from "../../components/Metatags";
 
 const Container = styled(DefaultCard)`
   display: grid;
@@ -73,6 +74,10 @@ const Surgeries = () => {
         const { edges: surgeries } = data.allMarkdownRemark;
         return (
           <Layout>
+            <Metatags
+              title={"العمليات الجراحية"}
+              description={"اقسام العيادة"}
+            />
             <SurgeriesComponent surgeries={surgeries} />
           </Layout>
         );

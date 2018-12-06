@@ -1,14 +1,11 @@
 import React from "react";
-import Helmet from "react-helmet";
 import { graphql } from "gatsby";
 import Layout from "../components/Layout";
 import { DefaultCard } from "../components/Card";
-
-export const TVPostTemplate = ({ content, title, helmet }) => {
+import Metatags from "../components/Metatags";
+export const TVPostTemplate = ({ content, title }) => {
   return (
     <DefaultCard>
-      {helmet || ""}
-
       <h2>{title}</h2>
       <div dangerouslySetInnerHTML={{ __html: content }} />
     </DefaultCard>
@@ -20,11 +17,8 @@ const TVPost = ({ data }) => {
 
   return (
     <Layout>
-      <TVPostTemplate
-        content={post.html}
-        helmet={<Helmet title={`${post.frontmatter.title} `} />}
-        title={post.frontmatter.title}
-      />
+      <Metatags title={post.frontmatter.title} description={post.html} />
+      <TVPostTemplate content={post.html} title={post.frontmatter.title} />
     </Layout>
   );
 };

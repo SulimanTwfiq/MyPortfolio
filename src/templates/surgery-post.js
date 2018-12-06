@@ -2,6 +2,7 @@ import React from "react";
 import { graphql } from "gatsby";
 import Layout from "../components/Layout";
 import { DefaultCard } from "../components/Card";
+import Metatags from "../components/Metatags";
 
 export const SurgeryPage = ({ title, content, img }) => {
   return (
@@ -12,6 +13,7 @@ export const SurgeryPage = ({ title, content, img }) => {
         }
       `}
     >
+      <Metatags title={title} description={content} />
       {/* <span> 🡲</span> */}
       <h2> {title} </h2>
       <img src={img} alt={title} />

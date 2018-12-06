@@ -12,7 +12,7 @@ import PicSeven from "../images/beforeANDafter/nizarfakih-7-2-300x282.jpg";
 import PicEight from "../images/beforeANDafter/nizarfakih-8-2-300x208.jpg";
 import PicNine from "../images/beforeANDafter/nizarfakih-9-2-300x225.jpg";
 import PicTen from "../images/beforeANDafter/nizarfakih-10-2-300x225.jpg";
-// import { graphql } from "gatsby";
+import Metatags from "../components/Metatags";
 
 const Container = styled(DefaultCard)`
   display: grid;
@@ -28,6 +28,10 @@ const Container = styled(DefaultCard)`
 
 const Pictures = () => (
   <Layout>
+    <Metatags
+      title={"معرض الصور"}
+      description={"صور لبعض العمليات التي قام بها الدكتور نزار فقية"}
+    />
     <Container>
       <h2>معرض الصور</h2>
       <img src={PicOne} alt="patient" />
@@ -43,11 +47,5 @@ const Pictures = () => (
     </Container>
   </Layout>
 );
-/* 
-export const PicturesQuery=graphql`
-query pictures {
 
-}
-` 
- */
 export default Pictures;

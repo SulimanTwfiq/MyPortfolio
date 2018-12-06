@@ -1,14 +1,11 @@
 import React from "react";
-import Helmet from "react-helmet";
 import { graphql } from "gatsby";
 import Layout from "../components/Layout";
 import { DefaultCard } from "../components/Card";
-
-export const BlogPostTemplate = ({ content, title, helmet, thumbnail }) => {
+import Metatags from "../components/Metatags";
+export const BlogPostTemplate = ({ content, title, thumbnail }) => {
   return (
     <DefaultCard>
-      {helmet || ""}
-
       <h2>{title}</h2>
       <img src={thumbnail} alt={title} />
       <div dangerouslySetInnerHTML={{ __html: content }} />
@@ -21,9 +18,9 @@ const BlogPost = ({ data }) => {
 
   return (
     <Layout>
+      <Metatags title={post.frontmatter.title} description={post.html} />
       <BlogPostTemplate
         content={post.html}
-        helmet={<Helmet title={`${post.frontmatter.title} `} />}
         title={post.frontmatter.title}
         thumbnail={post.frontmatter.thumbnail}
       />

@@ -4,10 +4,12 @@ import styled from "styled-components";
 import { DefaultCard } from "../components/Card";
 import TimePicker from "../components/TimePicker";
 import DatePicker from "../components/DatePicker";
+import Metatags from "../components/Metatags";
 import Button from "../components/Button";
 import DialogModal from "../components/DialogModal";
 import { graphql } from "gatsby";
 import TextField from "../components/TextField";
+
 const Container = styled(DefaultCard)`
   display: flex;
   flex-direction: column;
@@ -55,6 +57,11 @@ export const ContactCopmonent = ({
 }) => {
   return (
     <Container center>
+      <Metatags
+        title={"حجز موعد"}
+        description={" احجز موعدك مع الدكتور نزار فقية"}
+      />
+
       <StyledForm>
         <h1>حجز موعد</h1>
         <TextField
