@@ -37,7 +37,7 @@ export const SurgeriesComponent = ({ surgeries }) => (
     {surgeries.map(({ node: surgery }) => (
       <Link key={surgery.id} to={surgery.fields.slug}>
         <div>
-          <h4>{surgery.frontmatter.title}</h4>
+          <h5>{surgery.frontmatter.title}</h5>
           <img src={surgery.frontmatter.img} alt={surgery.frontmatter.title} />
         </div>
       </Link>

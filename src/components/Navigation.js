@@ -53,7 +53,7 @@ const StyledNav = styled.nav`
       li {
         margin: 15px;
         border: 2px black solid;
-        background-color: #a9edd7;
+        background-color: var(--color-tinary);
         border-radius: 20px;
         padding: 2px;
       }

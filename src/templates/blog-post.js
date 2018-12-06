@@ -4,12 +4,13 @@ import { graphql } from "gatsby";
 import Layout from "../components/Layout";
 import { DefaultCard } from "../components/Card";
 
-export const BlogPostTemplate = ({ content, title, helmet }) => {
+export const BlogPostTemplate = ({ content, title, helmet, thumbnail }) => {
   return (
     <DefaultCard>
       {helmet || ""}
 
-      <h4>{title}</h4>
+      <h2>{title}</h2>
+      <img src={thumbnail} alt={title} />
       <div dangerouslySetInnerHTML={{ __html: content }} />
     </DefaultCard>
   );
@@ -24,6 +25,7 @@ const BlogPost = ({ data }) => {
         content={post.html}
         helmet={<Helmet title={`${post.frontmatter.title} `} />}
         title={post.frontmatter.title}
+        thumbnail={post.frontmatter.thumbnail}
       />
     </Layout>
   );
@@ -40,6 +42,7 @@ export const pageQuery = graphql`
         date(formatString: "MMMM DD, YYYY")
         title
         description
+        thumbnail
       }
     }
   }

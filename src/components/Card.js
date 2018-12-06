@@ -17,15 +17,15 @@ export const DefaultCard = styled.div`
   border: 3px black solid;
   /* margin-top: ${props => (props.noMarginTop ? 0 : -50)}px; */
   border-radius: 10px;
-  background-color: rgb(202, 244, 255);
-  margin-top: -55px;
+    background-color: var(--color-tinary);
+      margin-top: -55px;
 
   h3 {
     color: #658e61;
     margin-top: 20px;
   }
   h2 {
-    color: #026b67;
+    color: #004469;
   }
 
   p {

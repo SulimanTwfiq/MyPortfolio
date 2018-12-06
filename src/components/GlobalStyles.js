@@ -4,8 +4,10 @@ import "../fonts/fonts.css";
 
 const GlobalStyle = createGlobalStyle`
 :root {
-    --primary-color: rgb(0,69,66);
-    --secoundary-color: rgb(0,173,167);
+
+    --color-primary:#4281A4;
+    --color-secoundary: #48A9A6;
+    --color-tinary:#E4DFDA;
     --light: #e5f0ef;
     --box-color: #ababab;
     --shadow: 0 1px 5px rgba(104, 104, 104, 0.8);
@@ -19,8 +21,8 @@ const GlobalStyle = createGlobalStyle`
   html,
   body {
     text-align:center;
-    background-color: var(--light);
-    color: #3b4e3e;
+    background-color: #fdfdfd;
+    color: black;
     font-size:19px;
   }
   a{

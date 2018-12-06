@@ -9,16 +9,19 @@ const StyledHeader = styled.header`
   grid-area: header;
   display: flex;
   flex-direction: column;
-  background-image: linear-gradient(-225deg, #b7f8db 0%, #50a7c2 100%);
+  background-image: linear-gradient(
+    -225deg,
+    white 0%,
+    var(--color-primary) 100%
+  );
   margin-bottom: 20px;
   border-bottom: 4px black solid;
 `;
 
-
 const HeaderContent = styled.div`
   flex: 1;
   line-height: 1.2;
-  color: #026b67;
+  color: black;
   h1 {
     font-size: 2.5rem;
     text-shadow: 1px 3px 7px white;
@@ -44,13 +47,15 @@ const Header = () => (
       <StyledHeader>
         <HeaderContent>
           <Navigation />
-          <h1>د. نزار فقيه</h1>
-          <h4>استشاري جراحة تجميل الأنف و الحنجرة</h4>
+          <h1>د. نزار فقية</h1>
+          <h4>استشاري تجميل و أمراض انف و وجه و رقبة</h4>
           <Link to="/">
-            <Img fixed={data.imageOne.childImageSharp.fixed} alt="د. نزار فقيه" />
+            <Img
+              fixed={data.imageOne.childImageSharp.fixed}
+              alt="د. نزار فقيه"
+            />
           </Link>
         </HeaderContent>
-
       </StyledHeader>
     )}
   />

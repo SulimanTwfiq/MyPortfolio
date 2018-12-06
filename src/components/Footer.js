@@ -6,7 +6,7 @@ import Call from "../images/footer/call.svg";
 import media from "./media";
 const StyledFooter = styled.footer`
   grid-area: footer;
-  background-color: var(--primary-color);
+  background-color: black;
   color: var(--light);
   text-align: center;
   p {
@@ -23,7 +23,7 @@ const StyledFooter = styled.footer`
 const SocialMedia = styled.div`
   display: flex;
   justify-content: center;
-  background-color: #3f5251;
+  background-color: var(--color-primary);
   flex-direction: column;
   align-content: center;
   padding: 10px;
@@ -43,12 +43,15 @@ const SocialMedia = styled.div`
 const Address = styled.div`
   display: flex;
   justify-content: center;
-  background-color: #5e7776;
+  background-color: var(--color-secoundary);
   flex-direction: column;
   align-content: center;
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   line-height: 1.4;
   padding: 10px;
+  span {
+    margin: 0 15px;
+  }
   ${media.tablet`
   display: flex;
   flex-direction:row;
