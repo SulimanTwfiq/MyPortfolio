@@ -9,11 +9,7 @@ const StyledHeader = styled.header`
   grid-area: header;
   display: flex;
   flex-direction: column;
-  background-image: linear-gradient(
-    -225deg,
-    white 0%,
-    var(--color-primary) 100%
-  );
+  background-image: linear-gradient(-225deg, white -119%, var(--color-primary) 121%);
   margin-bottom: 20px;
   border-bottom: 4px black solid;
 `;
@@ -25,9 +21,6 @@ const HeaderContent = styled.div`
   h1 {
     font-size: 2.5rem;
     text-shadow: 1px 3px 7px white;
-  }
-  img {
-    margin-top: 13px;
   }
 `;
 const Header = () => (
@@ -50,10 +43,7 @@ const Header = () => (
           <h1>د. نزار فقية</h1>
           <h4>استشاري تجميل و أمراض انف و وجه و رقبة</h4>
           <Link to="/">
-            <Img
-              fixed={data.imageOne.childImageSharp.fixed}
-              alt="د. نزار فقيه"
-            />
+            <Img fixed={data.imageOne.childImageSharp.fixed} alt="د. نزار فقيه" />
           </Link>
         </HeaderContent>
       </StyledHeader>
