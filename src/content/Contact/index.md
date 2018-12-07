@@ -11,5 +11,6 @@ days:
   thu: true
   tue: true
   wed: false
+phone: بلاباباباب
 ---
 
