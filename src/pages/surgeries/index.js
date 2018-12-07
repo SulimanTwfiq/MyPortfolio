@@ -13,8 +13,13 @@ const Container = styled(DefaultCard)`
   justify-content: center;
   align-content: center;
   text-align: center;
+  padding: 4px;
   img {
-    width: 100px;
+    width: 174px;
+    height: 170px;
+    border-radius: 50px;
+    background-color: white;
+    mix-blend-mode: multiply;
   }
   div {
     margin: 3px;
@@ -50,9 +55,7 @@ const Surgeries = () => {
     <StaticQuery
       query={graphql`
         query SurgeryQuery {
-          allMarkdownRemark(
-            filter: { frontmatter: { templateKey: { eq: "surgery-post" } } }
-          ) {
+          allMarkdownRemark(filter: { frontmatter: { templateKey: { eq: "surgery-post" } } }) {
             edges {
               node {
                 id
@@ -74,10 +77,7 @@ const Surgeries = () => {
         const { edges: surgeries } = data.allMarkdownRemark;
         return (
           <Layout>
-            <Metatags
-              title={"العمليات الجراحية"}
-              description={"اقسام العيادة"}
-            />
+            <Metatags title={"العمليات الجراحية"} description={"اقسام العيادة"} />
             <SurgeriesComponent surgeries={surgeries} />
           </Layout>
         );

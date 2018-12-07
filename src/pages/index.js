@@ -1,6 +1,6 @@
 import React from "react";
 import Layout from "../components/Layout";
-import { SurgeriesComponent as Surgeries } from "./surgeries";
+import { SurgeriesComponent } from "./surgeries";
 import styled from "styled-components";
 import { DefaultCard } from "../components/Card";
 import Metatags from "../components/Metatags";
@@ -26,7 +26,7 @@ const IndexPage = ({ data }) => {
       />
       <StyledSection>
         <CV CVinfo={cvPage} />
-        <Surgeries surgeries={surgeries} />
+        <SurgeriesComponent surgeries={surgeries} />
         <DefaultCard>
           <h2>معرض الصور</h2>
           <h5>شاهد صور المرضى قبل وبعد العمليات التي قام بها الدكتور نزار فقيه</h5>
