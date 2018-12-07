@@ -7,7 +7,7 @@ import media from "./media";
 const StyledFooter = styled.footer`
   grid-area: footer;
   background-color: black;
-  color: var(--light);
+  color: white;
   text-align: center;
   p {
     font-size: 0.8rem;

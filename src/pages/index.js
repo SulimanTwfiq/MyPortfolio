@@ -7,9 +7,17 @@ import Metatags from "../components/Metatags";
 import { graphql } from "gatsby";
 import { Link } from "@reach/router";
 import Button from "../components/Button";
+import media from "../components/media";
 import CV from "../templates/cv-page";
-const StyledSection = styled.div`
+
+const Container = styled.div`
   grid-area: sections;
+  ${media.tablet`
+  > div:nth-child(3) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  `}
 `;
 const IndexPage = ({ data }) => {
   const { edges: surgeries } = data.surgeries;
@@ -24,24 +32,28 @@ const IndexPage = ({ data }) => {
         }
         url={data.site.siteMetadata.siteUrl}
       />
-      <StyledSection>
+      <Container>
         <CV CVinfo={cvPage} />
         <SurgeriesComponent surgeries={surgeries} />
-        <DefaultCard>
-          <h2>معرض الصور</h2>
-          <h5>شاهد صور المرضى قبل وبعد العمليات التي قام بها الدكتور نزار فقيه</h5>
-          <Link to="/pictures">
-            <Button>مشاهدة</Button>
-          </Link>
-        </DefaultCard>
-        <DefaultCard>
-          <h2>حجز موعد</h2>
-          <h5>احجز موعدك مع الدكتور في أقل من دقيقتين</h5>
-          <Link to="/Contact">
-            <Button>احجز</Button>
-          </Link>
-        </DefaultCard>
-      </StyledSection>
+        <div>
+          <DefaultCard>
+            <h2>معرض الصور</h2>
+            <h5>
+              شاهد صور المرضى قبل وبعد العمليات <br /> التي قام بها الدكتور نزار فقيه
+            </h5>
+            <Link to="/pictures">
+              <Button>مشاهدة</Button>
+            </Link>
+          </DefaultCard>
+          <DefaultCard>
+            <h2>حجز موعد</h2>
+            <h5>احجز موعدك مع الدكتور في أقل من دقيقتين</h5>
+            <Link to="/Contact">
+              <Button>احجز</Button>
+            </Link>
+          </DefaultCard>
+        </div>
+      </Container>
     </Layout>
   );
 };

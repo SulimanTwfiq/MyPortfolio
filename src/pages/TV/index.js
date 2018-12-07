@@ -46,9 +46,7 @@ const Blog = () => {
               {interviews.map(({ node: interview }) => (
                 <StyledPost key={interview.id}>
                   <h4>
-                    <Link to={interview.fields.slug}>
-                      {interview.frontmatter.title}
-                    </Link>
+                    <Link to={interview.fields.slug}>{interview.frontmatter.title}</Link>
                   </h4>
                 </StyledPost>
               ))}

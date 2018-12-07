@@ -19,28 +19,24 @@ const disabledHours = (start, end) => {
   return closedHours;
 };
 
-const TimePickerComponent = ({ time, timeOnChange }) => (
+const TimePickerComponent = ({ availableTime, timeOnChange }) => (
   <>
     <label>وقت الحجز</label>
     <p>
       <span>الأوقات المتاحة من الساعة </span>
-      {time.startTime > 12
-        ? time.startTime - 12 + "مساء "
-        : time.startTime + "صباحاً"}
+      {availableTime.startTime > 12 ? availableTime.startTime - 12 + "مساء " : availableTime.startTime + "صباحاً"}
     </p>
     <p>
       <span> إلى الساعة </span>
-      {time.endTime > 12
-        ? time.endTime - 12 + "مساء "
-        : time.endTime + "صباحاً "}
+      {availableTime.endTime > 12 ? availableTime.endTime - 12 + "مساء " : availableTime.endTime + "صباحاً "}
     </p>
     <TimePicker
       onChange={timeOnChange}
-      disabledHours={() => disabledHours(time.startTime, time.endTime)}
+      disabledHours={() => disabledHours(availableTime.startTime, availableTime.endTime)}
       showSecond={false}
       format="h:m A"
       defaultValue={moment()
-        .hour(time.startTime)
+        .hour(availableTime.startTime)
         .minute(0)}
       use12Hours
     />

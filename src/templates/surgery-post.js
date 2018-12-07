@@ -3,17 +3,9 @@ import { graphql } from "gatsby";
 import Layout from "../components/Layout";
 import { DefaultCard } from "../components/Card";
 import Metatags from "../components/Metatags";
-
 export const SurgeryPage = ({ title, content, img }) => {
   return (
-    <DefaultCard
-      css={`
-        img {
-          width: 170px;
-        }
-      `}
-    >
-      <Metatags title={title} description={content} />
+    <DefaultCard>
       {/* <span> 🡲</span> */}
       <h2> {title} </h2>
       <img src={img} alt={title} />
@@ -24,8 +16,11 @@ export const SurgeryPage = ({ title, content, img }) => {
 
 const SurgeryPageTemplate = ({ data }) => {
   const { markdownRemark: post } = data;
+
   return (
     <Layout>
+      <Metatags title={post.frontmatter.title} description={post.frontmatter.description} />
+
       <SurgeryPage
         content={post.html}
         description={post.frontmatter.description}

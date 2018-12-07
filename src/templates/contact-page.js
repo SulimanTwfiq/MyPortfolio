@@ -47,7 +47,7 @@ const StyledForm = styled.div`
 export const ContactCopmonent = ({
   timeOnChange,
   dayOnChange,
-  time,
+  availableTime,
   days,
   selectedDay,
   isTimeAndDateSelected,
@@ -57,25 +57,15 @@ export const ContactCopmonent = ({
 }) => {
   return (
     <Container center>
-      <Metatags
-        title={"حجز موعد"}
-        description={" احجز موعدك مع الدكتور نزار فقية"}
-      />
+      <Metatags title={"حجز موعد"} description={" احجز موعدك مع الدكتور نزار فقية"} />
 
       <StyledForm>
-        <h1>حجز موعد</h1>
-        <TextField
-          Forlabel={"الأسم"}
-          ForHandleChange={handleTextFieldChanges}
-        />
+        <h2>حجز موعد</h2>
+        <TextField Forlabel={"الأسم"} ForHandleChange={handleTextFieldChanges} />
 
-        <DatePicker
-          days={days}
-          dayOnChange={dayOnChange}
-          selectedDay={selectedDay}
-        />
+        <DatePicker days={days} dayOnChange={dayOnChange} selectedDay={selectedDay} />
 
-        <TimePicker time={time} timeOnChange={timeOnChange} />
+        <TimePicker availableTime={availableTime} timeOnChange={timeOnChange} />
         <label>الرسالة</label>
         <textarea
           cols="30"
@@ -131,15 +121,13 @@ class Contact extends Component {
     }
   };
 
-  handleTextFieldChanges = event =>
-    this.setState({ [event.currentTarget.name]: event.currentTarget.value });
+  handleTextFieldChanges = event => this.setState({ [event.currentTarget.name]: event.currentTarget.value });
 
   ModalOnChange = () => {
     this.setState({ isModalOpen: !this.state.isModalOpen });
   };
 
-  timeOnChange = value =>
-    this.setState({ selectedTime: value.format("h:m A") });
+  timeOnChange = value => this.setState({ selectedTime: value.format("h:m A") });
 
   dayOnChange = (day, modifiers = {}) => {
     if (modifiers.disabled) return;
@@ -148,7 +136,7 @@ class Contact extends Component {
 
   render() {
     const { selectedDay, selectedTime, isModalOpen } = this.state;
-    const { time, days } = this.props.data.markdownRemark.frontmatter;
+    const { availableTime, days } = this.props.data.markdownRemark.frontmatter;
     return (
       <Layout>
         <ContactCopmonent
@@ -157,7 +145,7 @@ class Contact extends Component {
           isTimeAndDateSelected={this.isTimeAndDateSelected}
           selectedDay={selectedDay && selectedDay.toLocaleDateString("en-US")}
           selectedTime={selectedTime}
-          time={time}
+          availableTime={availableTime}
           days={days}
           isModalOpen={isModalOpen}
           ModalOnChange={this.ModalOnChange}
@@ -172,7 +160,7 @@ export const ContactPageQuery = graphql`
   query ContactPageTemplate {
     markdownRemark(frontmatter: { templateKey: { eq: "contact-page" } }) {
       frontmatter {
-        time {
+        availableTime {
           endTime
           startTime
         }

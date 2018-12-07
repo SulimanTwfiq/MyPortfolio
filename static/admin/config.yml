@@ -15,12 +15,7 @@ collections:
     create: true
     slug: "{{slug}}"
     fields:
-      - {
-          label: "Template Key",
-          name: "templateKey",
-          widget: "hidden",
-          default: "blog-post",
-        }
+      - { label: "Template Key", name: "templateKey", widget: "hidden", default: "blog-post" }
       - { label: "العنوان", name: "title", widget: "string" }
       - { label: "الصورة", name: "thumbnail", widget: "image", required: false }
       - { label: "تاريخ النشر", name: "date", widget: "datetime" }
@@ -31,13 +26,7 @@ collections:
     create: true
     slug: "{{slug}}"
     fields:
-      - {
-          label: "Template Key",
-          name: "templateKey",
-          widget: "hidden",
-          default: "TV-post",
-          required: false,
-        }
+      - { label: "Template Key", name: "templateKey", widget: "hidden", default: "TV-post", required: false }
       - { label: "العنوان", name: "title", widget: "string", required: false }
       - { label: "المحتوى", name: "body", widget: "markdown", required: false }
   - name: "surgeries"
@@ -46,13 +35,7 @@ collections:
     create: true
     slug: "{{slug}}"
     fields:
-      - {
-          label: "Template Key",
-          name: "templateKey",
-          widget: "hidden",
-          default: "surgery-post",
-          required: false,
-        }
+      - { label: "Template Key", name: "templateKey", widget: "hidden", default: "surgery-post", required: false }
       - { label: "العنوان", name: "title", widget: "string", required: true }
       - { label: "الصورة", name: "img", widget: "image", required: true }
       - { label: "المحتوى", name: "body", widget: "markdown", required: true }
@@ -63,26 +46,16 @@ collections:
         label: "About"
         name: "about"
         fields:
-          - {
-              label: "Template Key",
-              name: "templateKey",
-              widget: "hidden",
-              default: "about-page",
-            }
+          - { label: "Template Key", name: "templateKey", widget: "hidden", default: "about-page" }
           - { label: "Title", name: "title", widget: "string" }
           - { label: "Body", name: "body", widget: "markdown" }
       - file: "src/content/Contact/index.md"
         label: "حجز الموعد"
         name: "contact"
         fields:
-          - {
-              label: "Template Key",
-              name: "templateKey",
-              widget: "hidden",
-              default: "contact-page",
-            }
-          - label: "أوقات الدوام  | يرجى كتابة الأوقات بنظام الـ24 ساعة "
-            name: "time"
+          - { label: "Template Key", name: "templateKey", widget: "hidden", default: "contact-page" }
+          - label: "الأوقات المتاحة للحجز   | يرجى كتابة الأوقات بنظام الـ24 ساعة "
+            name: "availableTime"
             widget: "object"
             fields:
               - label: "يبدى الدوام عند الساعة : "
@@ -105,83 +78,38 @@ collections:
             name: "days"
             widget: "object"
             fields:
-              - {
-                  label: "السبت",
-                  name: "sat",
-                  widget: "boolean",
-                  default: false,
-                  required: true,
-                }
-              - {
-                  label: "الأحد",
-                  name: "sun",
-                  widget: "boolean",
-                  default: false,
-                  required: true,
-                }
-              - {
-                  label: "الأثنين",
-                  name: "mon",
-                  widget: "boolean",
-                  default: false,
-                  required: true,
-                }
-              - {
-                  label: "الثلاثاء",
-                  name: "tue",
-                  widget: "boolean",
-                  default: false,
-                  required: true,
-                }
-              - {
-                  label: "الأربعاء",
-                  name: "wed",
-                  widget: "boolean",
-                  default: false,
-                  required: true,
-                }
-              - {
-                  label: "الخميس",
-                  name: "thu",
-                  widget: "boolean",
-                  default: false,
-                  required: true,
-                }
-              - {
-                  label: "الجمعة",
-                  name: "fri",
-                  widget: "boolean",
-                  default: false,
-                  required: true,
-                }
+              - { label: "السبت", name: "sat", widget: "boolean", default: false, required: true }
+              - { label: "الأحد", name: "sun", widget: "boolean", default: false, required: true }
+              - { label: "الأثنين", name: "mon", widget: "boolean", default: false, required: true }
+              - { label: "الثلاثاء", name: "tue", widget: "boolean", default: false, required: true }
+              - { label: "الأربعاء", name: "wed", widget: "boolean", default: false, required: true }
+              - { label: "الخميس", name: "thu", widget: "boolean", default: false, required: true }
+              - { label: "الجمعة", name: "fri", widget: "boolean", default: false, required: true }
+          - { label: "رقم الجوال الذي ستأتي له رسالة الحجز", name: "phone", widget: "string" }
+          - label: "الأيام المتاحة للحجز "
+            name: "availableDays"
+            widget: "select"
+            multiple: true
+            options:
+              - { label: "السبت", value: "sat" }
+              - { label: "الأحد", value: "sun" }
+              - { label: "الأثنين", value: "1الأثنين" }
+              - { label: "الثلاثاء", value: "2الثلاثاء" }
+              - { label: "الأربعاء", value: "3الأربعاء" }
+              - { label: "الخميس", value: "4الخميس" }
+              - { label: "الجمعة", value: "الجمعة5" }
       - file: "src/content/CV/index.md"
         label: "السيرة الذاتية"
         name: "cv"
         fields:
-          - {
-              label: "Template Key",
-              name: "templateKey",
-              widget: "hidden",
-              default: "cv-page",
-            }
-          - {
-              label: "path",
-              name: "path",
-              widget: "hidden",
-              default: "/cv",
-              required: true,
-            }
+          - { label: "Template Key", name: "templateKey", widget: "hidden", default: "cv-page" }
+          - { label: "path", name: "path", widget: "hidden", default: "/cv", required: true }
           - { label: "Body", name: "body", widget: "markdown" }
       - file: "src/pages/products/index.md"
         label: "Products Page"
         name: "products"
         fields:
-          - {
-              label: "Template Key",
-              name: "templateKey",
-              widget: "hidden",
-              default: "product-page",
-            }
+          - { label: "Template Key", name: "templateKey", widget: "hidden", default: "product-page" }
           - { label: Title, name: title, widget: string }
           - { label: Image, name: image, widget: image }
           - { label: Heading, name: heading, widget: string }
@@ -198,11 +126,7 @@ collections:
                     label: Blurbs,
                     name: blurbs,
                     widget: list,
-                    fields:
-                      [
-                        { label: Image, name: image, widget: image },
-                        { label: Text, name: text, widget: text },
-                      ],
+                    fields: [{ label: Image, name: image, widget: image }, { label: Text, name: text, widget: text }],
                   },
                 ],
             }
@@ -218,31 +142,19 @@ collections:
                     label: Image1,
                     name: image1,
                     widget: object,
-                    fields:
-                      [
-                        { label: Image, name: image, widget: image },
-                        { label: Alt, name: alt, widget: string },
-                      ],
+                    fields: [{ label: Image, name: image, widget: image }, { label: Alt, name: alt, widget: string }],
                   },
                   {
                     label: Image2,
                     name: image2,
                     widget: object,
-                    fields:
-                      [
-                        { label: Image, name: image, widget: image },
-                        { label: Alt, name: alt, widget: string },
-                      ],
+                    fields: [{ label: Image, name: image, widget: image }, { label: Alt, name: alt, widget: string }],
                   },
                   {
                     label: Image3,
                     name: image3,
                     widget: object,
-                    fields:
-                      [
-                        { label: Image, name: image, widget: image },
-                        { label: Alt, name: alt, widget: string },
-                      ],
+                    fields: [{ label: Image, name: image, widget: image }, { label: Alt, name: alt, widget: string }],
                   },
                 ],
             }
@@ -250,11 +162,7 @@ collections:
               label: Testimonials,
               name: testimonials,
               widget: list,
-              fields:
-                [
-                  { label: Quote, name: quote, widget: string },
-                  { label: Author, name: author, widget: string },
-                ],
+              fields: [{ label: Quote, name: quote, widget: string }, { label: Author, name: author, widget: string }],
             }
           - { label: Full_image, name: full_image, widget: image }
           - {
@@ -273,11 +181,7 @@ collections:
                       [
                         { label: Plan, name: plan, widget: string },
                         { label: Price, name: price, widget: string },
-                        {
-                          label: Description,
-                          name: description,
-                          widget: string,
-                        },
+                        { label: Description, name: description, widget: string },
                         { label: Items, name: items, widget: list },
                       ],
                   },

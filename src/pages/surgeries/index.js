@@ -15,9 +15,9 @@ const Container = styled(DefaultCard)`
   text-align: center;
   padding: 4px;
   img {
-    width: 174px;
-    height: 170px;
-    border-radius: 50px;
+    width: 85%;
+    height: 180px;
+    border-radius: 15px;
     background-color: white;
     mix-blend-mode: multiply;
   }

@@ -37,7 +37,8 @@ export const DefaultCard = styled.div`
   }
  
   img{
-    width:100%;
+    height:200px;
+    width:200px
   }
 `;
 export const ContactCard = styled(StyledCard)`

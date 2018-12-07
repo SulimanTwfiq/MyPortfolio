@@ -1,7 +1,7 @@
 import { createGlobalStyle } from "styled-components";
 
 import "../fonts/fonts.css";
-
+import media from "./media";
 const GlobalStyle = createGlobalStyle`
 :root {
 
@@ -14,6 +14,7 @@ const GlobalStyle = createGlobalStyle`
     --light: #e5f0ef;
     --box-color: #ababab;
     --shadow: 0 1px 5px rgba(104, 104, 104, 0.8);
+    --font-size:19px
   }
   *{
     box-sizing: border-box;
@@ -27,6 +28,9 @@ const GlobalStyle = createGlobalStyle`
     color: black;
     font-size:19px;
     background-color: #e8e8e8;
+    ${media.phone`
+        font-size:23px;
+    `}
   }
   a{
     text-decoration: none;
