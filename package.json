@@ -7,7 +7,6 @@
     "@atlaskit/button": "^9.0.16",
     "@atlaskit/field-base": "^11.0.12",
     "@atlaskit/input": "^4.0.9",
-    "antd": "^3.11.0",
     "babel-plugin-styled-components": "^1.9.2",
     "gatsby": "^2.0.63",
     "gatsby-image": "^2.0.22",
@@ -22,21 +21,19 @@
     "gatsby-source-filesystem": "^2.0.11",
     "gatsby-transformer-remark": "^2.1.15",
     "gatsby-transformer-sharp": "^2.1.9",
-    "less": "^3.9.0",
     "lodash": "^4.17.5",
     "lodash-webpack-plugin": "^0.11.4",
     "netlify-cms": "^2.3.0",
     "node-sass": "^4.10.0",
     "parcel-bundler": "^1.10.3",
-    "prop-types": "^15.6.0",
+    "rc-time-picker": "^3.4.0",
     "react": "^16.6.3",
     "react-day-picker": "^7.2.4",
     "react-dom": "^16.6.3",
     "react-helmet": "^5.2.0",
     "react-responsive-modal": "^3.5.1",
     "styled-components": "^4.1.2",
-    "uglifyjs-webpack-plugin": "^2.0.1",
-    "uuid": "^3.2.1"
+    "uglifyjs-webpack-plugin": "^2.0.1"
   },
   "keywords": [
     "gatsby"
