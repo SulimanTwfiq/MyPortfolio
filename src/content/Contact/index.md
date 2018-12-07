@@ -11,6 +11,10 @@ days:
   thu: true
   tue: true
   wed: false
-phone: بلاباباباب
+phone: 0555067869
+airport-code:
+  - الأحد
+  - الثلاثاء
+  - الخميس
 ---
 
