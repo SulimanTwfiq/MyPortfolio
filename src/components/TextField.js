@@ -7,7 +7,7 @@ const TextField = ({ Forlabel, ForHandleChange }) => (
   <>
     <label>{Forlabel}</label>
     <FieldBase isCompact>
-      <Input isEditing onChange={ForHandleChange} />
+      <Input name="name" isEditing onChange={ForHandleChange} />
     </FieldBase>
   </>
 );

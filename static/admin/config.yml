@@ -86,18 +86,6 @@ collections:
               - { label: "الخميس", name: "thu", widget: "boolean", default: false, required: true }
               - { label: "الجمعة", name: "fri", widget: "boolean", default: false, required: true }
           - { label: "رقم الجوال الذي ستأتي له رسالة الحجز", name: "phone", widget: "string" }
-          - label: "الأيام المتاحة للحجز "
-            name: "availableDays"
-            widget: "select"
-            multiple: true
-            options:
-              - { label: "السبت", value: "sat" }
-              - { label: "الأحد", value: "sun" }
-              - { label: "الأثنين", value: "1الأثنين" }
-              - { label: "الثلاثاء", value: "2الثلاثاء" }
-              - { label: "الأربعاء", value: "3الأربعاء" }
-              - { label: "الخميس", value: "4الخميس" }
-              - { label: "الجمعة", value: "الجمعة5" }
       - file: "src/content/CV/index.md"
         label: "السيرة الذاتية"
         name: "cv"

@@ -29,6 +29,7 @@ const StyledForm = styled.div`
 
   p {
     color: grey;
+    font-size: 0.8rem;
   }
   .DayPicker {
     &-wrapper {
@@ -102,22 +103,23 @@ class Contact extends Component {
     if (!selectedTime || !selectedDay || !msg || !name) {
       this.setState({ isModalOpen: true });
     } else {
+      const { phone } = this.props.data.markdownRemark.frontmatter;
+      const CountryCode = "966";
       const uri =
-        "https://wa.me/966544710774?text=" +
+        `https://wa.me/${CountryCode}${phone}?text=` +
         `
         *عيادة الدكتور نزار فقية*
       _حــــجـــز مــــوعــــد_ 
       ~~~~~~~~~~~~~~~
       ${name} : الأسم  
-      ${selectedDay} : تاريخ الحجز 
+      ${selectedDay.toLocaleDateString("en-US")} : تاريخ الحجز 
       ${selectedTime} : وقت الحجز 
       - الرسالة  
      ${msg}
      ~~~~~~~~~~~~~~~
     سيتم التواصل معك في أقرب وقت ممكن , شكراً لك  
      `;
-      const encdodedURI = encodeURI(uri);
-      window.open(encdodedURI);
+      window.open(encodeURI(uri));
     }
   };
 
@@ -135,7 +137,7 @@ class Contact extends Component {
   };
 
   render() {
-    const { selectedDay, selectedTime, isModalOpen } = this.state;
+    const { isModalOpen } = this.state;
     const { availableTime, days } = this.props.data.markdownRemark.frontmatter;
     return (
       <Layout>
@@ -143,8 +145,6 @@ class Contact extends Component {
           timeOnChange={this.timeOnChange}
           dayOnChange={this.dayOnChange}
           isTimeAndDateSelected={this.isTimeAndDateSelected}
-          selectedDay={selectedDay && selectedDay.toLocaleDateString("en-US")}
-          selectedTime={selectedTime}
           availableTime={availableTime}
           days={days}
           isModalOpen={isModalOpen}
@@ -173,6 +173,7 @@ export const ContactPageQuery = graphql`
           fri
           sat
         }
+        phone
       }
     }
   }
