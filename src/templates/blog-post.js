@@ -19,11 +19,7 @@ const BlogPost = ({ data }) => {
   return (
     <Layout>
       <Metatags title={post.frontmatter.title} description={post.html} />
-      <BlogPostTemplate
-        content={post.html}
-        title={post.frontmatter.title}
-        thumbnail={post.frontmatter.thumbnail}
-      />
+      <BlogPostTemplate content={post.html} title={post.frontmatter.title} thumbnail={post.frontmatter.thumbnail} />
     </Layout>
   );
 };
@@ -38,7 +34,6 @@ export const pageQuery = graphql`
       frontmatter {
         date(formatString: "MMMM DD, YYYY")
         title
-        description
         thumbnail
       }
     }

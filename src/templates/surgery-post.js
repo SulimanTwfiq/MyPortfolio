@@ -21,12 +21,7 @@ const SurgeryPageTemplate = ({ data }) => {
     <Layout>
       <Metatags title={post.frontmatter.title} description={post.frontmatter.description} />
 
-      <SurgeryPage
-        content={post.html}
-        description={post.frontmatter.description}
-        title={post.frontmatter.title}
-        img={post.frontmatter.img}
-      />
+      <SurgeryPage content={post.html} title={post.frontmatter.title} img={post.frontmatter.img} />
     </Layout>
   );
 };
@@ -39,7 +34,6 @@ export const SurgeryPageQuery = graphql`
       html
       frontmatter {
         title
-        description
         img
       }
     }

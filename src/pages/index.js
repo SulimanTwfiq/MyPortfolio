@@ -36,18 +36,18 @@ const IndexPage = ({ data }) => {
         <CV CVinfo={cvPage} />
         <SurgeriesComponent surgeries={surgeries} />
         <div>
-          <DefaultCard>
+          <DefaultCard center>
             <h2>معرض الصور</h2>
-            <h5>
+            <p>
               شاهد صور المرضى قبل وبعد العمليات <br /> التي قام بها الدكتور نزار فقيه
-            </h5>
+            </p>
             <Link to="/pictures">
               <Button>مشاهدة</Button>
             </Link>
           </DefaultCard>
-          <DefaultCard>
+          <DefaultCard center>
             <h2>حجز موعد</h2>
-            <h5>احجز موعدك مع الدكتور في أقل من دقيقتين</h5>
+            <p>احجز موعدك مع الدكتور في أقل من دقيقتين</p>
             <Link to="/Contact">
               <Button>احجز</Button>
             </Link>
@@ -70,7 +70,6 @@ export const IndexQuery = graphql`
           frontmatter {
             title
             templateKey
-            description
             img
           }
         }

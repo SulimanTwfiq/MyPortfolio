@@ -15,10 +15,9 @@ export const DefaultCard = styled.div`
   text-align: center;
   margin-bottom: 70px;
   border: 3px black solid;
-  /* margin-top: ${props => (props.noMarginTop ? 0 : -50)}px; */
   border-radius: 10px;
-    background-color: var(--color-tinary);
-      margin-top: -55px;
+  background-color: var(--color-tinary);
+  margin-top: -55px;
 
   h3 {
     color: #658e61;
@@ -35,10 +34,10 @@ export const DefaultCard = styled.div`
   a {
     color: #026b67;
   }
- 
-  img{
-    height:200px;
-    width:200px
+
+  img {
+    height: 200px;
+    width: 200px;
   }
 `;
 export const ContactCard = styled(StyledCard)`
