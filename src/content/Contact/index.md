@@ -13,8 +13,7 @@ days:
   wed: false
 phone: 0555067869
 availableDays:
-  - 0الأحد
-  - 2الثلاثاء
-  - 4الخميس
+  - sat
+  - sun
 ---
 
