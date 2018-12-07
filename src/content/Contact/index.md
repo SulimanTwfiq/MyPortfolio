@@ -1,6 +1,6 @@
 ---
 templateKey: contact-page
-time:
+availableTime:
   endTime: 20
   startTime: 17
 days:
@@ -12,7 +12,7 @@ days:
   tue: true
   wed: false
 phone: 0555067869
-airport-code:
+availableDays:
   - 0الأحد
   - 2الثلاثاء
   - 4الخميس
