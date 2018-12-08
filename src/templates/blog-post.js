@@ -5,7 +5,7 @@ import { DefaultCard } from "../components/Card";
 import Metatags from "../components/Metatags";
 export const BlogPostTemplate = ({ content, title, thumbnail }) => {
   return (
-    <DefaultCard>
+    <DefaultCard as="article">
       <h2>{title}</h2>
       <img src={thumbnail} alt={title} />
       <div dangerouslySetInnerHTML={{ __html: content }} />

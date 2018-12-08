@@ -5,7 +5,7 @@ import { DefaultCard } from "../components/Card";
 import Metatags from "../components/Metatags";
 export const TVPostTemplate = ({ content, title }) => {
   return (
-    <DefaultCard>
+    <DefaultCard as="article">
       <h2>{title}</h2>
       <div dangerouslySetInnerHTML={{ __html: content }} />
     </DefaultCard>

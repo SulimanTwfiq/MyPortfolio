@@ -7,7 +7,7 @@ export const StyledCard = styled.div`
   border-image-slice: 1;
 `;
 
-export const DefaultCard = styled.div`
+export const DefaultCard = styled.article`
   position: relative;
   padding: 10px;
   line-height: 1.5;

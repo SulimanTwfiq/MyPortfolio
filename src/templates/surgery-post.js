@@ -5,7 +5,7 @@ import { DefaultCard } from "../components/Card";
 import Metatags from "../components/Metatags";
 export const SurgeryPage = ({ title, content, img }) => {
   return (
-    <DefaultCard>
+    <DefaultCard as="article">
       {/* <span> 🡲</span> */}
       <h2> {title} </h2>
       <img src={img} alt={title} />

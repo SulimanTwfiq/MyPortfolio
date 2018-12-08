@@ -73,14 +73,11 @@ const Blog = () => {
           <Layout>
             <DefaultCard center>
               {posts.map(({ node: post }) => (
-                <StyledPost key={post.id}>
+                <StyledPost as="article" key={post.id}>
                   <h4>
                     <Link to={post.fields.slug}>{post.frontmatter.title}</Link>
                   </h4>
-                  <img
-                    src={post.frontmatter.thumbnail}
-                    alt={post.frontmatter.title}
-                  />
+                  <img src={post.frontmatter.thumbnail} alt={post.frontmatter.title} />
                   <p>{post.excerpt}</p>
                 </StyledPost>
               ))}

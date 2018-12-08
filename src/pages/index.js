@@ -19,6 +19,16 @@ const Container = styled.div`
   }
   `}
 `;
+const SmallSection = ({ title, children, linkTo, buttonTitle }) => (
+  <DefaultCard as="section" center>
+    <h2>{title}</h2>
+    <p>{children}</p>
+    <Link to={`${linkTo}`}>
+      <Button>{buttonTitle}</Button>
+    </Link>
+  </DefaultCard>
+);
+
 const IndexPage = ({ data }) => {
   const { edges: surgeries } = data.surgeries;
   const { cvPage } = data;
@@ -36,22 +46,12 @@ const IndexPage = ({ data }) => {
         <CV CVinfo={cvPage} />
         <SurgeriesComponent surgeries={surgeries} />
         <div>
-          <DefaultCard center>
-            <h2>معرض الصور</h2>
-            <p>
-              شاهد صور المرضى قبل وبعد العمليات <br /> التي قام بها الدكتور نزار فقيه
-            </p>
-            <Link to="/pictures">
-              <Button>مشاهدة</Button>
-            </Link>
-          </DefaultCard>
-          <DefaultCard center>
-            <h2>حجز موعد</h2>
-            <p>احجز موعدك مع الدكتور في أقل من دقيقتين</p>
-            <Link to="/Contact">
-              <Button>احجز</Button>
-            </Link>
-          </DefaultCard>
+          <SmallSection title="معرض الصور" linkTo="pictures" buttonTitle="مشاهدة">
+            شاهد صور المرضى قبل وبعد العمليات <br /> التي قام بها الدكتور نزار فقي{" "}
+          </SmallSection>
+          <SmallSection title="حجز موعد" linkTo="Contact" buttonTitle="احجز">
+            احجز موعدك مع الدكتور في أقل من دقيقتين
+          </SmallSection>
         </div>
       </Container>
     </Layout>

@@ -4,10 +4,8 @@ import { DefaultCard } from "../components/Card";
 export const CV = ({ CVinfo }) =>
   CVinfo ? (
     <DefaultCard center>
-      <div>
-        <h2>السيرة الذاتية</h2>
-        <div dangerouslySetInnerHTML={{ __html: CVinfo.html }} />
-      </div>
+      <h2>السيرة الذاتية</h2>
+      <p dangerouslySetInnerHTML={{ __html: CVinfo.html }} />
     </DefaultCard>
   ) : (
     <p>صفحة غير موجودة</p>

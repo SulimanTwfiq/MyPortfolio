@@ -40,7 +40,7 @@ const Container = styled(DefaultCard)`
 const Pictures = () => (
   <Layout>
     <Metatags title={"معرض الصور"} description={"صور لبعض العمليات التي قام بها الدكتور نزار فقية"} />
-    <Container>
+    <Container as="section">
       <figure>
         <img src={Office} alt="في المكتب" />
         <figcaption>معرض الصور</figcaption>

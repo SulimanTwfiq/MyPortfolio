@@ -44,7 +44,7 @@ const Blog = () => {
           <Layout>
             <DefaultCard center>
               {interviews.map(({ node: interview }) => (
-                <StyledPost key={interview.id}>
+                <StyledPost as="article" key={interview.id}>
                   <h4>
                     <Link to={interview.fields.slug}>{interview.frontmatter.title}</Link>
                   </h4>

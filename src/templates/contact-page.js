@@ -17,7 +17,7 @@ const Container = styled(DefaultCard)`
   align-content: center;
 `;
 
-const StyledForm = styled.div`
+const StyledForm = styled.form`
   display: flex;
   flex-direction: column;
 
@@ -57,7 +57,7 @@ export const ContactCopmonent = ({
   ModalOnChange
 }) => {
   return (
-    <Container center>
+    <Container as="section" center>
       <Metatags title={"حجز موعد"} description={" احجز موعدك مع الدكتور نزار فقية"} />
 
       <StyledForm>

@@ -14,20 +14,20 @@ const Container = styled(DefaultCard)`
   align-content: center;
   text-align: center;
   padding: 4px;
-  img {
-    width: 85%;
-    height: 160px;
-    border-radius: 15px;
-    background-color: white;
-    mix-blend-mode: multiply;
-  }
-  div {
+
+  figure {
     margin: 3px;
     margin-bottom: 20px;
     background-color: rgba(255, 255, 255, 0.3);
     border-radius: 36px;
     border-bottom: 2px rgba(255, 255, 255, 0.7) solid;
-    padding: 5px 2px;
+    img {
+      width: 85%;
+      height: 160px;
+      border-radius: 15px;
+      background-color: white;
+      mix-blend-mode: multiply;
+    }
   }
   h2 {
     grid-column: 1/-1;
@@ -41,11 +41,11 @@ export const SurgeriesComponent = ({ surgeries }) => (
   <Container>
     <h2>العمليات الجراحية</h2>
     {surgeries.map(({ node: surgery }) => (
-      <Link key={surgery.id} to={surgery.fields.slug}>
-        <div>
-          <h5>{surgery.frontmatter.title}</h5>
+      <Link as="article" key={surgery.id} to={surgery.fields.slug}>
+        <figure>
+          <figcaption>{surgery.frontmatter.title}</figcaption>
           <img src={surgery.frontmatter.img} alt={surgery.frontmatter.title} />
-        </div>
+        </figure>
       </Link>
     ))}
   </Container>
