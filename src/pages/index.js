@@ -60,7 +60,10 @@ const IndexPage = ({ data }) => {
 
 export const IndexQuery = graphql`
   query IndexQuery {
-    surgeries: allMarkdownRemark(filter: { frontmatter: { templateKey: { eq: "surgery-post" } } }) {
+    surgeries: allMarkdownRemark(
+      sort: { order: DESC, fields: [frontmatter___date] }
+      filter: { frontmatter: { templateKey: { eq: "surgery-post" } } }
+    ) {
       edges {
         node {
           id
