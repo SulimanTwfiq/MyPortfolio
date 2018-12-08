@@ -16,7 +16,7 @@ const Container = styled(DefaultCard)`
   padding: 4px;
   img {
     width: 85%;
-    height: 180px;
+    height: 160px;
     border-radius: 15px;
     background-color: white;
     mix-blend-mode: multiply;
@@ -55,7 +55,10 @@ const Surgeries = () => {
     <StaticQuery
       query={graphql`
         query SurgeryQuery {
-          allMarkdownRemark(filter: { frontmatter: { templateKey: { eq: "surgery-post" } } }) {
+          allMarkdownRemark(
+            sort: { order: DESC, fields: [frontmatter___date] }
+            filter: { frontmatter: { templateKey: { eq: "surgery-post" } } }
+          ) {
             edges {
               node {
                 id
