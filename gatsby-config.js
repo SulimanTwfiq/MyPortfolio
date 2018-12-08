@@ -28,6 +28,18 @@ module.exports = {
       }
     },
     "gatsby-plugin-sharp",
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `الدكتور نزار فقية`,
+        short_name: `د.نزار فقية`,
+        start_url: `/`,
+        background_color: `#f7f0eb`,
+        theme_color: `#a2466c`,
+        display: `dr.nizar`,
+        icon: `src/images/logo.png` // This path is relative to the root of the site.
+      }
+    },
     "gatsby-transformer-sharp",
     {
       resolve: "gatsby-transformer-remark",
@@ -49,7 +61,8 @@ module.exports = {
       }
     },
     "gatsby-plugin-styled-components",
-
+    "gatsby-plugin-sitemap",
+    "gatsby-plugin-offline",
     "gatsby-plugin-netlify" // make sure to keep it last in the array
   ]
 };
