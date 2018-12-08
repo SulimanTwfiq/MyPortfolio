@@ -35,8 +35,8 @@ module.exports = {
         short_name: `د.نزار فقية`,
         start_url: `/`,
         background_color: `#f7f0eb`,
-        theme_color: `#a2466c`,
-        display: `dr.nizar`,
+        theme_color: `#84E3D2`,
+        display: `standalone`,
         icon: `src/images/logo.png` // This path is relative to the root of the site.
       }
     },
