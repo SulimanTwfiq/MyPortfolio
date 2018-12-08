@@ -12,6 +12,7 @@ import PicSeven from "../images/beforeANDafter/nizarfakih-7-2-300x282.jpg";
 import PicEight from "../images/beforeANDafter/nizarfakih-8-2-300x208.jpg";
 import PicNine from "../images/beforeANDafter/nizarfakih-9-2-300x225.jpg";
 import PicTen from "../images/beforeANDafter/nizarfakih-10-2-300x225.jpg";
+import Office from "../images/in-office.jpeg";
 import Metatags from "../components/Metatags";
 
 const Container = styled(DefaultCard)`
@@ -21,19 +22,29 @@ const Container = styled(DefaultCard)`
   justify-items: center;
   overflow: hidden;
   grid-gap: 40px;
-  h2 {
+  padding: 0px;
+  figure {
     grid-column: 1/-1;
+    img {
+      height: 360px;
+      width: 100%;
+    }
+    figcaption {
+      margin-top: -68px;
+      font-size: 1.89rem;
+      color: aliceblue;
+    }
   }
 `;
 
 const Pictures = () => (
   <Layout>
-    <Metatags
-      title={"معرض الصور"}
-      description={"صور لبعض العمليات التي قام بها الدكتور نزار فقية"}
-    />
+    <Metatags title={"معرض الصور"} description={"صور لبعض العمليات التي قام بها الدكتور نزار فقية"} />
     <Container>
-      <h2>معرض الصور</h2>
+      <figure>
+        <img src={Office} alt="في المكتب" />
+        <figcaption>معرض الصور</figcaption>
+      </figure>
       <img src={PicOne} alt="patient" />
       <img src={PicTwo} alt="patient" />
       <img src={PicThree} alt="patient" />
