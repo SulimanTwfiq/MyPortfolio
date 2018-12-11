@@ -1,5 +1,5 @@
 import React from "react";
-import Layout from "../components/Layout";
+import Layout from "../templates/Layout";
 import styled from "styled-components";
 import { DefaultCard } from "../components/Card";
 import PicOne from "../images/beforeANDafter/nizarfakih-1-2-300x300.png";

@@ -12,8 +12,4 @@ days:
   tue: true
   wed: false
 phone: 0555067869
-availableDays:
-  - sat
-  - sun
 ---
-

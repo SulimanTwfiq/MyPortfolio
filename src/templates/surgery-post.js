@@ -1,6 +1,6 @@
 import React from "react";
 import { graphql } from "gatsby";
-import Layout from "../components/Layout";
+import Layout from "./Layout";
 import { DefaultCard } from "../components/Card";
 import Metatags from "../components/Metatags";
 export const SurgeryPage = ({ title, content, img }) => {

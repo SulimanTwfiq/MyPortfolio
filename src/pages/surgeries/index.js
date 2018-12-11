@@ -1,7 +1,7 @@
 import React from "react";
 import { Link, StaticQuery } from "gatsby";
 import styled from "styled-components";
-import Layout from "../../components/Layout";
+import Layout from "../../templates/Layout";
 import { graphql } from "gatsby";
 import { DefaultCard } from "../../components/Card";
 import media from "../../components/media";

@@ -1,5 +1,5 @@
 import React from "react";
-import Layout from "../components/Layout";
+import Layout from "../templates/Layout";
 import { SurgeriesComponent } from "./surgeries";
 import styled from "styled-components";
 import { DefaultCard } from "../components/Card";

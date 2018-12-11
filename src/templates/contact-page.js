@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Layout from "../components/Layout";
+import Layout from "./Layout";
 import styled from "styled-components";
 import { DefaultCard } from "../components/Card";
 import TimePicker from "../components/TimePicker";
@@ -124,20 +124,14 @@ class Contact extends Component {
   };
 
   handleTextFieldChanges = event => this.setState({ [event.currentTarget.name]: event.currentTarget.value });
-
-  ModalOnChange = () => {
-    this.setState({ isModalOpen: !this.state.isModalOpen });
-  };
-
+  ModalOnChange = () => this.setState({ isModalOpen: !this.state.isModalOpen });
   timeOnChange = value => this.setState({ selectedTime: value.format("h:m A") });
-
   dayOnChange = (day, modifiers = {}) => {
     if (modifiers.disabled) return;
     this.setState({ selectedDay: modifiers.selected ? undefined : day });
   };
-
   render() {
-    const { isModalOpen } = this.state;
+    const { isModalOpen, selectedDay } = this.state;
     const { availableTime, days } = this.props.data.markdownRemark.frontmatter;
     return (
       <Layout>
@@ -147,6 +141,7 @@ class Contact extends Component {
           isTimeAndDateSelected={this.isTimeAndDateSelected}
           availableTime={availableTime}
           days={days}
+          selectedDay={selectedDay && selectedDay.toLocaleDateString("en-US")}
           isModalOpen={isModalOpen}
           ModalOnChange={this.ModalOnChange}
           handleTextFieldChanges={this.handleTextFieldChanges}
