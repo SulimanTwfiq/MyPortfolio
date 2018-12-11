@@ -73,11 +73,11 @@ const Footer = () => (
       </span>
       <span>
         <img src={Whatsapp} alt="" />
-        0505580358
+        00966549818686
       </span>
       <span>
         <img src={Call} alt="" />
-        0549818686
+        00966555067869
       </span>
     </SocialMedia>
     <p>
