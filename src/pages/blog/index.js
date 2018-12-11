@@ -59,7 +59,7 @@ const Blog = () => {
                   title
                   templateKey
                   thumbnail
-                  date(formatString: "MMMM DD, YYYY")
+                  date
                 }
               }
             }

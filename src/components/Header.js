@@ -23,7 +23,7 @@ const HeaderContent = styled.div`
     text-shadow: 1px 3px 7px white;
   }
 `;
-const Header = () => (
+const Header = ({ shortDesc }) => (
   <StaticQuery
     query={graphql`
       query HeadingQuery {
@@ -41,7 +41,7 @@ const Header = () => (
         <HeaderContent>
           <Navigation />
           <h1>د. نزار فقية</h1>
-          <h4>استشاري تجميل و أمراض انف و وجه و رقبة</h4>
+          <p>{shortDesc}</p>
           <Link to="/">
             <Img fixed={data.imageOne.childImageSharp.fixed} alt="د. نزار فقيه" />
           </Link>

@@ -92,15 +92,12 @@ collections:
         name: "Layout"
         fields:
           - { label: "Template Key", name: "templateKey", widget: "hidden", default: "Layout" }
-          - { label: "Body", name: "body", widget: "markdown" }
-          - label: "Testimonials"
-            name: "testimonials"
+          - { label: "عنوان المستشفى", name: "Address", widget: "text" }
+          - { label: "الحقوق", name: "rights", widget: "text" }
+          - { label: "وصف مختصر تحت أسم الدكتور", name: "shortDesc", widget: "string" }
+          - label: "معلومات التواصل"
+            name: "contactInfo"
             widget: "list"
             fields:
-              - { label: Quote, name: quote, widget: string, default: "Everything is awesome!" }
-              - label: Author
-                name: author
-                widget: object
-                fields:
-                  - { label: Name, name: name, widget: string, default: "Emmet" }
-                  - { label: Avatar, name: avatar, widget: image, default: "/img/emmet.jpg" }
+              - { label: وسيلة التواصل | مثلاً رقم الجوال او موقع تواصل اجتماعي, name: name, widget: string }
+              - { label: الشعار, name: logo, widget: image }

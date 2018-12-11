@@ -32,7 +32,6 @@ const SmallSection = ({ title, children, linkTo, buttonTitle }) => (
 const IndexPage = ({ data }) => {
   const { edges: surgeries } = data.surgeries;
   const { cvPage } = data;
-  console.log(cvPage.html);
   return (
     <Layout>
       <Metatags

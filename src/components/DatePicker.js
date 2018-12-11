@@ -9,7 +9,6 @@ class DatePicker extends React.Component {
     /*     const DaysInArabic = ["الأحد", "الأثنين", "الثلاثاء", "الأربعاء", "الخميس", "الجمعة", "السبت"].map(
       (day, index) => days[index] == true
     ); */
-    console.log(selectedDay);
     const DisabledDaysArray = Object.values(days).map((day, index) => day === false && index);
     const disabledDays = [{ daysOfWeek: DisabledDaysArray }, { before: new Date() }];
 
