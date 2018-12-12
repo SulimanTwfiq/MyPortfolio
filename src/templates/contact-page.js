@@ -58,7 +58,7 @@ export const ContactCopmonent = ({
 }) => {
   return (
     <Container as="section" center>
-      <Metatags title={"حجز موعد"} description={" احجز موعدك مع الدكتور نزار فقية"} />
+      <Metatags title={"حجز موعد"} description={" احجز موعدك مع الدكتور نزار فقيه"} />
 
       <StyledForm>
         <h2>حجز موعد</h2>
@@ -108,7 +108,7 @@ class Contact extends Component {
       const uri =
         `https://wa.me/${CountryCode}${phone}?text=` +
         `
-        *عيادة الدكتور نزار فقية*
+        *عيادة الدكتور نزار فقيه*
       _حــــجـــز مــــوعــــد_ 
       ~~~~~~~~~~~~~~~
       ${name} : الأسم  

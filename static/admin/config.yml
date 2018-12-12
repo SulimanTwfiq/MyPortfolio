@@ -4,6 +4,8 @@ backend:
 
 media_folder: static/img
 public_folder: /img
+display_url: https://www.drnizarfakih.com
+logo_url: http://drnizar.netlify.com/images/logo.png
 
 editor:
   preview: false

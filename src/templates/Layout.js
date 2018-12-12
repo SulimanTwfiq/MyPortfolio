@@ -41,7 +41,7 @@ const Layout = ({ children }) => (
           <GlobalStyles />
           <Helmet>
             <meta charSet="utf-8" />
-            <title>دكتور نزار فقية</title>
+            <title>دكتور نزار فقيه</title>
             <html lang="ar" dir="rtl" />
           </Helmet>
           <Container>

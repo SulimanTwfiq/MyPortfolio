@@ -40,7 +40,7 @@ const Header = ({ shortDesc }) => (
       <StyledHeader>
         <HeaderContent>
           <Navigation />
-          <h1>د. نزار فقية</h1>
+          <h1>د. نزار فقيه</h1>
           <p>{shortDesc && shortDesc}</p>
           <Link to="/">
             <Img fixed={data.imageOne.childImageSharp.fixed} alt="د. نزار فقيه" />

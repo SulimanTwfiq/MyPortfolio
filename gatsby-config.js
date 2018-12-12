@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: "الدكتور نزار فقية",
+    title: "الدكتور نزار فقيه",
     siteUrl: "https://www.drnizarfakih.com/"
   },
   plugins: [
@@ -30,8 +30,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `الدكتور نزار فقية`,
-        short_name: `د.نزار فقية`,
+        name: `الدكتور نزار فقيه`,
+        short_name: `د.نزار فقيه`,
         start_url: `/`,
         background_color: `#f7f0eb`,
         theme_color: `#84E3D2`,
