@@ -28,6 +28,7 @@ const Layout = ({ children }) => (
             shortDesc
             contactInfo {
               name
+              logo
             }
           }
         }
@@ -35,7 +36,6 @@ const Layout = ({ children }) => (
     `}
     render={data => {
       const { shortDesc, Address, rights, contactInfo } = data.markdownRemark.frontmatter;
-      console.log(Address);
       return (
         <>
           <GlobalStyles />
