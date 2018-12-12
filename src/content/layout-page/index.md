@@ -10,7 +10,11 @@ rights: |-
   استشاري جراحة تجميل الأنف والوجه
 shortDesc: استشاري تجميل و أمراض انف و وجه و رقبة
 contactInfo:
-  - name: Dranfakih2013
-  - name: 00966549818686
-  - name: 00966555067869
+  - logo: /img/skype.svg
+    name: Dranfakih2013
+  - logo: /img/whatsapp.svg
+    name: 00966549818686
+  - logo: /img/call.svg
+    name: 00966555067869
 ---
+
