@@ -1,6 +1,6 @@
 import React from "react";
 
-import FieldBase, { Label } from "@atlaskit/field-base";
+import FieldBase from "@atlaskit/field-base";
 import Input from "@atlaskit/input";
 
 const TextField = ({ Forlabel, ForHandleChange }) => (

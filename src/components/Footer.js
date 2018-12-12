@@ -1,15 +1,12 @@
 import React from "react";
 import styled from "styled-components";
-import Whatsapp from "../images/footer/whatsapp.svg";
-import Skype from "../images/footer/skype.svg";
-import Call from "../images/footer/call.svg";
 import media from "./media";
 const StyledFooter = styled.footer`
   grid-area: footer;
   background-color: black;
   color: white;
   text-align: center;
-  p {
+  pre {
     font-size: 0.8rem;
   }
 
@@ -49,26 +46,24 @@ const Address = styled.div`
   font-size: 0.9rem;
   line-height: 1.4;
   padding: 10px;
-  span {
-    margin: 0 15px;
+  pre {
+    font-size: 0.8rem;
   }
-  ${media.tablet`
-  display: flex;
-  flex-direction:row;
-  `};
 `;
 
-const Footer = () => (
+const Footer = ({ AddressInfo, rights, contactInfo }) => (
   <StyledFooter>
     <Address>
       <h3> العنوان</h3>
-      <span>مجمع محمد فقيه الطبية</span>
-      <span>شارع التحلية</span>
-      <span>خلف مركز لامول</span>
-      <span>جده السعودية</span>
+      <pre>{AddressInfo}</pre>
     </Address>
     <SocialMedia>
-      <span>
+      {contactInfo.map(({ name, logo }) => (
+        <span>
+          <img src={logo} alt={name} /> {name}
+        </span>
+      ))}
+      {/*  <span>
         <img src={Skype} alt="" /> Dranfakih2013
       </span>
       <span>
@@ -78,12 +73,9 @@ const Footer = () => (
       <span>
         <img src={Call} alt="" />
         00966555067869
-      </span>
+      </span> */}
     </SocialMedia>
-    <p>
-      جميع الحقوق محفوظة د.نزار فقيه <br />
-      استشاري جراحة تجميل الأنف والوجه
-    </p>
+    <pre>{rights}</pre>
     <a href="https://www.sulimantwfiq.com">تصميم سليمان توفيق</a>
   </StyledFooter>
 );
