@@ -8,7 +8,7 @@ import { graphql } from "gatsby";
 import { Link } from "@reach/router";
 import Button from "../components/Button";
 import media from "../components/media";
-import CVcomp from "../components/sections/CV";
+import CV from "../components/sections/CV";
 
 const Container = styled.div`
   grid-area: sections;
@@ -31,7 +31,7 @@ const SmallSection = ({ title, children, linkTo, buttonTitle }) => (
 
 const IndexPage = ({ data }) => {
   const { edges: surgeries } = data.surgeries;
-  const { CV } = data;
+  const { CV: CVinfo } = data.CV.frontmatter;
   return (
     <Layout>
       <Metatags
@@ -42,11 +42,11 @@ const IndexPage = ({ data }) => {
         url={data.site.siteMetadata.siteUrl}
       />
       <Container>
-        <CVcomp CVinfo={CV} />
+        <CV CVinfo={CVinfo} />
         <SurgeriesComponent surgeries={surgeries} />
         <div>
           <SmallSection title="معرض الصور" linkTo="pictures" buttonTitle="مشاهدة">
-            شاهد صور المرضى قبل وبعد العمليات <br /> التي قام بها الدكتور نزار فقي{" "}
+            شاهد صور المرضى قبل وبعد العمليات <br /> التي قام بها الدكتور نزار فقي
           </SmallSection>
           <SmallSection title="حجز موعد" linkTo="Contact" buttonTitle="احجز">
             احجز موعدك مع الدكتور في أقل من دقيقتين

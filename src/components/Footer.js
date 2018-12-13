@@ -59,21 +59,10 @@ const Footer = ({ AddressInfo, rights, contactInfo }) => (
     </Address>
     <SocialMedia>
       {contactInfo.map(({ name, logo }) => (
-        <span>
+        <span key={name}>
           <img src={logo} alt={name} /> {name}
         </span>
       ))}
-      {/*  <span>
-        <img src={Skype} alt="" /> Dranfakih2013
-      </span>
-      <span>
-        <img src={Whatsapp} alt="" />
-        00966549818686
-      </span>
-      <span>
-        <img src={Call} alt="" />
-        00966555067869
-      </span> */}
     </SocialMedia>
     <pre>{rights}</pre>
     <a href="https://www.sulimantwfiq.com">تصميم سليمان توفيق</a>
