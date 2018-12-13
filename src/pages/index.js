@@ -8,7 +8,7 @@ import { graphql } from "gatsby";
 import { Link } from "@reach/router";
 import Button from "../components/Button";
 import media from "../components/media";
-import CV from "../templates/cv-page";
+import CV from "../components/sections/CV";
 
 const Container = styled.div`
   grid-area: sections;
@@ -31,7 +31,7 @@ const SmallSection = ({ title, children, linkTo, buttonTitle }) => (
 
 const IndexPage = ({ data }) => {
   const { edges: surgeries } = data.surgeries;
-  const { cvPage } = data;
+  const { CV } = data;
   return (
     <Layout>
       <Metatags
@@ -42,7 +42,7 @@ const IndexPage = ({ data }) => {
         url={data.site.siteMetadata.siteUrl}
       />
       <Container>
-        <CV CVinfo={cvPage} />
+        <CV CVinfo={CV} />
         <SurgeriesComponent surgeries={surgeries} />
         <div>
           <SmallSection title="معرض الصور" linkTo="pictures" buttonTitle="مشاهدة">
@@ -78,8 +78,10 @@ export const IndexQuery = graphql`
       }
     }
 
-    cvPage: markdownRemark(frontmatter: { path: { eq: "/cv" } }) {
-      html
+    CV: markdownRemark(frontmatter: { templateKey: { eq: "Layout" } }) {
+      frontmatter {
+        CV
+      }
     }
 
     site: site {

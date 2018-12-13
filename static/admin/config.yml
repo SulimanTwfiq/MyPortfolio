@@ -6,7 +6,6 @@ media_folder: static/img
 public_folder: /img
 display_url: https://www.drnizarfakih.com
 logo_url: http://drnizar.netlify.com/images/logo.png
-
 editor:
   preview: false
 
@@ -82,20 +81,14 @@ collections:
               - { label: "الخميس", name: "thu", widget: "boolean", default: false, required: true }
               - { label: "الجمعة", name: "fri", widget: "boolean", default: false, required: true }
           - { label: "رقم الجوال الذي ستأتي له رسالة الحجز", name: "phone", widget: "string" }
-      - file: "src/content/CV/index.md"
-        label: "السيرة الذاتية"
-        name: "cv"
-        fields:
-          - { label: "Template Key", name: "templateKey", widget: "hidden", default: "cv-page" }
-          - { label: "path", name: "path", widget: "hidden", default: "/cv", required: true }
-          - { label: "Body", name: "body", widget: "markdown" }
       - file: "src/content/layout-page/index.md"
         label: "معلومات عامة"
         name: "Layout"
         fields:
           - { label: "Template Key", name: "templateKey", widget: "hidden", default: "Layout" }
-          - { label: "عنوان المستشفى", name: "Address", widget: "text" }
+          - { label: "عنوان العيادة", name: "Address", widget: "text" }
           - { label: "الحقوق", name: "rights", widget: "text" }
+          - { label: "السيرة الذاتية", name: "CV", widget: "text" }
           - { label: "وصف مختصر تحت أسم الدكتور", name: "shortDesc", widget: "string" }
           - label: "معلومات التواصل"
             name: "contactInfo"
