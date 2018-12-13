@@ -43,6 +43,7 @@ const Layout = ({ children }) => (
             <meta charSet="utf-8" />
             <title>دكتور نزار فقيه</title>
             <html lang="ar" dir="rtl" />
+            <meta name="google-site-verification" content="mm2XlsT_-E5Y2dfTU7TB0EaRnJ0nuM0sv7bxp4mCVh4" />
           </Helmet>
           <Container>
             <Header shortDesc={shortDesc} />
