@@ -68,7 +68,6 @@ const Surgeries = () => {
                 frontmatter {
                   title
                   templateKey
-
                   img
                 }
               }

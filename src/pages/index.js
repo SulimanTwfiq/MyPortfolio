@@ -8,7 +8,7 @@ import { graphql } from "gatsby";
 import { Link } from "@reach/router";
 import Button from "../components/Button";
 import media from "../components/media";
-import CV from "../components/sections/CV";
+import CVcomp from "../components/sections/CV";
 
 const Container = styled.div`
   grid-area: sections;
@@ -42,7 +42,7 @@ const IndexPage = ({ data }) => {
         url={data.site.siteMetadata.siteUrl}
       />
       <Container>
-        <CV CVinfo={CV} />
+        <CVcomp CVinfo={CV} />
         <SurgeriesComponent surgeries={surgeries} />
         <div>
           <SmallSection title="معرض الصور" linkTo="pictures" buttonTitle="مشاهدة">

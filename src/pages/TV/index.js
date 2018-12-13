@@ -4,6 +4,7 @@ import styled from "styled-components";
 import Layout from "../../templates/Layout";
 import { graphql } from "gatsby";
 import { DefaultCard } from "../../components/Card";
+import Metatags from "../../components/Metatags";
 const StyledPost = styled.div`
   border-radius: 10px;
   background-color: rgba(255, 255, 255, 0.5);
@@ -42,6 +43,7 @@ const Blog = () => {
 
         return (
           <Layout>
+            <Metatags title={"المقابلات التلفزيونية"} description={"المقابلات التلفزيونية للدكتور نزار فقيه"} />
             <DefaultCard center>
               {interviews.map(({ node: interview }) => (
                 <StyledPost as="article" key={interview.id}>
