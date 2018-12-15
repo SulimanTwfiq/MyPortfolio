@@ -5,6 +5,7 @@ import Layout from "../../templates/Layout";
 import { graphql } from "gatsby";
 import { DefaultCard } from "../../components/Card";
 import media from "../../components/media";
+import Metatags from "../../components/Metatags";
 const StyledPost = styled.div`
   border-radius: 10px;
   background-color: rgba(255, 255, 255, 0.5);
@@ -71,6 +72,7 @@ const Blog = () => {
 
         return (
           <Layout>
+            <Metatags title={"المدونة"} description={"مقالات طبية متنوعة للدكتور نزار فقيه"} />
             <DefaultCard center>
               {posts.map(({ node: post }) => (
                 <StyledPost as="article" key={post.id}>
