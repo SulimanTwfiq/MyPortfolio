@@ -46,7 +46,7 @@ const IndexPage = ({ data }) => {
         <SurgeriesComponent surgeries={surgeries} />
         <div>
           <SmallSection title="معرض الصور" linkTo="pictures" buttonTitle="مشاهدة">
-            شاهد صور المرضى قبل وبعد العمليات <br /> التي قام بها الدكتور نزار فقي
+            شاهد صور المرضى قبل وبعد العمليات <br /> التي قام بها الدكتور نزار فقيه
           </SmallSection>
           <SmallSection title="حجز موعد" linkTo="Contact" buttonTitle="احجز">
             احجز موعدك مع الدكتور في أقل من دقيقتين
