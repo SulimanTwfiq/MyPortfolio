@@ -23,17 +23,8 @@ const Container = styled(DefaultCard)`
   overflow: hidden;
   grid-gap: 40px;
   padding: 0px;
-  figure {
+  h1 {
     grid-column: 1/-1;
-    img {
-      height: 360px;
-      width: 100%;
-    }
-    figcaption {
-      margin-top: -68px;
-      font-size: 1.89rem;
-      color: aliceblue;
-    }
   }
 `;
 
@@ -41,10 +32,7 @@ const Pictures = () => (
   <Layout>
     <Metatags title={"معرض الصور"} description={"صور لبعض العمليات التي قام بها الدكتور نزار فقيه"} />
     <Container as="section">
-      <figure>
-        <img src={Office} alt="في المكتب" />
-        <figcaption>معرض الصور</figcaption>
-      </figure>
+      <h1>معرض الصور</h1>
       <img src={PicOne} alt="patient" />
       <img src={PicTwo} alt="patient" />
       <img src={PicThree} alt="patient" />

@@ -9,7 +9,7 @@ const StyledHeader = styled.header`
   grid-area: header;
   display: flex;
   flex-direction: column;
-  background-image: linear-gradient(-225deg, white -119%, var(--color-primary) 121%);
+  background-image: linear-gradient(-225deg, white -23%, var(--color-primary) 93%);
   margin-bottom: 20px;
   border-bottom: 4px black solid;
 `;
