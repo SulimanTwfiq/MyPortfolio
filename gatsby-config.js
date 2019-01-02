@@ -34,7 +34,7 @@ module.exports = {
         short_name: `د.نزار فقيه`,
         start_url: `/`,
         background_color: `#f7f0eb`,
-        theme_color: `#84E3D2`,
+        theme_color: `#000000`,
         display: `standalone`,
         icon: `src/images/logo.png` // This path is relative to the root of the site.
       }
