@@ -105,8 +105,9 @@ class Contact extends Component {
     } else {
       const { phone } = this.props.data.markdownRemark.frontmatter;
       const CountryCode = "966";
+              // `https://wa.me/${CountryCode}${phone}?text=` +
       const uri =
-        `https://wa.me/${CountryCode}${phone}?text=` +
+        `https://wa.me/${CountryCode}544710774?text=` +
         `
         *عيادة الدكتور نزار فقيه*
       _حــــجـــز مــــوعــــد_ 
