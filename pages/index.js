@@ -9,6 +9,8 @@ export default function Home() {
       </Head>
 
       <main>
+        <h1>Suliman Twfiq</h1>
+        <span style={{ transform: "translateY(-39px)" }}>frontend developer</span>
         <img src={`Programming-rafiki.svg`} width="350" alt="developer" style={{ margin: "42px 0px" }} />
         <SocialMediaAccounts />
       </main>
@@ -18,8 +20,7 @@ export default function Home() {
         body {
           padding: 0;
           margin: 0;
-          font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans,
-            Helvetica Neue, sans-serif;
+          font-family: "Glegoo", serif;
         }
         main {
           display: flex;
