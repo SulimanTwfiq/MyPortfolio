@@ -5,13 +5,13 @@ export default function Home() {
     <div className="container">
       <Head>
         <title>سليمان توفيق</title>
-        <link rel="icon" href="/favicon.ico" />
+        {/* <link rel="icon" href="/favicon.ico" /> */}
       </Head>
 
       <main>
         <h1>Suliman Twfiq</h1>
         <span style={{ transform: "translateY(-39px)" }}>frontend developer</span>
-        <img src={`Programming-rafiki.svg`} width="350" alt="developer" style={{ margin: "42px 0px" }} />
+        <img src={`Programming-rafiki.svg`} width="350" alt="developer" style={{ marginTop: "-30px" }} />
         <SocialMediaAccounts />
       </main>
 
@@ -26,7 +26,6 @@ export default function Home() {
           display: flex;
           align-items: center;
           justify-content: center;
-          height: 100vh;
           flex-direction: column;
         }
         * {
