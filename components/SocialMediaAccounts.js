@@ -11,7 +11,7 @@ const SocialMediaAccounts = () => {
     <div>
       {Object.entries(socialMediaAccounts).map(([key, value]) => (
         <a href={`https://${value}`} target="_blank" rel="noopener noreferrer">
-          <img src={`/icons/${key}.svg`} width="50" alt="my image" style={{ margin: "0px 4px" }} />
+          <img src={`/icons/${key}.svg`} width="40" alt="my image" style={{ margin: "0px 4px" }} />
         </a>
       ))}
     </div>
